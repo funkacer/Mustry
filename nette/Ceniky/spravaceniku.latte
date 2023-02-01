@@ -1,0 +1,13 @@
+{block content}
+<h2 class="text-center">Správa ceníku</h2>
+<div class="text-center">
+<p>Vyberte soubor .XLS který chcete použít pro tvorbu položek ceníku.</p>
+</div>
+
+<div class="text-center mb-5" n:if="$fileLink ?? false">
+    <h4>Šablona ke stažení</h4>
+    <a href="{$basePath}{$fileLink}" class="font-weight-bold"><i class="fas fa-file-excel"></i> sprava_ceniku-template.xls</a>
+</div>
+<div class="form">
+    {control cenik}
+</div>
