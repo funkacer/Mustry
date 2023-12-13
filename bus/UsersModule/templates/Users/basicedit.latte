@@ -1,0 +1,187 @@
+{*form editForm*}
+
+{block content}
+
+{form basicEditForm}
+    
+    <div class="template-container container text-center">
+        <div class="card card-body p-3 border-0">
+            <h2 class="mb-4 mt-2 ml-3">{ifset $user->getIdentity()->getData()['kontakt']['username']}{$user->getIdentity()->getData()['kontakt']['jmeno']} {$user->getIdentity()->getData()['kontakt']['prijmeni']} ({$user->getIdentity()->getData()['kontakt']['username']}){else}Nový uživatel{/ifset}</h2>
+            <div class="row lead mb-3 ml-1">
+                <div class="col-12 col-md-4 col-lg-4 d-flex justify-content-center justify-content-sm-start">
+                    <div class="mr-2 d-flex flex-column justify-content-around">
+                        {*<div><i class="fas fa-briefcase"></i></div>*}
+                        <div><i class="fas fa-signature"></i></div>
+                        <div><i class="fas fa-signature"></i></div>
+                        <div><i class="fas fa-user"></i></div>
+                        <div><i class="fas fa-key"></i></div>
+                        <div><i class="invisible fas fa-key"></i></div>
+                        {*<div><i class="fas fa-user-tag"></i></div>*}
+                        {*<div><i class="fas fa-scroll"></i></div>*}
+                    </div>
+                    <div class="mr-2 d-flex flex-column justify-content-around">
+                        {*<div>{label firma}</div>*}
+                        <div>{label jmeno}</div>
+                        <div>{label prijmeni}</div>
+                        <div>{label username}</div>
+                        <div>{label password}</div>
+                        <div>{label password2}</div>
+                        {*<div>{label funkce}</div>*}
+                        {*<div>{label titul}</div>*}
+                    </div>
+                    <div class="d-flex flex-column justify-content-around">
+                        {*<div class="my-1">{input firma}</div>*}
+                        <div class="my-1">{input jmeno}</div>
+                        <div class="mb-1">{input prijmeni}</div>
+                        <div class="mb-1">{input username}</div>
+                        <div class="mb-1">{input password}</div>
+                        <div class="mb-1">{input password2}</div>
+                        {*<div class="mb-1">{input funkce}</div>*}
+                        {*<div class="mb-1">{input titul}</div>*}
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4 col-lg-4 d-flex flex-column justify-content-between">
+                    <div class="d-flex justify-content-center justify-content-sm-start">
+                        <div class="mr-3 mr-sm-2 d-flex flex-column justify-content-around">
+                            <div><i class="fas fa-user"></i></div>
+                            {*<div><i class="fas fa-shopping-cart"></i></div>*}
+
+                        </div>
+                        <div class="mr-3 mr-sm-1 mr-md-2 d-flex flex-column justify-content-around">
+                            <div>{label busRoless}</div>
+                            <div>{label shopRoless}</div>
+                            {*<div>{label shopRoles}</div>*}
+
+                        </div>
+                        <div class="ml-1 ml-sm-3 ml-md-0 d-flex flex-column justify-content-around">
+                            <div class="my-1">{input busRoless}</div>
+                            <div class="mb-1">{input shopRoless}</div>
+                            {*<div class="mb-1">{input testEmail}</div>*}
+                            {*<div class="mb-1">{input shopRoles}</div>*}
+   
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center justify-content-sm-center">
+                        
+                        <div class="ml-1 ml-sm-3 ml-md-0 d-flex flex-column justify-content-around">
+                            
+                            <div class="my-1">{input testEmail}</div>
+                            <div class="mb-1">{input imaptest}</div>
+                            {*<div class="mb-1">{input shopRoles}</div>*}
+   
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-4 d-flex flex-column justify-content-between">
+                    <div class="d-flex justify-content-center justify-content-sm-start">
+                        <div class="mr-3 mr-sm-2 d-flex flex-column justify-content-around">
+                            <div><i class="fas fa-user"></i></div>
+                            <div><i class="fas fa-key"></i></div>
+                            <div><i class="fas fa-server"></i></div>
+                            <div><i class="fas fa-ethernet"></i></div>
+                            <div><i class="fas fa-at"></i></div>
+                            <div><i class="fas fa-envelope"></i></div>
+                        </div>
+                        <div class="mr-3 mr-sm-1 mr-md-2 d-flex flex-column justify-content-around">
+                            <div>{label imapname}</div>
+                            <div>{label imappass}</div>
+                            <div>{label imapserv}</div>
+                            <div>{label imapport}</div>
+                            <div>{label imapsifr}</div>
+                            <div>{label imapfold}</div>
+                        </div>
+                        <div class="ml-1 ml-sm-4 ml-md-0 d-flex flex-column justify-content-around">
+                            <div class="my-1">{input imapname}</div>
+                            <div class="mb-1">{input imappass}</div>
+                            <div class="mb-1">{input imapserv}</div>
+                            <div class="mb-1">{input imapport}</div>
+                            <div class="mb-1">{input imapsifr}</div>
+                            <div class="mb-1">{input imapfold}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+<div class="mx-3 mx-md-0 mb-3 mb-md-0">{input submit}</div>
+
+    </div>
+    
+    
+
+{/form}
+
+
+<script>
+    function zprava()
+    {
+
+        event.preventDefault();
+
+        var $form = $("#frm-basicEditForm");
+
+        // Let's select and cache all the fields
+        var $inputs = $form.find("input, select, button, textarea");
+
+        // Serialize the data in the form
+        var serializedData = $form.serialize();
+        //console.log(serializedData);
+
+        // Let's disable the inputs for the duration of the Ajax request.
+        // Note: we disable elements AFTER the form data has been serialized.
+        // Disabled form elements will not be serialized.
+        $inputs.prop("disabled", true);
+
+        // Fire off the request to /form.php
+        request = $.ajax({
+            url: {plink :Mail:Mail:test},
+            type: "post",
+            data: serializedData
+        });
+
+        // Callback handler that will be called on success
+        request.done(function (response, textStatus, jqXHR){
+            // Log a message to the console
+            console.log(response);
+            window.FlashMessage.success('Zpráva se vygenerovala a uložila úspěšně, pokračujte prosím tlačítkem Uložit.', {
+                timeout: 4000,
+            });
+        });
+
+        // Callback handler that will be called on failure
+        request.fail(function (jqXHR, textStatus, errorThrown){
+            // Log the error to the console
+            /*
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+            */
+            window.FlashMessage.error('Zprávu se nepodařilo vygenerovat a uložit, zkontrolujte prosím nastavení emailu.', {
+                timeout: 4000,
+            });
+        });
+
+        // Callback handler that will be called regardless
+        // if the request failed or succeeded
+        request.always(function () {
+            // Reenable the inputs
+            $inputs.prop("disabled", false);
+            $('#username').prop("disabled", true);
+            $('#busroless').prop("disabled", true);
+            $('#shoproless').prop("disabled", true);
+        });
+
+    }
+
+    function flashMessage(message, type){
+    
+}
+
+</script>
+
+{/block}

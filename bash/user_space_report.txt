@@ -1,0 +1,3 @@
+12	test
+4	moje.txt
+0	tato

@@ -1,0 +1,103 @@
+{block menu}
+    <div class="card mt-4">
+        <div class="card-header">
+            <h3>Kontakty firmy</h3>
+        </div>
+        <div class="card-body">
+            <ul n:foreach="$kontakty as $kontakt">
+                <li>
+                    <a href="#"
+                       onclick="$('#frm-mailForm-to').val($('#frm-mailForm-to').val() + {$kontakt['email']} + ',');">
+                        {$kontakt['jmeno']} ({$kontakt['email']})
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{/block}
+
+{block content}
+    <div class="row tabulka pt-4">
+        <div class="col-xs-12 col-md-10 col-lg-9">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Email</h1>
+                </div>
+                <div class="card-body">
+                    {control mailForm}
+                </div>
+                <div class="card-footer">
+                    <p>* Při přístupu z přehledu dokladů se automaticky přiloží doklad z evidence "{$evidence}".</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <a class="btn btn-primary btn-lg" n:href="Sign:default">Vytvořit/Upravit podpis</a>
+        </div>
+    </div>
+{/block}
+{block scripts}
+    {include parent}
+    <script src='{$basePath}/js/tinymce/tinymce.min.js'></script>
+    <script>
+        tinyMCE.init({
+            mode: "specific_textareas",
+            editor_selector: "mceEditor",
+            paste_data_images: true,
+            height: 500,
+            resize: 'both',
+            menubar: false,
+            branding: false,
+            language: 'cs',
+            plugins: [
+                'advlist autolink lists link image imagetools anchor textcolor',
+                'searchreplace visualblocks code fullscreen save',
+                'insertdatetime media table contextmenu paste code help'
+            ],
+            toolbar: `undo redo |  styleselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify |
+                          image | bullist numlist outdent indent | removeformat | code`,
+            imagetools_toolbar: "rotateleft rotateright | editimage",
+            images_upload_handler: function (blobInfo, success, failure) {
+                success("data:" + blobInfo.blob().type + ";base64," + blobInfo.base64());
+            },
+            file_picker_types: 'image',
+            // and here's our custom image picker
+            file_picker_callback: function (cb, value, meta) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+
+                // Note: In modern browsers input[type="file"] is functional without
+                // even adding it to the DOM, but that might not be the case in some older
+                // or quirky browsers like IE, so you might want to add it to the DOM
+                // just in case, and visually hide it. And do not forget do remove it
+                // once you do not need it anymore.
+
+                input.onchange = function () {
+                    var file = this.files[0];
+
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function () {
+                        // Note: Now we need to register the blob in TinyMCEs image blob
+                        // registry. In the next release this part hopefully won't be
+                        // necessary, as we are looking to handle it internally.
+                        var id = 'blobid' + (new Date()).getTime();
+                        var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                        var base64 = reader.result.split(',')[1];
+                        var blobInfo = blobCache.create(id, file, base64);
+                        blobCache.add(blobInfo);
+
+                        // call the callback and populate the Title field with the file name
+                        cb(blobInfo.blobUri(), {
+                            title: file.name
+                        });
+                    };
+                };
+
+                input.click();
+            }
+
+        });
+    </script>
+{/block}

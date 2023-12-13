@@ -1,0 +1,166 @@
+sudo apt update
+
+//nejde
+sudo apt install wget
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+//jde
+sudo apt install chromium-browser
+
+apt-get install git
+
+ssh-keygen -t ed25519 -C "funkacer@gmail.com"
+cat home/funkacer/.ssh/id_ed25519.pub
+
+
+sudo su
+
+apt install software-properties-common
+add-apt-repository ppa:ondrej/php
+apt update
+apt install php8.0 libapache2-mod-php8.0
+
+apt install apache2 php8.0 php8.0-cli php8.0-sqlite3 php8.0-curl php8.0-gd php8.0-imagick php8.0-mbstring php8.0-mcrypt php8.0-soap php8.0-xml php8.0-zip php8.0-fpm
+
+sudo apt-get install php8.0-pgsql
+
+service apache2 restart
+
+sudo service php8.0-fpm start
+sudo service apache2 start
+
+snap install codium --classic
+
+cd /var/www/
+sudo chmod -R 777 .
+
+sudo mv composer.phar /usr/local/bin/composer
+cd /usr/local/bin/
+sudo chmod -R 777 .
+
+composer global about
+cd /home/funkacer/.config/composer
+composer global require laravel/installer
+
+cd /var/www/html
+composer create-project --prefer-dist laravel/laravel:^7.0 blog
+
+
+cd /etc/apache2/apache2.conf
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+
+<Directory /var/www/html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+
+sudo a2enmod rewrite
+systemctl restart apache2
+
+
+//instalace mysql pro laravel_hospital
+apt list --installed
+sudo apt-get remove mysql-client-core-8.0
+sudo apt-get remove mysql-apt-config
+
+sudo apt-get update
+sudo apt-get install mysql-server-8.0
+sudo systemctl restart mysql
+sudo systemctl status mysql
+sudo su
+mysql -u root
+show databases;
+create database laravel_hospital;
+use laravel_hospital;
+
+//use VS codium integrated terminal to create table patient
+(cd /var/www/html/blog)
+php artisan make:migration create_patient_table --create=patient
+
+//upravit soubor v database/migrations
+php artisan migrate
+
+//změnit soubor v database/migrations
+php artisan migrate:refresh
+
+//check php mysql driver
+php -m | grep mysql
+sudo apt-get install php8.0-mysql
+sudo service apache2 restart
+
+//nastaví heslo na 'pass'
+sudo mysql -u root -p
+    > use mysql;
+    > select user,host,plugin from mysql.user;
+    > ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass';
+    > flush privileges;
+
+//use this way
+mysql -u root -p laravel_hospital
+password: xxxx
+desc patient;
+
+//test data
+insert into patient SET firstname = 'Jirka', surname = 'Černý', age = 49, detail = 'Nějaký strašně dlouhý detail pro Jirku', status = 2;
+insert into patient SET firstname = 'Lucka', surname = 'Černá', age = 47, detail = 'Nějaký strašně dlouhý detail pro Lucku', status = 1;
+
+update patient set created_at = now();
+update patient set updated_at = now() where id = 1;
+update patient set updated_at = now() where id = 2;
+
+
+//symlink na Git
+cd /var/www/html
+ln -s /home/funkacer/Git/laravel_hospital/public hospital
+
+//list all users
+cut -d: -f1 /etc/passwd
+
+//tohle nefunguje, access forbiden:
+sudo chown -R www-data:www-data /var/www/html/hospital
+sudo chmod -R g+rw /var/www/html/hospital
+
+test pro symlink, musí ukázat seznam souborů:
+sudo -u www-data ls -l /var/www/html/hospital/.
+
+https://stackoverflow.com/questions/7381371/apache-wont-follow-symlinks-403-forbidden
+
+//tohle funguje, asi přidá www-data pod skupinu funkacer:
+sudo usermod -a -G funkacer www-data
+
+//po git clone nutno:
+composer install
+přejmenovat .env.example na .env a upravit db:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_hospital
+DB_USERNAME=root
+DB_PASSWORD=pass
+
+
+//errors
+cd /home/funkacer/Git/laravel_hospital/resources/views
+mkdir errors
+touch 404.blade.php
+
+//controllers
+php artisan make:controller HomepageController
+php artisan make:controller ContactController
+php artisan make:controller PatientsController
+php artisan make:controller PatientController
+
+
+
+
+
+
+
+
+

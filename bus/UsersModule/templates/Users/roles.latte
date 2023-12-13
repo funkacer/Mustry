@@ -1,0 +1,177 @@
+{block styles}
+{include parent}
+<style>
+    label.control-label{
+    }
+</style>
+{/block}
+
+{block content}
+{control roleEditForm}
+<div id="editor_holder"></div> 
+{/block}
+
+{block scripts}
+{include parent}
+<script src="{$basePath}/js/jsoneditor.js"></script>
+<script>
+    JSONEditor.defaults.options.theme = 'bootstrap3';
+    //JSONEditor.defaults.language = "cs";
+    JSONEditor.defaults.options.iconlib = "fontawesome4";
+    JSONEditor.defaults.options.disable_array_delete_all_rows = true;
+    JSONEditor.defaults.options.no_additional_properties = true;
+
+// Initialize the editor
+    var editor = new JSONEditor(document.getElementById("editor_holder"), {
+        disable_array_reorder: false,
+        disable_properties: true,
+        schema: {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            title: "Nastavení",
+            type: "object",
+            properties: {
+                roles: {
+                    "title": "Role",
+                    "type": "array",
+                    items: {
+                        "headerTemplate": "{{ self.name }}",
+                        "type": "object",
+                        "format": "grid",
+                        options: {
+                            "collapsed": true
+                        },
+                        properties: {
+                            name: {
+                                "type": "string"
+                            },
+                            parents: {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                resources: {
+                    "title": "Zdroje",
+                    "type": "array",
+                    options: {
+                        "collapsed": true
+                    },
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                allow: {
+                    "title": "Pravidla povolení",
+                    "type": "array",
+                    items: {
+                        "headerTemplate": "{{ i0 }}.",
+                        "type": "object",
+                        options: {
+                            "collapsed": true
+                        },
+                        properties: {
+                            roles: {
+                                "title": "Role",
+                                "type": "array",
+                                "minItems": 1,
+                                "uniqueItems": true,
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            resources: {
+                                "title": "Zdroje",
+                                "type": "array",
+                                "uniqueItems": true,
+                                "items": {
+                                    "type": "string",
+                                    "watch": {
+                                        "resEnum": "resources"
+                                    },
+                                    "enumSource": [
+                                        {
+                                            "source": "resEnum"
+                                        }
+                                    ]
+                                }
+
+                            },
+                            actions: {
+                                "title": "Akce",
+                                "type": "array",
+                                "uniqueItems": true,
+                                items: {
+                                    "type": "string",
+                                    "enum": ["view", "edit", "ALL"]
+                                }
+                            }
+                        }
+                    }
+                },
+                deny: {
+                    "title": "Pravidla zakázání",
+                    "type": "array",
+                    items: {
+                        "headerTemplate": "{{ i0 }}.",
+                        "type": "object",
+                        options: {
+                            "collapsed": true
+                        },
+                        properties: {
+                            roles: {
+                                "title": "Role",
+                                "type": "array",
+                                "minItems": 1,
+                                "uniqueItems": true,
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            resources: {
+                                "title": "Zdroje",
+                                "type": "array",
+                                "uniqueItems": true,
+                                "items": {
+                                    "type": "string",
+                                    "watch": {
+                                        "resEnum": "resources"
+                                    },
+                                    "enumSource": "resEnum"
+                                }
+
+                            },
+                            actions: {
+                                "title": "Akce",
+                                "type": "array",
+                                "uniqueItems": true,
+                                items: {
+                                    "type": "string",
+                                    "enum": ["view", "edit", "ALL"]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "required": [
+                "roles", "resources", "allow", "deny"
+            ]
+        }
+    });
+    editor.setValue(JSON.parse($("#frm-roleEditForm-json").val()));
+    editor.on('change', function () {
+        console.log("change");
+        var errors = editor.validate();
+        console.log(errors);
+        if (errors.length === 0) {
+            console.log(editor.getValue());
+            $("#frm-roleEditForm-json").val(JSON.stringify(editor.getValue(), null, 2));
+        }
+    });
+</script>
+{/block}
+{block menu}
+<p>Je to poměrně komplikované</p>

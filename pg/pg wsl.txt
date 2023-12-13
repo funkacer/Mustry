@@ -1,0 +1,1168 @@
+//postgre pokus last
+create table table1 (col1 int, col2 text, col3 date);
+insert into table1 values (1, 'Ahoj', now());
+insert into table1 values (2, 'Ahoj 2', now());
+select * from table1;
+alter table table1 ALTER COLUMN col3 TYPE timestamp;
+insert into table1 values (3, 'Ahoj 3', now());
+
+
+//posun zpet
+with t1 AS (SELECT EXTRACT(YEAR FROM now()) AS rok, EXTRACT(MONTH FROM now()) AS mesic, generate_series(0,22) as posun_zpet)
+SELECT rok,
+	mesic,
+	posun_zpet,
+	EXTRACT(YEAR FROM date(concat(rok::varchar, '-', mesic::varchar, '-01')) - concat(posun_zpet, ' month')::Interval) AS rok_zpet,
+	EXTRACT(MONTH FROM date(concat(rok::varchar, '-', mesic::varchar, '-01')) - concat(posun_zpet, ' month')::Interval) AS mesic_zpet
+	from t1;
+
+//conditional
+$conditional1 = new \PhpOffice\PhpSpreadsheet\Style\Conditional();
+        $conditional1->setConditionType(\PhpOffice\PhpSpreadsheet\Style\Conditional::CONDITION_CELLIS);
+        $conditional1->setOperatorType(\PhpOffice\PhpSpreadsheet\Style\Conditional::OPERATOR_GREATERTHAN);
+        $conditional1->addCondition(0);
+        $conditional1->getStyle()->getFont()->getColor()->setARGB(\PhpOffice\PhpSpreadsheet\Style\Color::COLOR_DARKGREEN);
+        //$conditional->getStyle()->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID);
+        //$conditional->getStyle()->getFill()->getEndColor()->setARGB(\PhpOffice\PhpSpreadsheet\Style\Color::COLOR_GREEN);
+        $conditional2 = new \PhpOffice\PhpSpreadsheet\Style\Conditional();
+        $conditional2->setConditionType(\PhpOffice\PhpSpreadsheet\Style\Conditional::CONDITION_CELLIS);
+        $conditional2->setOperatorType(\PhpOffice\PhpSpreadsheet\Style\Conditional::OPERATOR_LESSTHANOREQUAL);
+        $conditional2->addCondition(0);
+        $conditional2->getStyle()->getFont()->getColor()->setARGB(\PhpOffice\PhpSpreadsheet\Style\Color::COLOR_RED);
+
+$conditionalStyles = $objWorksheetW->getStyle("C$radek:{$columnsIndex[($diff+4)]}$radek")->getConditionalStyles();
+                $conditionalStyles[] = $conditional1;
+                $conditionalStyles[] = $conditional2;
+                $objWorksheetW->getStyle("C$radek:{$columnsIndex[($diff+4)]}$radek")->setConditionalStyles($conditionalStyles);
+
+for ( $c = 0; $c <= ($diff + 4); $c++ ) {
+            $objWorksheetW->getColumnDimension($columnsIndex[$c])->setAutoSize(true);
+        }
+
+
+//xml
+function put(string $evidence, $data) {
+        $wsurl = $evidence . '.json';
+        $response = Flexibee::request($wsurl, 'PUT', json_encode($data));
+        file_put_contents('temp_files/flexibee_log.json', json_encode($data));
+        file_put_contents('temp_files/flexibee_log.xml', $this->array_to_xml($data, new \SimpleXMLElement('<winstrom/>'))->asXML());
+        return json_decode($response, true);
+    }
+    function array_to_xml(array $arr, \SimpleXMLElement $xml)
+{
+    foreach ($arr as $k => $v) {
+        is_array($v)
+            ? $this->array_to_xml($v, $xml->addChild($k))
+            : $xml->addChild($k, $v);
+    }
+    return $xml;
+}
+
+//mailer
+public function sendMailChyby($doMailu) {
+        $latte = new \Latte\Engine;
+
+        $odesilatel = 'cerny.home@seznam.cz';
+        $prijemce = 'cerny.home@seznam.cz';
+        
+        /*
+        $mailer = new \Nette\Mail\SmtpMailer([
+            'host' => 'localhost',
+            'port' => '25',
+            'secure' =>  ''
+        ]);
+        */
+
+        $mailer = new \Nette\Mail\SmtpMailer([
+            'host' => 'smtp.seznam.cz',
+            'from' => 'cerny.home@seznam.cz',
+            'username' => '****',
+            'password' => '****',
+            'secure' => 'ssl'
+        ]);
+        
+        $email = new \Nette\Mail\Message;
+        foreach (explode(',', $prijemce) as $to) {
+            if (!empty($to)) {
+                $email->addTo(trim($to));
+            }
+        }
+        $email->setFrom($odesilatel)
+        ->addBcc('cerny.home@seznam.cz') //skrytá kopie cerny@arit.cz
+        ->setSubject("Kontrola platnosti DIČ")
+        //->setHtmlBody($latte->renderToString('../app/Presenters/templates/ParsingSkluzu/email.latte'))
+        ->setHtmlBody("Dobrý den,<br><br>posíláme výsledek kontroly:<br>$doMailu<br><br>S pozdravem,<br>Váš Arit");
+        //->addAttachment('temp_files/skluz_result.log');
+        /*
+        if (file_exists('temp_files/skluz_chyby.xlsx')) {
+            $email->addAttachment('temp_files/skluz_chyby.xlsx');
+        }
+        if (file_exists('temp_files/skluz_temp.xlsx')) {
+            $email->addAttachment(explode("/", $filenameForJob)[count(explode("/", $filenameForJob))-1] ?? 'skluzy.xlsx', file_get_contents('temp_files/skluz_temp.xlsx'));
+        }
+        if (file_exists('temp_files/skluz_zameny.html')) {
+            $email->addAttachment('temp_files/skluz_zameny.html');
+        }
+        */
+            //->setHtmlBody($latte->renderToString('/home/koralky-skripty/app/Presenters/templates/ParsingSkluzu/email.latte'));
+        $mailer->send($email);
+    }
+
+
+//$soap = new \SoapClient('https://adisrws.mfcr.cz/dpr/axis2/services/rozhraniCRPDPH.rozhraniCRPDPHSOAP');
+        //dumpe($soap->getStatusNespolehlivySubjektRozsireny(['dic' => '8702080024']));
+
+        /*
+        $client = new \SoapClient("http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl");
+        dumpe($client->checkVat(array(
+        'countryCode' => 'CZ',
+        'vatNumber' => '8702080024'
+        )));
+        */
+
+
+function getAresByIc($ic) {
+        $file = @file_get_contents("http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=" . $ic);
+        $res = [];
+        if ($file) {
+            $xml = @simplexml_load_string($file);
+        }
+        if (isset($xml) && $xml) {
+            $ns = $xml->getDocNamespaces();
+            $data = $xml->children($ns['are']);
+            $el = $data->children($ns['D'])->VBAS;
+            if (strval($el->ICO) == $ic && isset($el->AD)) {
+                $res['ic'] = strval($el->ICO);
+                $res['dic'] = strval($el->DIC);
+                $res['nazev'] = strval($el->OF);
+                $res['ulice'] = strval($el->AD->UC);
+                $res['psc'] = explode(' ', strval($el->AD->PB))[0];
+                $res['mesto'] = explode(' ', strval($el->AD->PB))[1];
+            }
+        }
+        return $res;
+    }
+
+//v prezenteru model injection
+class UpdateterminuPresenter extends BasePresenter {
+
+    /**
+     * @inject
+     * @var \App\Models\UpdateterminuModel
+     */
+    public $model;
+
+
+
+//v prezenteru
+public function createComponentDoklad(): Form
+    {
+        $user = $this->getPresenter()->user;
+        $dokladConfig = $this->getPresenter()->user->getSchema()['doklad']['config'];
+        $form = new Form();
+        $form->setHtmlAttribute('id', 'frm-doklad-doklad');
+        $form->addSelect('evidence', 'Druh dokladu', $this->getEvidences())
+            ->setHtmlAttribute('class', 'form-control')
+            ->setPrompt('Vyberte druh dokladu')
+            ->addCondition($form::IS_IN, array_keys($this->getEvidences()))->toggle('#doklad-form');
+        $form->addHidden('id');
+        $form->addHidden('nadrazenaVerzeId');
+        $form->addSelect('typDokl', 'Typ dokladu', $this->nabidkaVydanaModel->getTypDokladu($this->doklad->getHeader()->evidence))
+            ->setHtmlAttribute('class', 'form-control')
+            ->setDisabled($dokladConfig['evidences'][$this->doklad->getHeader()->evidence]['typeDisabled'] ?? false)
+            ->setPrompt('Vyberte typ dokladu');
+        $form->addSelect('mena', 'Měna', self::MENA)
+            ->setHtmlAttribute('class', 'form-control')
+            ->addCondition($form::IS_IN, array_keys($this->getEvidences()))->toggle('#doklad-form');
+        $form->addInteger('slevaDokl', 'Sleva na doklad')
+            ->setHtmlAttribute('class', 'form-control');
+        $form->addComponent(new AutocompleteInput(
+            id: 'firma',
+            name: 'Firma',
+            source: $this->presenter->link(':Autocomplete:', ['do' => 'firma']),
+            callback: $this->link('UpdateHeader'),
+            controlName: 'doklad'
+        ), 'firma');
+        $form->addComponent(new AutocompleteInput(
+            id: 'kontaktOsoba',
+            name: 'Kontakt',
+            source: $this->presenter->link(':Autocomplete:', ['do' => 'kontakt']),
+            callback: $this->link('UpdateHeader'),
+            controlName: 'doklad'
+        ), 'kontaktOsoba');
+        if ($this->getPresenter()->user->getSchema()['doklad']['config']['mistUrc']){
+            $mistUrc = new AutocompleteInput(
+                id: 'mistUrc',
+                name: 'Pobočka',
+                source: $this->presenter->link(':Autocomplete:', ['do' => 'mistUrc']),
+                callback: $this->link('UpdateHeader'),
+                controlName: 'doklad');
+
+            if ($this->getPresenter()->user->getSchema()['doklad']['config']['mistUrcRequired']){
+                $mistUrc->setHtmlAttribute('data-required', 'Pole Pobočka je povinné')->setOption('description', 'Toto pole je povinné!');
+            }
+            $form->addComponent($mistUrc, 'mistUrc');
+        }
+        $form->addComponent(new AutocompleteInput(
+            id: 'zakazka',
+            name: 'Zakázka',
+            source: $this->presenter->link(':Autocomplete:', ['do' => 'zakazka']),
+            callback: $this->link('UpdateHeader'),
+            controlName: 'doklad'
+        ), 'zakazka');
+        $form->addSelect('formaDopravy', 'Forma dopravy', $this->nabidkaVydanaModel->getFormaDopravy())
+            ->setHtmlAttribute('class', 'form-control');
+        if ($this->doklad->getHeader()->evidence !== 'nabidka-vydana')
+            $form->addText('formaUhradyCis', 'Forma úhrady')
+                ->setHtmlAttribute('class', 'form-control');
+        $form->addText('poznam', 'Poznámka')
+            ->setHtmlAttribute('class', 'form-control');
+        $form->addText('popis', 'Popis')
+            ->setHtmlAttribute('class', 'form-control');
+        $form->setDefaults($this->doklad->getHeader() ?? $this->getDefaultValues());
+        $itemsContainer = $form->addContainer('polozkyDokladu');
+        $workItems = $this->doklad->getItems();
+        $rowCount = $this->doklad->getRowCount();
+        if ($rowCount == 0) {
+            $itemsContainer->addComponent(new \Override\Control\Doklad\RowContainer(
+                $this->doklad->updateItem(self::DEFAULT_ITEM)->toArray(), $this->presenter, $this),
+                0);
+        } else {
+            for ($i = 0; $i < $rowCount; $i++) {
+                $itemsContainer->addComponent(new \Override\Control\Doklad\RowContainer(
+                    $workItems[$i]->toArray(), $this->presenter, $this
+                ), $i);
+            }
+        }
+        $notificationsContainer = $form->addContainer('notifications');
+        $notifications = $this->doklad->getNotifications();
+        $notCount = $this->doklad->getNotificationsCount();
+        if ($notCount > 0) {
+            for ($i = 0; $i < $notCount; $i++) {
+                $notificationsContainer->addComponent(new NotificationContainer(
+                    $notifications[$i]->toArray()
+                ), $i);
+            }
+        }
+        $form->addSubmit('submit', 'Uložit')
+            ->setHtmlAttribute('class', 'btn btn-lg btn-primary btn-block m-2')
+            ->onClick[] = fn(Button $btn) => $this->processForm($btn->getForm());
+        $form->addSubmit('submitPdf', 'Uložit a zobrazit PDF')
+            ->setHtmlAttribute('class', 'btn btn-lg btn-info btn-block m-2')
+            ->onClick[] = fn(Button $btn) => $this->processForm($btn->getForm(), 'pdf');
+        $form->addSubmit('submitMail', 'Uložit a odeslat emailem')
+            ->setHtmlAttribute('class', 'btn btn-lg btn-warning btn-block m-2')
+            ->onClick[] = fn(Button $btn) => $this->processForm($btn->getForm(), 'mail');
+//        $form->addSubmit('store', 'Uložit')
+//            ->setHtmlAttribute('class', 'btn btn-lg btn-primary btn-block ajax')
+//            ->setHtmlAttribute('style', 'display: none;')
+//            ->onClick[] = fn(Button $btn) => $this->storeForm($btn->getForm(), $this->doklad ?? null);
+        $form->addSubmit('flush', 'Opustit doklad')
+            ->setHtmlAttribute('class', 'btn btn-lg btn-danger btn-block m-2 ajax')
+            ->onClick[] = fn(Button $btn) => $this->flushDoklad();
+        return $form;
+    }
+
+//v latte
+{snippetArea dokladWrapper}
+    {form doklad}
+	{input submit}
+
+//v prezenteru
+public function handleFlushDoklad()
+    {
+        $this->flushDoklad();
+        $this->redrawControl();
+        $this->getPresenter()->redirect(':Homepage:Homepage:default');
+    }
+//v latte
+<a n:href="flushDoklad" class="btn btn-lg btn-danger m-2"><i class="fa fa-times"/> Opustit doklad</a>
+
+
+//mpdf
+public function preparePdf($data, $fileName, $from, $to) {
+        $latte = new \Latte\Engine;
+        $latte->setTempDirectory(__DIR__ . "/../../../temp/");
+        $html = $latte->renderToString(__DIR__ . '/../../controls/Override/Vedeni/pdf.latte', ['obrat' => $data, 'from' => $from, 'to' => $to]);
+        $mpdf = new Mpdf(['tempDir' => __DIR__ . '/../../../temp/']);
+        $stylesheet = file_get_contents(__DIR__ . '/../../../www/css/styles_pdf.css');
+
+        $mpdf->WriteHTML($stylesheet, 1);
+        $mpdf->WriteHTML($html, 2);
+        $mpdf->Output($fileName . '.pdf', 'D');
+    }
+
+//syntaxe s ?
+$this->from . '-' . $this->to . '-' . (!empty($this->cenik) ? $this->cenik . '-report' : 'report')
+
+//get presenter
+$this->getPresenter()->flashMessage('Doplňte prosím místo určení!', 'danger');
+$this->redrawControl('flash-messages');
+$zodpOsoba = $this->getPresenter()->user->getIdentity()->getData()['zodpOsoba'];
+
+date '+%A %W %Y %X'
+crontab -u apache -e
+0 */1 * * *  cd /home/aulix-skripty/www && php index.php Updateterminu:check
+
+//Update busu:
+cp -r flexibus flexibus_old
+git checkout -- cron/cronData.php
+git pull
+git submodule update --recursive
+
+//bus submoduly:
+https://git.arit.cz/bus-moduly
+
+//php zpracovani rozdilu retezcu
+...
+$kody1 = array_column(array_column($data, 'cenik'), 'kod');
+...
+$kody2 = array_column($allPrefix, 'kod');
+...
+$diffPrefix = array_diff($kody2, array_unique($kody1));
+...
+foreach($diffPrefix as $ii => $kod){
+    nazev = $allPrefix[$ii]['nazev'];
+}
+
+//php zpracovani duplicit v Prolichtu
+...
+$polozky[$r] = $polozka;
+$kody[$r] = $polozka['cenik']['kod'];
+...
+$duplicity = array_diff_assoc($kody, array_unique($kody));
+foreach($duplicity as $r => $kod) {
+    unset($polozky[$r]);	//data bez polozek
+    $duplicity[$r] = "duplicita se řádkem " . array_search($kod, $kody);
+}
+
+//bus keypress
+$('.aktCenaCenikCheck').on('change', function(){
+        //console.log('aktCenaCheck');
+        var idRadku = $(this).parent().parent().data('id');
+        //console.log(idRadku);
+        if(this.checked){
+            var cenaMj = $("#frm-doklad-doklad-polozkyDokladu-" + idRadku + "-cenaMj").val();
+            $("#frm-doklad-doklad-polozkyDokladu-" + idRadku + "-cenaPoSleve").val(cenaMj);
+            //$("#frm-doklad-doklad-polozkyDokladu-" + idRadku + "-celkemBezDph").val(cenaMj);
+            var e = jQuery.Event("keypress");
+            e.which = 13; //choose the one you want
+            e.keyCode = 13;
+            $("#frm-doklad-doklad-polozkyDokladu-" + idRadku + "-cenaPoSleve").trigger(e);
+        }
+    });
+
+$('.template-container').each(function(i, element){});
+
+const addRows = e => {
+    e.preventDefault()
+    {if $config['mistUrcRequiredPolozky']}
+        if($('#mistUrc').val() == '') {
+            alert('Hodnota "Místo určení" musí být vyplněna')
+            $('#mistUrcLabel').focus();
+            return;
+        }
+    {/if}
+
+    handleRequest({link addRow!}, {})
+}
+
+{if $config['mistUrcRequiredPolozky']}
+    $('body').on('click keypress keyup', '#cenik1Label', function(e) {
+        if($('#mistUrc').val() == '') {
+            e.preventDefault()
+            alert('Hodnota "Místo určení" musí být vyplněna')
+            $('#mistUrcLabel').focus();
+            return;
+        }
+    });
+{/if}
+
+
+?git fetch
+git switch delicado_jce_vyroba
+
+////nový bus
+
+//ssh
+ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
+cd  ~/.ssh/
+cat id_rsa.pub
+zkopírovat celé do git jako nový ssh klíč
+
+//composer (https://getcomposer.org/download/)
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031906575712edab6f13eb0b361f2085f1f1237b7126d785e826a450292b6cfd1d64d92e6563bbde02') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
+
+//composer alt dle pos
+cd ~
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php
+rm composer-setup.php
+mv composer.phar /usr/local/bin/composer
+
+cd /home
+git clone ssh://git@git.arit.cz:1300/viky/bus-ng.git flexibus
+cd flexibus/
+git submodule update --init --recursive
+composer install
+
+//symlink
+cd /var/www
+mv html html_old
+ln -s /home/flexibus/www/ /var/www/html
+
+//práva
+cd /home/flexibus
+chown -R apache log/ temp/
+
+//apache
+1. mcedit /etc/httpd/conf/httpd.conf
+2. v sekci viz nize nastavit AllowOwerride na All 
+<Directory /var/www/html>
+...
+ # 
+ # AllowOverride controls what directives may be placed in .htaccess files.
+ # It can be "All", "None", or any combination of the keywords:
+ # Options FileInfo AuthConfig Limit
+ #
+ AllowOverride All
+...
+</Directory>
+3. service httpd reload
+
+
+Habilis_feedy_pokus (přemapování pole):
+$result = array_column($this->flexibee->get('cenik', ['stitky' => 'code:BOW'], ['detail' => 'id', 'limit' => 0]), 'external-ids');
+bdump($result);
+$inFb = array_map(function($item) { return explode('ext:BOW:', $item[0])[1]; }, $result);
+bdump($inFb);
+
+<?php
+    $result = ["ext:BOW:1", "ext:BOW:2", "ext:BOW:3"];
+    $inFb = array_map(function($item) { return explode('ext:BOW:', $item)[1]; }, $result);
+    for ($i = 0; $i < count($result); $i++) {
+        echo $result[$i] . " - " . $inFb[$i] . "\n";
+    }
+?>
+
+(isset($polozka['uplSlevaDokl']) && ($polozka['uplSlevaDokl'] === 'false' || $polozka['uplSlevaDokl'] === false)) ? false : true,
+
+Filtrování flexi:
+https://habilis.arit.cz:5459/c/habilis_steel_spol__s_r_o_/strom-cenik/(idZaznamu=6779).xml?detail=full
+https://fb-test-ng.arit.cz:5542/c/mamavis_healing_care_s_r_o_/cenik/(stitky='code:MASTER').xml?detail=custom:kod&limit=0
+
+$obrData = @file_get_contents($polozka);
+                        
+if($obrData === false || $obrData === null){
+	//catch warning
+} else {
+	//ok, do something
+}
+
+
+http://192.168.99.253/ - testovací stránka apache2
+
+git log --oneline --graph
+git reset --hard 5b30006
+
+//submoduly od Dana
+git submodule update --init --recursive
+
+
+//hezka tabulka
+<table class="table table-striped table-hover" id="zakaznikTab">
+
+//prida krizek na smazani do textoveho pole a udrzi sirku
+$form->addText('zakaznik', 'Zákazník')
+            ->setHtmlAttribute('class', 'form-control')
+            ->setHtmlAttribute('type', 'search')
+            ->setHtmlAttribute('style', 'width: 200px');
+
+select encode(content, 'escape')::text
+from attachment;
+
+-- chunk size
+
+$dataRe = json_decode(file_get_contents("temp_files/cenik_temp.json"), TRUE);
+        $data = $this->getDataCenikFromXls($indexy, $objWorksheet, $schema);
+        $countData = count($data['data']);
+        //bdump($data, "data");
+        //bdump(count($countData, "data count");
+        $controls = $this->getControl();
+        $threads = 1;
+        /*
+        foreach ($controls as $control) {
+            if ($control['job'] == 'flexibee') {
+                $threads = $control['threads'];
+            }
+        }
+        */
+        $execute = false;
+        $char = "";
+        foreach ($controls as $control) {
+            if ($control['job'] == 'addPrefix') {
+                $execute = $control['execute'];
+                $char = $control['char'];
+            }
+        }
+        $chunkSize = ceil($countData / $threads);
+        //bdump($chunkSize, "chunkSize");
+        for ($chunk = 0; $chunk < $threads; $chunk++) {
+            $dataChunk = array_slice($data['data'], $chunk * $chunkSize, $chunkSize, true);
+            $chunkFrom = $chunk * $chunkSize;
+            //bdump("$chunk: $chunkFrom - $chunkSize", "chunk");
+            //bdump($dataChunk, "dataChunk $chunk");
+            if (isset($dataRe['fb-session'])) {
+                $res = file_put_contents("temp_files/cenik_temp_$chunk.json", json_encode(['fb-session' => $dataRe['fb-session'],
+                'username' => null, 'password' => null, 'fb-company' => $dataRe['fb-company'], 'prefix' => $data['prefix'], 'execute' => $execute, 'char' => $char, 'data' => $dataChunk]));
+            } else {
+                $res = file_put_contents("temp_files/cenik_temp_$chunk.json", json_encode(['fb-session' => null,
+                'username' => $dataRe["username"], 'password' => $dataRe["password"], 'fb-company' => $dataRe['fb-company'], 'prefix' => $data['prefix'], 'execute' => $execute, 'char' => $char, 'data' => $dataChunk]));
+            }
+        }
+
+
+--cli sprava ceniku id
+
+php index.php Cli:spravaceniku $id
+
+public function actionSpravaceniku(?int $id = null) {
+        set_time_limit(100000);
+        ini_set('memory_limit', '4000M');
+
+        
+        if($id === null){
+            $id =  $_SERVER['argv'][2];
+        }
+
+
+public function get(string $evidence, $id = null, ?array $options = null)
+    {
+        $adresa = $evidence;
+        if ($id !== null) {
+            $adresa .= '/' . $id;
+        }
+
+        $append = '?_access_token=' . $this->kasa['token'];
+
+        if ($options !== null) {
+            foreach ($options as $k => $o) {
+                    $append .= '&' . $k . '=' . $o;
+            }
+        }
+
+        $adresa .= $append;
+        return $this->request('GET', $adresa);
+    }
+
+public function put(string $evidence, string $method, array $data)
+    {
+        $adresa = $evidence;
+        $adresa .= '/' . $method;
+        $append = '?_access_token=' . $this->kasa['token'];
+
+        $adresa .= $append;
+        $body = json_encode($data);
+        return $this->request('POST', $adresa, $body);
+    }
+
+public function request(string $method, string $address, ?string $body = null)
+    {
+        $ch = curl_init();
+        $adresa = $this->kasa['adresa'] . $address;
+        curl_setopt($ch, CURLOPT_URL, $adresa);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        if ($method === 'POST') {
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+        }
+
+        $output = curl_exec($ch);
+        curl_close($ch);
+        return json_decode($output, true);
+    }
+
+
+SELECT
+    column_name,
+    data_type
+FROM
+    information_schema.columns
+WHERE
+    table_name = "cenik";
+
+git show --stat
+git log -p
+
+history
+crontab -u apache -l (list)
+crontab -u apache -e (edit)
+
+uname -a
+lsb_release -a
+df (disk)
+free (memory)
+sudo apt-get --purge remove postgresql postgresql-*
+
+rm -r -f /home/var/www/html_backup
+v temp lze rm -rf cache
+cp -r /home/var/www/html /home/var/www/html_backup
+
+git fetch --all
+git branch -r
+git branch -v -a (all branches)
+git switch -c postgres-local origin/postgres-local
+git pull
+
+cloud api na wsl:
+cd /home/Apps/cloud
+git pull
+apt install npm
+npm install
+sudo su
+npm run bulid;
+mc nakopírovat z dist do /var/www/html
+ln -s /home/Apps/api/www/ /var/www/html/api
+
+???
+npm install test @vue/cli
+(udělá nějaký základ, ale bez aplikace)
+
+composer aby šlo s php 7.1.33:
+composer self-update --2.2
+
+CTRL + r => reverse-i-search
+history (history 10) - historie příkazů
+history | grep git | wc -l (počet výskytů git v historii)
+
+sudo apt purge -y libreoffice*
+(odstraní)
+
+sudo apt purge -y thunderbird*
+
+apt list --installed | grep libreoffice
+apt list --installed | grep thunderbird
+(seznam)
+
+
+git checkout -- app/Models/WorkerModel.php
+git checkout -- .
+
+???git stash drop
+git stash - uloží změny zvlášť, lze prozkoumat:
+git stash show (seznam)
+git stash show -p (detail)
+
+//symlink v ubuntu
+
+ln -s /mnt/c/wamp64/www/Projekty/Pos/Apps/api/www /var/www/html/api
+ln -s /home/Apps/api/www /var/www/html/api
+
+//php v ubuntu
+
+https://linuxwizardry.com/how-to-install-php-8-on-ubuntu-20-04-using-a-ppa/
+
+sudo su
+
+apt install software-properties-common
+add-apt-repository ppa:ondrej/php
+apt update
+apt install php8.0 libapache2-mod-php8.0
+
+apt install apache2 php8.0 php8.0-cli php8.0-sqlite3 php8.0-curl php8.0-gd php8.0-imagick php8.0-mbstring php8.0-mcrypt php8.0-soap php8.0-xml php8.0-zip
+
+sudo apt-get install php8.0-pgsql
+
+service apache2 restart
+
+sudo service php8.0-fpm start
+sudo service apache2 start
+
+cd /etc/apache2/apache2.conf
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+
+<Directory /var/www/html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+
+sudo a2enmod rewrite
+service apache2 restart
+
+přejmenovat index.html ve /var/www/html
+mc CTRL+o - projít, pak pwd, zkopírovat cestu, pak CTRL+o, F10, cd ...
+
+#apt install php8.0 -y
+#add-apt-repository ppa:ondrej/php
+
+update-alternatives --config php
+
+apt install apache2 php php-cli php-json php-sqlite3 php-curl php-gd php-imagick php-mbstring php-mcrypt php-soap php-xml php-zip
+
+#php version, modules list:
+php -v
+php -m
+
+
+du -s * | sort -nr > $HOME/user_space_report.txt
+
+\etc\php.ini
+post_max_size = 20M
+upload_max_filesize = 20M
+max_input_vars = 1000000
+
+service httpd restart
+service php-fpm restart
+
+git checkout -- app/Models/WorkerModel.php
+(stash changes)
+
+php -v
+(chcek php version)
+
+apt -y install postgresql-14
+apt-get update
+apt -y install postgresql-14
+
+echo 'PostgreSQL 14 a unaccent extension'
+apt -y install postgresql-14
+
+
+pg_lsclusters
+sudo pg_ctlcluster 14 main start
+sudo service postgresql restart
+
+
+psql --version
+
+(lze nastavit password pro uzivatele postgres nebo dat jineho uzivatele viz nize)
+sudo -u postgres psql
+\password postgres
+
+\l (\l+)
+\du
+\c postgres
+\conninfo
+
+sudo su
+
+echo 'CREATE EXTENSION IF NOT EXISTS "unaccent";' > /tmp/unaccent.sql
+sudo -u postgres psql -f /tmp/unaccent.sql
+rm -f /tmp/unaccent.sql
+
+echo "create user pos with password '******';" > /tmp/pos-create.sql
+echo 'create database pos;' >> /tmp/pos-create.sql
+echo 'grant all privileges on database pos to pos;' >> /tmp/pos-create.sql
+sudo -u postgres psql -f /tmp/pos-create.sql
+rm -f /tmp/pos-create.sql
+
+cd /home/Apps/api-pos
+sudo -u www-data bin/console migrations:migrate
+(spustí migraci tabulek)
+
+SELECT datname FROM pg_database;
+select * from pg_tables where schemaname='public';
+
+gen_random_uuid ()
+(náhodné uuid pro nové typy dokladů)
+
+
+sudo -i -u postgres
+psql
+ALTER USER pos WITH CREATEDB;
+CREATE DATABASE posadmin;
+grant all privileges on database posadmin to pos;
+
+//import sql
+sudo -i -u postgres
+psql posadmin < posadmin.sql
+
+
+//export sql (local posadmin)
+//nejpre docasny uzivatel postgres, pak export
+
+sudo -i -u postgres
+pg_dump -F p posadmin > posadmin.sql
+pg_dump -F p test > test.sql
+(pg_dump -U postgres -F p posadmin > pos.sql)
+
+
+sudo -u postgres psql
+\du
+\l (\l+)
+\c pos
+SET ROLE pos;
+(!!! nastavi uzivatele na pos)
+SELECT SESSION_USER, CURRENT_USER;
+(dá info lépe než v \conninfo)
+
+CREATE TABLE clients (id SERIAL PRIMARY KEY, first_name VARCHAR, last_name VARCHAR, role VARCHAR);
+INSERT INTO clients (first_name, last_name, role) VALUES ('John', 'Smith', 'CEO');
+
+v pgadmin udělat Register>Server, connection address 127.0.0.1, 5432, pos, ******
+
+pokud chces pouzivat postgre v nette/database, musis mit nainstalovanou php extension pdo_pgsql
+database:
+    dsn: 'pgsql:host=xxx;dbname=xxx'
+    user: xxx
+    password: xxx
+    debugger: true
+    options:
+        lazy: yes
+
+
+
+insert into  "Device" ("KlientID" ,
+    nazev,
+    stav ,
+    vytvoreno ,
+    posledni_aktivita ,
+    "HW_info" ,
+    verze ) VALUES (1, 'Device 1 pro Klient 1', 'funkcni', '2023-03-13 13:13:13', '2023-03-14 14:14:14', 'NUC', '15.1')
+
+
+select t1.*, t2.nazev as "Klient nazev" from (select * from "Device") t1 join (select * from "Klient") t2 on t1."KlientID" = t2."ID";
+
+insert into  "licence_cerpani" ("KlientID",
+    "Licence_typID" ,
+    "DatumOD" ,
+    "DatumDO" ,
+    stav) VALUES (1, 1, '2023-03-14', '2024-03-14', 'aktivní');
+
+
+
+-- Table: public.Device
+
+DROP TABLE IF EXISTS public."Device";
+
+CREATE TABLE IF NOT EXISTS public."Device"
+(
+    "ID" SERIAL PRIMARY KEY,
+    "KlientID" integer,
+	serial_number character varying COLLATE pg_catalog."default",
+    nazev character varying COLLATE pg_catalog."default",
+    stav character varying COLLATE pg_catalog."default",
+    vytvoreno timestamp with time zone,
+    posledni_aktivita timestamp with time zone,
+    "HW_info" character varying COLLATE pg_catalog."default",
+    verze character varying COLLATE pg_catalog."default",
+    CONSTRAINT fk_klient FOREIGN KEY ("KlientID")
+        REFERENCES public."Klient" ("ID")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Device"
+    OWNER to pos;
+
+
+insert into sklad (typ, url, "user", pass, stav) values ('flexibee', 'url', 'user', 'pass', 'nové');
+
+
+alter table "licence_cerpani" ADD CONSTRAINT fk_klient
+      FOREIGN KEY("KlientID") 
+	  REFERENCES "Klient"("ID");
+
+alter table "licence_cerpani" ADD CONSTRAINT fk_licence_typ
+      FOREIGN KEY("Licence_typID") 
+	  REFERENCES "licence_typy"("ID");
+
+ALTER TABLE licence_cerpani
+ADD COLUMN pristup integer;
+ALTER TABLE licence_cerpani
+RENAME COLUMN pristup to "PristupyID";
+ALTER TABLE licence_cerpani ALTER COLUMN "pristupyID" SET NOT NULL;
+ALTER TABLE licence_cerpani ALTER COLUMN "pristupyID" DROP NOT NULL;
+
+alter table "licence_cerpani" ADD CONSTRAINT fk_pristupy
+      FOREIGN KEY("pristupyID")
+	  REFERENCES "pristupy"("ID");
+
+
+
+alter table "Device" add column "serial_number" character varying COLLATE pg_catalog."default";
+
+CREATE TABLE "Device_old" AS select * from  "Device" where "ID" < 4 ;
+
+insert into "Device" ("KlientID", nazev, stav, vytvoreno, posledni_aktivita, "HW_info", verze) (select "KlientID", nazev, stav, vytvoreno, posledni_aktivita, "HW_info", verze from "Device_old"); 
+
+drop table "Device_old";
+
+
+
+CREATE TABLE "Device_old" AS select * from  "Device"
+
+DROP TABLE IF EXISTS public."Device";
+
+CREATE TABLE IF NOT EXISTS public."Device"
+(
+    "ID" SERIAL PRIMARY KEY,
+    "KlientID" integer,
+    serial_number uuid NOT NULL,
+    nazev character varying COLLATE pg_catalog."default",
+    stav character varying COLLATE pg_catalog."default",
+    vytvoreno timestamp with time zone,
+    posledni_aktivita timestamp with time zone,
+    "HW_info" character varying COLLATE pg_catalog."default",
+    verze character varying COLLATE pg_catalog."default",
+    CONSTRAINT fk_klient FOREIGN KEY ("KlientID")
+        REFERENCES public."Klient" ("ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Device"
+    OWNER to pos;
+
+insert into "Device" ("KlientID", serial_number, nazev, stav, vytvoreno, posledni_aktivita, "HW_info", verze) (select "KlientID", gen_random_uuid(), nazev, stav, vytvoreno, posledni_aktivita, "HW_info", verze from "Device_old"); 
+
+drop table "Device_old";
+
+
+CREATE TABLE "licence_cerpani_old" AS select * from  "licence_cerpani";
+
+DROP TABLE IF EXISTS "licence_cerpani";
+
+CREATE TABLE public.licence_cerpani (
+	"ID" SERIAL PRIMARY KEY,
+    "KlientID" integer NOT NULL,
+    "Licence_typID" integer NOT NULL,
+    "DatumOD" date NOT NULL,
+    "DatumDO" date NOT NULL,
+   stav character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT fk_klient FOREIGN KEY ("KlientID")
+        REFERENCES public."Klient" ("ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fk_licence_typ FOREIGN KEY ("Licence_typID")
+        REFERENCES public.licence_typy ("ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+);
+
+insert into "licence_cerpani" ("KlientID", "Licence_typID", "DatumOD", "DatumDO", stav) (select "KlientID", "Licence_typID", "DatumOD", "DatumDO", stav from "licence_cerpani_old"); 
+
+drop table "licence_cerpani_old";
+
+
+ALTER TABLE "Klient" ADD COLUMN "database_name" character varying COLLATE pg_catalog."default";
+ALTER TABLE "Klient" ADD COLUMN "database_exists" BOOLEAN NOT NULL DEFAULT 'f' ;
+
+update "Klient" set "database_exists" = 't' where "ID" = 1;
+
+alter table "Klient" ADD COLUMN "skladID" integer;
+alter table "Klient" ADD CONSTRAINT fk_sklad
+      FOREIGN KEY("skladID") 
+	  REFERENCES "sklad"("ID");
+
+
+alter table "Klient" DROP COLUMN "skladID";
+
+
+echo "create user cerny with password '*****';" > /tmp/partseu-create.sql
+echo 'create database partseu;' >> /tmp/partseu-create.sql
+echo 'grant all privileges on database partseu to cerny;' >> /tmp/partseu-create.sql
+sudo -u postgres psql -f /tmp/partseu-create.sql
+rm -f /tmp/partseu-create.sql
+
+sudo -u postgres psql
+\c partseu
+SET ROLE cerny;
+SELECT SESSION_USER, CURRENT_USER;
+
+CREATE TABLE import1 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2));
+CREATE TABLE import2 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2));
+
+COPY import1("C1", "C2", "C8")
+FROM '/tmp/import1_CCEN0323.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+COPY import2("C1", "C2", "C8")
+FROM '/tmp/import2_VCEN0323.csv'
+DELIMITER ','
+CSV HEADER;
+
+(\copy import1 FROM '/tmp/import1_CCEN0323.csv' DELIMITER ',' CSV)
+
+CREATE TABLE import1 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+CREATE TABLE import2 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+
+
+COPY import1("C1", "C2", "C8", "C25")
+FROM '/tmp/import1_CCEN0323.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY import2("C1", "C2", "C8", "C25")
+FROM '/tmp/import2_VCEN0323.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+
+CREATE TABLE import21 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+CREATE TABLE import22 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+
+
+COPY import21("C1", "C2", "C8", "C25")
+FROM '/tmp/import1_CCEN0423.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY import22("C1", "C2", "C8", "C25")
+FROM '/tmp/import2_VCEN0423.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+CREATE TABLE import31 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+CREATE TABLE import32 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+
+
+COPY import31("C1", "C2", "C8", "C25")
+FROM '/tmp/import2_CCEN0523.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY import32("C1", "C2", "C8", "C25")
+FROM '/tmp/import1_VCEN0523.csv'
+DELIMITER ','
+CSV HEADER;
+
+sudo -u postgres psql
+\c partseu
+SET ROLE cerny;
+SELECT SESSION_USER, CURRENT_USER;
+
+CREATE TABLE import41 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+CREATE TABLE import42 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+
+sudo -i -u postgres
+psql
+\c partseu
+
+COPY import41("C1", "C2", "C8", "C25")
+FROM '/tmp/import2_CCEN0623.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY import42("C1", "C2", "C8", "C25")
+FROM '/tmp/import1_VCEN0623.csv'
+DELIMITER ','
+CSV HEADER;
+
+with t1 as (
+select id, "C1", "C2", "C8", "C25", row_number() OVER () as row_id from import41)
+select * from t1 where (select max(row_id) from t1) - row_id < 5;
+
+
+
+sudo -u postgres psql
+\c partseu
+SET ROLE cerny;
+SELECT SESSION_USER, CURRENT_USER;
+
+CREATE TABLE import51 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+CREATE TABLE import52 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+
+
+sudo -i -u postgres
+psql
+\c partseu
+
+COPY import51("C1", "C2", "C8", "C25")
+FROM '/tmp/import2_CCEN0723.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY import52("C1", "C2", "C8", "C25")
+FROM '/tmp/import1_VCEN0723.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+
+sudo -u postgres psql
+\c partseu
+SET ROLE cerny;
+SELECT SESSION_USER, CURRENT_USER;
+
+CREATE TABLE import61 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+CREATE TABLE import62 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+
+COPY import61("C1", "C2", "C8", "C25")
+FROM '/tmp/import2_CCEN0823.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY import62("C1", "C2", "C8", "C25")
+FROM '/tmp/import1_VCEN0823.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+sudo -u postgres psql
+\c partseu
+SET ROLE cerny;
+SELECT SESSION_USER, CURRENT_USER;
+
+CREATE TABLE t1 (id SERIAL PRIMARY KEY, "ID" VARCHAR, "Kód z ceníku" VARCHAR);
+CREATE TABLE t2 (id SERIAL PRIMARY KEY, "Položka" VARCHAR, "Číslo" NUMERIC(10,2));
+CREATE TABLE t3 (id SERIAL PRIMARY KEY, "ID" VARCHAR, "Kód z ceníku" VARCHAR);
+
+sudo -i -u postgres
+psql
+\c partseu
+
+COPY t1("ID", "Kód z ceníku")
+FROM '/tmp/T1.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY t2("Položka", "Číslo")
+FROM '/tmp/T2.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY t3("ID", "Kód z ceníku")
+FROM '/tmp/T3.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+sudo -i -u postgres
+psql
+\c partseu
+
+SET ROLE cerny;
+SELECT SESSION_USER, CURRENT_USER;
+
+CREATE TABLE import71 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+CREATE TABLE import72 (id SERIAL PRIMARY KEY, "C1" VARCHAR, "C2" VARCHAR, "C8" NUMERIC(10,2), "C25" NUMERIC(10,2));
+
+SET ROLE postgres;
+SELECT SESSION_USER, CURRENT_USER;
+
+COPY import71("C1", "C2", "C8", "C25")
+FROM '/tmp/import2_CCEN0923.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY import72("C1", "C2", "C8", "C25")
+FROM '/tmp/import1_VCEN0923.csv'
+DELIMITER ','
+CSV HEADER;

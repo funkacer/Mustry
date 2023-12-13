@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<winstrom version="1.0">
+  <!-- Uživatelské tlačítko -->
+  <custom-button>
+    <!-- ID (celé číslo) - -->
+
+    <!-- Zkratka (řetězec) - max. délka: 20 -->
+    <kod>CENIK-dev</kod>
+    <!-- Url (řetězec) - -->
+    <url><![CDATA[http://localhost/Projekty/Ceniky/koralky-skripty/www/worker/spravaceniku?session=${authSessionId}&amp;url=${url}]]></url>
+    <!-- Název (řetězec) - -->
+    <title>Správa ceníku dev</title>
+    <!-- Popis (řetězec) - -->
+    <description>Správa ceníkových položek dev</description>
+    <!-- Evidence (řetězec) - -->
+    <evidence>cenik</evidence>
+    <!-- Umístění (řetězec) - -->
+    <location>list</location>
+    <!-- Volba prohlížeče (řetězec) - -->
+    <browser>desktop</browser>
+  </custom-button>
+</winstrom>

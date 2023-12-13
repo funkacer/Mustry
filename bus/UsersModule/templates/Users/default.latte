@@ -1,0 +1,25 @@
+
+{block menu}
+{if $user->isAllowed('users','view') && $user->isAllowed('users', 'editRole')}
+    <ul class="nav">
+        <li><a n:href="roles">Nastavení rolí</a></li>          
+    </ul>
+{/if}
+{/block}
+
+{block content}
+{if $user->isAllowed('users','view')}
+    <div class="row tabulka">
+        <div class="col-xs-12">
+            <h1>Uživatelé</h1>
+            <a n:if="$user->isAllowed('users', 'add')" class="btn btn-success ajax" n:href="edit"><i class="fa fa-plus"/> Vytvořit uživatele</a>
+            {snippet datagrid}
+                {control dataGrid}
+            {/snippet}
+        </div>
+    </div>
+
+{else}
+    <p>Nemáte právo prohlížet uživatele</p>
+{/if}
+{/block}

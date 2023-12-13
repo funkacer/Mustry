@@ -1,0 +1,1 @@
+select * from import1 Offset (select case when count(id)>10 then count(id)-10 end from import1);

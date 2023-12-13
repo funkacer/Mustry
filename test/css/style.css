@@ -1,0 +1,84 @@
+
+.status-bar-success {
+    width:100%;
+    height:130px;
+    top:50%;
+    margin:30px 0;
+    background: #43B92B;
+    align-content: center;
+    padding: 10px;
+}
+.status-bar-error {
+    width:100%;
+    height:130px;
+    top:50%;
+    background: #DF1A3B;
+}
+.arit-logo {
+    height: 200px;
+    width:218px;
+}
+.form form table {
+    margin: 0 auto;
+    text-align: center;
+    width:100%;
+}
+label {
+    margin-right: 10px;
+}
+.form label {
+    text-align: center;   
+}
+#status-bar {
+    position:absolute;
+    width:100%;
+    height:130px;
+    top:50%;
+    background: rgba(76, 76, 76, 0.6);
+    display: none;
+}
+.status-minimize {
+    position:absolute;
+    width:30px !important;
+}
+.status-minimize > a{
+    color:white !important;
+}
+.login-form {
+    height:280px;
+    width:500px;
+    background: #454d54;
+    color: #454d54;
+    margin-top:25%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+.footer {
+    background: #454d54;
+    padding:5px;
+    color: #f2f2f2;
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+#frm-loginForm table,
+#frm-doplnenipolozek table {
+    margin: 0 auto;
+}
+
+.arrowup {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    fill: #f03018;
+}
+
+.arrowup:hover .ikona{
+    fill: #e8523f;
+}
