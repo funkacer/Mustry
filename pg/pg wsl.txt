@@ -1,3 +1,40 @@
+//htop na linuxu pro správu procesů
+
+//Aulix report sql
+select * from "dotaz-frepo-obrat" where datvyst > '2023-12-04';
+select id, idpolfak, datvyst, nakladynaznacku, znackanazev, uzivatelnazev from "dotaz-frepo-obrat" where datvyst > '2023-11-13' and nakladynaznacku > 0;
+select id, idpolfak, datvyst, nakladynaznacku, znackanazev, uzivatelnazev from "dotaz-frepo-obrat" where datvyst > '2023-11-13' and nakladynaznacku > 0 order by znackanazev ASC, datvyst ASC;
+
+// Kontrola duplicit v cenicich
+// viz array_diff_assoc.php v php
+$kody[$r] = $polozka['cenik']['kod'];
+...
+$duplicity = array_diff_assoc($kody, array_unique($kody));
+foreach($duplicity as $r => $kod) {
+    unset($polozky[$r]);
+    $duplicity[$r] = "duplicita se řádkem " . array_search($kod, $kody);
+}
+
+
+// Prolicht - rozdil array rychle, aby se nemenily nazvy s prefixem (kody2) vsude, ale jen tam kde to nebudu nahravat (kody1)
+// viz array_diff.php v php
+$kody1 = array_column(array_column($data, 'cenik'), 'kod');
+//bdump(count($kody1), "kody1");
+
+$allPrefix = $this->flexibee->get('cenik', ['kod' => ['@begins' => $prefix]], [
+    'detail' => ['kod', 'nazev'], "limit" => 0
+]);
+
+$kody2 = array_column($allPrefix, 'kod');
+//bdump(count($kody2), "kody2");
+
+$diffPrefix = array_diff($kody2, array_unique($kody1));
+//bdump($diffPrefix);
+
+$countPrefix = count($diffPrefix);
+
+
+
 //postgre pokus last
 create table table1 (col1 int, col2 text, col3 date);
 insert into table1 values (1, 'Ahoj', now());
@@ -5,7 +42,9 @@ insert into table1 values (2, 'Ahoj 2', now());
 select * from table1;
 alter table table1 ALTER COLUMN col3 TYPE timestamp;
 insert into table1 values (3, 'Ahoj 3', now());
-
+with t1 AS (SELECT * from table1)
+SELECT EXTRACT(YEAR FROM col3) AS ROK, EXTRACT(MONTH FROM col3) AS MESIC, EXTRACT(DAY FROM col3) AS DEN,
+EXTRACT(HOUR FROM col3) AS HODINA, EXTRACT(MINUTE FROM col3) AS MINUTA, EXTRACT(SECOND FROM col3) AS SEKUNDA from t1;
 
 //posun zpet
 with t1 AS (SELECT EXTRACT(YEAR FROM now()) AS rok, EXTRACT(MONTH FROM now()) AS mesic, generate_series(0,22) as posun_zpet)
@@ -301,8 +340,11 @@ $this->redrawControl('flash-messages');
 $zodpOsoba = $this->getPresenter()->user->getIdentity()->getData()['zodpOsoba'];
 
 date '+%A %W %Y %X'
+//edit:
 crontab -u apache -e
 0 */1 * * *  cd /home/aulix-skripty/www && php index.php Updateterminu:check
+//list:
+crontab -u apache -l
 
 //Update busu:
 cp -r flexibus flexibus_old
