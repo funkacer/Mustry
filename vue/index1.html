@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="./unpkg.com_vue@3.3.4_dist_vue.global.js"></script>
+</head>
+<body>
+
+    <!-- index.html -->
+    <div id="app"></div>
+
+    <script>
+        const { createApp, ref } = Vue
+      
+        createApp({
+          setup() {
+            const count = ref(0)
+            const message = ref("Hello World!")
+            function increment() {
+                // update component state
+                count.value++
+            }
+            function decrement() {
+                // update component state
+                count.value--
+            }
+            return {
+              count, message, increment, decrement
+            }
+          },
+          template: `
+          <h2>{{ count }}</h2>
+          <button @click="increment">Plus</button>
+          <button @click="decrement">Minus</button>
+          <h2>{{ message.split('').reverse().join('') }}</h2>
+          <input type = "text" v-model = "message">
+          `
+        }).mount('#app')
+      </script>
+</body>
+</html>
+

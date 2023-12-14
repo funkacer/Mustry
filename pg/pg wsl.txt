@@ -12,7 +12,7 @@ select id, idpolfak, datvyst, nakladynaznacku, znackanazev, uzivatelnazev from "
 
 select id, idpolfak, datvyst, nakladynaznacku, znackanazev, uzivatelnazev from "dotaz-frepo-obrat" where datvyst > '2023-11-13' and nakladynaznacku > 0 order by znackanazev ASC, datvyst ASC;
 
-select concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')), min(nakladynaznacku), max(nakladynaznacku), znackanazev from "dotaz-frepo-obrat" where datvyst > '2023-01-01' and nakladynaznacku > 0 and znackanazev <> ''
+select concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')) AS datum, min(nakladynaznacku) AS nakladynaznacku_min, max(nakladynaznacku) AS nakladynaznacku_max, znackanazev from "dotaz-frepo-obrat" where datvyst > '2023-01-01' and nakladynaznacku > 0 and znackanazev <> ''
 group by concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')), znackanazev order by concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')) ASC, znackanazev ASC;
 
 
