@@ -1,5 +1,10 @@
 //htop na linuxu pro správu procesů
 
+//lokální politiky
+secpol.msc do vyhledávání windows
+https://www.microsoft.com/en-us/download/details.aspx?id=105668
+
+
 //Aulix report sql
 select * from "dotaz-frepo-obrat" where datvyst > '2023-12-04';
 
@@ -10,6 +15,7 @@ select id, idpolfak, datvyst, nakladynaznacku, znackanazev, uzivatelnazev from "
 select concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')), min(nakladynaznacku), max(nakladynaznacku), znackanazev from "dotaz-frepo-obrat" where datvyst > '2023-01-01' and nakladynaznacku > 0 and znackanazev <> ''
 group by concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')), znackanazev order by concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')) ASC, znackanazev ASC;
 
+
 // Kontrola duplicit v cenicich
 // viz array_diff_assoc.php v php
 $kody[$r] = $polozka['cenik']['kod'];
@@ -19,7 +25,6 @@ foreach($duplicity as $r => $kod) {
     unset($polozky[$r]);
     $duplicity[$r] = "duplicita se řádkem " . array_search($kod, $kody);
 }
-
 
 // Prolicht - rozdil array rychle, aby se nemenily nazvy s prefixem (kody2) vsude, ale jen tam kde to nebudu nahravat (kody1)
 // viz array_diff.php v php
