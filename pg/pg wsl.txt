@@ -5,6 +5,25 @@ secpol.msc do vyhledávání windows
 https://www.microsoft.com/en-us/download/details.aspx?id=105668
 
 
+//datediff HOURS
+select EXTRACT(EPOCH FROM (current_timestamp-'2023-12-15 10:40'::TIMESTAMP))/3600;
+
+//copy table https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-copy-table/
+CREATE TABLE new_table AS 
+TABLE existing_table;
+
+CREATE TABLE new_table AS 
+TABLE existing_table 
+WITH NO DATA;
+
+CREATE TABLE new_table AS 
+SELECT
+*
+FROM
+    existing_table
+WHERE
+    condition;
+
 //Aulix report sql
 select * from "dotaz-frepo-obrat" where datvyst > '2023-12-04';
 
@@ -12,9 +31,8 @@ select id, idpolfak, datvyst, nakladynaznacku, znackanazev, uzivatelnazev from "
 
 select id, idpolfak, datvyst, nakladynaznacku, znackanazev, uzivatelnazev from "dotaz-frepo-obrat" where datvyst > '2023-11-13' and nakladynaznacku > 0 order by znackanazev ASC, datvyst ASC;
 
-select concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')) AS datum, min(nakladynaznacku) AS nakladynaznacku_min, max(nakladynaznacku) AS nakladynaznacku_max, znackanazev from "dotaz-frepo-obrat" where datvyst > '2023-01-01' and nakladynaznacku > 0 and znackanazev <> ''
+select concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')) AS datum, min(nakladynaznacku) AS nakladynaznacku_min, max(nakladynaznacku) AS nakladynaznacku_max, znackanazev from "dotaz-frepo-obrat" where datvyst > '2023-01-01' and nakladynaznacku <> 0 and znackanazev <> ''
 group by concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')), znackanazev order by concat(EXTRACT(YEAR FROM datvyst), '-', lpad(extract(month from datvyst)::text, 2, '0')) ASC, znackanazev ASC;
-
 
 // Kontrola duplicit v cenicich
 // viz array_diff_assoc.php v php
