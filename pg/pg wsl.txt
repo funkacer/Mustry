@@ -380,6 +380,9 @@ git checkout -- cron/cronData.php
 git pull
 git submodule update --recursive
 
+//jit do submodulu, zrusit zmeny
+git checkout -- *
+
 //bus submoduly:
 https://git.arit.cz/bus-moduly
 
