@@ -1,0 +1,6 @@
+# install wsl
+# https://learn.microsoft.com/en-us/windows/wsl/install
+# open PowerShell
+wsl --install
+
+# install postgres
