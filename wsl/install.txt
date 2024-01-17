@@ -3,4 +3,70 @@
 # open PowerShell
 wsl --install
 
+# install mc
+sudo apt install mc
+
 # install postgres
+apt-get update
+apt -y install postgresql-14
+
+pg_lsclusters
+sudo pg_ctlcluster 14 main start
+sudo service postgresql restart
+
+psql --version
+
+(lze nastavit password pro uzivatele postgres nebo dat jineho uzivatele viz nize)
+sudo -i -u postgres
+psql
+
+# \password postgres
+
+\l (\l+)
+\du
+\c postgres
+\conninfo
+
+create user funka with password '*****';
+create database test;
+grant all privileges on database test to funka;
+
+# v pgadmin udělat Register>Server, connection address 127.0.0.1, 5432, funka, *****
+
+\c test
+SET ROLE funka;
+# (!!! nastavi uzivatele na funka)
+SELECT SESSION_USER, CURRENT_USER;
+# (dá info lépe než v \conninfo)
+
+CREATE TABLE clients (id SERIAL PRIMARY KEY, first_name VARCHAR, last_name VARCHAR, role VARCHAR);
+INSERT INTO clients (first_name, last_name, role) VALUES ('John', 'Smith', 'CEO');
+
+CREATE TABLE sekce (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR);
+CREATE TABLE skupiny (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR, oddil VARCHAR, text VARCHAR);
+CREATE TABLE tridy (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR, skupina VARCHAR, text VARCHAR);
+CREATE TABLE oddily (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR, sekce VARCHAR, text VARCHAR);
+
+sudo -i -u postgres
+psql
+\c test
+
+COPY sekce("kod", "nazev")
+FROM '/tmp/Sekce.txt'
+DELIMITER E'\t'
+CSV HEADER;
+
+COPY skupiny("kod", "nazev", "oddil", "text")
+FROM '/tmp/Skupiny_podklad.txt'
+DELIMITER E'\t'
+CSV HEADER;
+
+COPY tridy("kod", "nazev", "skupina", "text")
+FROM '/tmp/Třídy_podklad.txt'
+DELIMITER E'\t'
+CSV HEADER;
+
+COPY oddily("kod", "nazev", "sekce", "text")
+FROM '/tmp/Oddíly_podklad.txt'
+DELIMITER E'\t'
+CSV HEADER;
