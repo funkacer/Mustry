@@ -1,0 +1,17 @@
+python -m venv c:/_venv
+c:/_venv/Scripts/activate.bat
+
+pip install jupyter notebook
+pip install pandas
+pip install numpy
+pip install matplotlib
+pip install psycopg2
+
+pip freeze
+print(help('modules'))
+
+pip install -U scikit-learn
+
+python -m pip show scikit-learn  # to see which version and where scikit-learn is installed
+python -m pip freeze  # to see all packages installed in the active virtualenv
+python -c "import sklearn; sklearn.show_versions()"

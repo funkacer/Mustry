@@ -1,0 +1,303 @@
+ALTER USER zprac_vse2 WITH PASSWORD '******';
+
+SELECT version();
+
+Note: Always end SQL statements with a semicolon ;
+
+SELECT customer_name, country FROM customers;
+
+SELECT * FROM customers;
+
+SELECT DISTINCT country FROM customers;
+
+SELECT COUNT(DISTINCT country) FROM customers; 
+
+
+-- WHERE;
+
+SELECT * FROM customers
+WHERE city = 'London';
+
+SELECT * FROM customers
+WHERE customer_id = 19;
+
+SELECT * FROM customers
+WHERE customer_id > 80;
+
+
+--ORDER BY;
+
+SELECT * FROM products
+ORDER BY price;
+
+SELECT * FROM products
+ORDER BY price DESC;
+
+SELECT * FROM products
+ORDER BY product_name;
+
+SELECT * FROM products
+ORDER BY product_name DESC;
+
+
+--LIMIT;
+
+SELECT * FROM customers
+LIMIT 20;
+
+SELECT * FORM customers
+LIMIT 20 OFFSET 40;
+
+
+--MIN(), MAX(), AS;
+
+SELECT MIN(price)
+FROM products;
+
+SELECT MAX(price)
+FROM products;
+
+SELECT MIN(price) AS lowest_price
+FROM products;
+
+
+--COUNT();
+
+SELECT COUNT(customer_id)
+FROM customers;
+
+--Note: NULL values are not counted.;
+
+--By specifying a WHERE clause, you can e.g. return the number of customers that comes from London:;
+
+SELECT COUNT(customer_id)
+FROM customers
+WHERE city = 'London';
+
+
+--SUM();
+
+SELECT SUM(quantity)
+FROM order_details;
+
+Note: NULL values are ignored.;
+
+
+--AVG();
+
+SELECT AVG(price)
+FROM products;
+
+--Note: NULL values are ignored.;
+
+--With 2 Decimals:;
+--We can use the ::NUMERIC operator to round the average price to a number with 2 decimals:;
+
+SELECT AVG(price)::NUMERIC(10,2)
+FROM products;
+
+
+--LIKE;
+
+--There are two wildcards often used in conjunction with the LIKE operator:;
+--'%' The percent sign represents zero, one, or multiple characters;
+--'_' The underscore sign represents one, single character;
+
+--Return all customers with a name that starts with the letter 'A':;
+SELECT * FROM customers
+WHERE customer_name LIKE 'A%';
+
+--Return all customers with a name that contains the letter 'A':;
+SELECT * FROM customers
+WHERE customer_name LIKE '%A%';
+
+--Return all customers with a name that ends with the phrase 'en':;
+SELECT * FROM customers
+WHERE customer_name LIKE '%en';
+
+--Return all customers from a city that starts with 'L' followed by one wildcard character, then 'nd' and then two wildcard characters:;
+SELECT * FROM customers
+WHERE city LIKE 'L_nd__';
+--returns cities London, Lander;
+
+--Note: The LIKE operator is case sensitive, if you want to do a case insensitive search, use the ILIKE operator instead.;
+
+
+--ILIKE;
+
+--Return all customers with a name that contains the letter 'A' or 'a':;
+SELECT * FROM customers
+WHERE customer_name ILIKE '%A%';
+
+
+--IN, NOT IN;
+
+--Return all customers from 'Germany', France' or 'UK':;
+SELECT * FROM customers
+WHERE country IN ('Germany', 'France', 'UK');
+
+--Return all customers that are NOT from 'Germany', France' or 'UK':;
+SELECT * FROM customers
+WHERE country NOT IN ('Germany', 'France', 'UK');
+
+
+--IN (SELECT);
+
+--You can also us a SELECT statement inside the parenthesis to return all records that are in the result of the SELECT statement.;
+
+--Return all customers that have an order in the orders table:;
+SELECT * FROM customers
+WHERE customer_id IN (SELECT customer_id FROM orders);
+
+
+--NOT IN (SELECT);
+
+--The result in the example above returned 89 records, that means that there are 2 customers that haven't placed any orders.;
+--Let us check if that is correct, by using the NOT IN operator.;
+
+--Return all customers that have NOT placed any orders in the orders table:;
+SELECT * FROM customers
+WHERE customer_id NOT IN (SELECT customer_id FROM orders);
+
+
+
+--BETWEEN;
+
+--The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.;
+--The BETWEEN operator is inclusive: begin and end values are included.;
+
+--Select all products with a price between 10 and 15:;
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 15;
+
+--The BETWEEN operator can also be used on text values.;
+--The result returns all records that are alphabetically between the specified values.;
+
+--Select all products between 'Pavlova' and 'Tofu':;
+SELECT * FROM Products
+WHERE product_name BETWEEN 'Pavlova' AND 'Tofu';
+
+--Same example as above, but we sort it by product_name:;
+SELECT * FROM Products
+WHERE product_name BETWEEN 'Pavlova' AND 'Tofu'
+ORDER BY product_name;
+
+--The BETWEEN operator can also be used on date values.;
+SELECT * FROM orders
+WHERE order_date BETWEEN '2023-04-12' AND '2023-05-05';
+
+
+--AS, ||;
+
+--SQL aliases are used to give a table, or a column in a table, a temporary name.;
+
+--Using aliases for columns:;
+SELECT customer_id AS id
+FROM customers;
+
+--AS is Optional;
+
+--Same result without AS:;
+SELECT customer_id id
+FROM customers;
+
+--Concatenate two fields and call them product:;
+SELECT product_name || unit AS product
+FROM products;
+
+--Note: In the result of the example above we are missing a space between product_name and unit. To add a space when concatenating, use || ' ' ||.;
+
+--Concatenate, with space:;
+SELECT product_name || ' ' || unit AS product
+FROM products;
+
+--If you want your alias to contain one or more spaces, like "My Great Products", surround your alias with double quotes.;
+
+--Surround your alias with double quotes:;
+SELECT product_name AS "My Great Products"
+FROM products;
+
+
+--JOIN;
+
+--A JOIN clause is used to combine rows from two or more tables, based on a related column between them.;
+
+--Join products to categories using the category_id column:;
+SELECT product_id, product_name, category_name
+FROM products
+INNER JOIN categories ON products.category_id = categories.category_id;
+
+--INNER JOIN: Returns records that have matching values in both tables;
+--LEFT JOIN: Returns all records from the left table, and the matched records from the right table;
+--RIGHT JOIN: Returns all records from the right table, and the matched records from the left table;
+--FULL JOIN: Returns all records when there is a match in either left or right table;
+
+--Note: JOIN and INNER JOIN will give the same result.
+--INNER is the default join type for JOIN, so when you write JOIN the parser actually writes INNER JOIN.
+
+--Join testproducts to categories using the category_id column:;
+SELECT testproduct_id, product_name, category_name
+FROM testproducts
+INNER JOIN categories ON testproducts.category_id = categories.category_id;
+
+
+--LEFT JOIN;
+
+--The LEFT JOIN keyword selects ALL records from the "left" table, and the matching records from the "right" table.;
+--The result is 0 records from the right side if there is no match.;
+
+--Join testproducts to categories using the category_id column:;
+SELECT testproduct_id, product_name, category_name
+FROM testproducts
+LEFT JOIN categories ON testproducts.category_id = categories.category_id;
+
+--Note: LEFT JOIN and LEFT OUTER JOIN will give the same result.;
+--OUTER is the default join type for LEFT JOIN, so when you write LEFT JOIN the parser actually writes LEFT OUTER JOIN.;
+
+
+--RIGHT JOIN;
+
+--The RIGHT JOIN keyword selects ALL records from the "right" table, and the matching records from the "left" table.;
+--The result is 0 records from the left side if there is no match.;
+
+--Join testproducts to categories using the category_id column:;
+SELECT testproduct_id, product_name, category_name
+FROM testproducts
+RIGHT JOIN categories ON testproducts.category_id = categories.category_id;
+
+--Note: RIGHT JOIN and RIGHT OUTER JOIN will give the same result.;
+--OUTER is the default join type for RIGHT JOIN, so when you write RIGHT JOIN the parser actually writes RIGHT OUTER JOIN.;
+
+
+--FULL JOIN;
+
+--The FULL JOIN keyword selects ALL records from both tables, even if there is not a match.;
+--For rows with a match the values from both tables are available, if there is not a match the empty fields will get the value NULL.;
+
+--Join testproducts to categories using the category_id column:;
+SELECT testproduct_id, product_name, category_name
+FROM testproducts
+FULL JOIN categories ON testproducts.category_id = categories.category_id;
+
+--Moje verze dle SPSS:;
+SELECT testproduct_id, t1.category_id category_id_from_testproducts, t2.category_id category_id_from_categories, product_name, category_name FROM
+(SELECT testproduct_id, category_id, product_name
+FROM testproducts) t1
+FULL JOIN (SELECT category_id, category_name FROM categories) t2 ON t1.category_id = t2.category_id;
+
+--Note: FULL JOIN and FULL OUTER JOIN will give the same result.;
+--OUTER is the default join type for FULL JOIN, so when you write FULL JOIN the parser actually writes FULL OUTER JOIN.;
+
+
+--CROSS JOIN (kartézský součin);
+
+--The CROSS JOIN keyword matches ALL records from the "left" table with EACH record from the "right" table.;
+--That means that all records from the "right" table will be returned for each record in the "left" table.;
+--This way of joining can potentially return very large table, and you should not use it if you do not have to.;
+
+--Note: The CROSS JOIN method will return ALL categories for EACH testproduct, meaning that it will return 80 rows (10 * 8).;
+--Join testproducts to categories using the CROSS JOIN keyword:;
+SELECT testproduct_id, product_name, category_name
+FROM testproducts
+CROSS JOIN categories;
+

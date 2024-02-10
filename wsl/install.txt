@@ -31,6 +31,8 @@ create user funka with password '*****';
 create database test;
 grant all privileges on database test to funka;
 
+ALTER USER funka WITH PASSWORD '******';
+
 # v pgadmin udělat Register>Server, connection address 127.0.0.1, 5432, funka, *****
 
 \c test
@@ -42,10 +44,8 @@ SELECT SESSION_USER, CURRENT_USER;
 CREATE TABLE clients (id SERIAL PRIMARY KEY, first_name VARCHAR, last_name VARCHAR, role VARCHAR);
 INSERT INTO clients (first_name, last_name, role) VALUES ('John', 'Smith', 'CEO');
 
-CREATE TABLE sekce (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR);
-CREATE TABLE skupiny (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR, oddil VARCHAR, text VARCHAR);
-CREATE TABLE tridy (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR, skupina VARCHAR, text VARCHAR);
-CREATE TABLE oddily (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR, sekce VARCHAR, text VARCHAR);
+
+
 
 sudo -i -u postgres
 psql
@@ -70,3 +70,82 @@ COPY oddily("kod", "nazev", "sekce", "text")
 FROM '/tmp/Oddíly_podklad.txt'
 DELIMITER E'\t'
 CSV HEADER;
+
+COPY sekce_podklad(kod, nazev, oddily, oddily_min, oddily_max, oddil_1, oddil_2, oddil_3, oddil_4, oddil_5, oddil_6, oddil_7, oddil_8, oddil_9, oddil_10, oddil_11, oddil_12, oddil_13, oddil_14, oddil_15, oddil_16, oddil_17, oddil_18, oddil_19, oddil_20, oddil_21, oddil_22, oddil_23, oddil_24)
+FROM '/tmp/Export_Sekce.txt'
+DELIMITER E'\t'
+CSV HEADER;
+
+
+select * from pg_tables where schemaname='public';
+
+select * from information_schema.tables where table_schema='public';
+
+SELECT
+    column_name,
+    data_type
+FROM
+    information_schema.columns
+WHERE
+    table_name = 'sekce';
+
+
+
+# chci dat tyto tabulky do schema nace;
+
+
+create schema nace;
+
+pg_dump --dbname=test --schema=public --file=/tmp/test.dump --format=c --username=funka --host=localhost --port=5432;
+(prompts for password of user funka)
+# nejde
+pg_restore --dbname=test --schema=nace --format=c --username=funka --host=localhost --port=5432 /tmp/test.dump --no-owner
+
+
+sudo -i -u postgres
+psql
+\c test
+
+grant all privileges on schema nace to funka;
+
+SET ROLE funka;
+CREATE TABLE nace.sekce (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR);
+CREATE TABLE nace.skupiny (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR, oddil VARCHAR, text VARCHAR);
+CREATE TABLE nace.tridy (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR, skupina VARCHAR, text VARCHAR);
+CREATE TABLE nace.oddily (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR, sekce VARCHAR, text VARCHAR);
+CREATE TABLE nace.sekce_podklad (id SERIAL PRIMARY KEY, kod VARCHAR, nazev VARCHAR, oddily VARCHAR, oddily_min SMALLINT, oddily_max SMALLINT, oddil_1 VARCHAR, oddil_2 VARCHAR, oddil_3 VARCHAR, oddil_4 VARCHAR, oddil_5 VARCHAR, oddil_6 VARCHAR, oddil_7 VARCHAR, oddil_8 VARCHAR, oddil_9 VARCHAR, oddil_10 VARCHAR, oddil_11 VARCHAR, oddil_12 VARCHAR, oddil_13 VARCHAR, oddil_14 VARCHAR, oddil_15 VARCHAR, oddil_16 VARCHAR, oddil_17 VARCHAR, oddil_18 VARCHAR, oddil_19 VARCHAR, oddil_20 VARCHAR, oddil_21 VARCHAR, oddil_22 VARCHAR, oddil_23 VARCHAR, oddil_24 VARCHAR);
+
+sudo -i -u postgres
+psql
+\c test
+
+COPY nace.sekce("kod", "nazev")
+FROM '/tmp/Sekce.txt'
+DELIMITER E'\t'
+CSV HEADER;
+COPY nace.skupiny("kod", "nazev", "oddil", "text")
+FROM '/tmp/Skupiny_podklad.txt'
+DELIMITER E'\t'
+CSV HEADER;
+COPY nace.tridy("kod", "nazev", "skupina", "text")
+FROM '/tmp/Třídy_podklad.txt'
+DELIMITER E'\t'
+CSV HEADER;
+COPY nace.oddily("kod", "nazev", "sekce", "text")
+FROM '/tmp/Oddíly_podklad.txt'
+DELIMITER E'\t'
+CSV HEADER;
+COPY nace.sekce_podklad(kod, nazev, oddily, oddily_min, oddily_max, oddil_1, oddil_2, oddil_3, oddil_4, oddil_5, oddil_6, oddil_7, oddil_8, oddil_9, oddil_10, oddil_11, oddil_12, oddil_13, oddil_14, oddil_15, oddil_16, oddil_17, oddil_18, oddil_19, oddil_20, oddil_21, oddil_22, oddil_23, oddil_24)
+FROM '/tmp/Export_Sekce.txt'
+DELIMITER E'\t'
+CSV HEADER;
+
+# nahrat testovaci tabulky w3schools do public
+# w3schools.sql musi mit na zacatku set role funka;
+
+sudo -u postgres psql -d test -f /tmp/w3schools.sql
+sudo -u postgres psql -d test -f /tmp/bill.sql
+sudo -u postgres psql -d test -f /tmp/bill2.sql
+
+# jak zmenit ownera tabulek, pokud bych nedal set role???
+

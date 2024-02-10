@@ -667,7 +667,7 @@ SELECT
 FROM
     information_schema.columns
 WHERE
-    table_name = "cenik";
+    table_name = 'cenik';
 
 git show --stat
 git log -p
