@@ -1,0 +1,18 @@
+git se instaluje zadanim git do ssh, nainstaluje devtools pro prikazovy radek
+git config --global user.name "Jiří Černý"
+git config --global user.email funkacer@gmail.com
+ssh-keygen -t ed25519 -C "funkacer@gmail.com"
+cat ...
+install python for mac
+/bin/bash
+python3 -m venv ~/_Git/_venv
+source ~/_Git/_venv/bin/activate
+python
+import sys
+sys.executable
+exit()
+pip install jupyter notebook
+pip install pandas
+pip install matplotlib
+pip install seaborn
+pip install -U scikit-learn
