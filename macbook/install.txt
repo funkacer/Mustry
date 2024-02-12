@@ -16,3 +16,18 @@ pip install pandas
 pip install matplotlib
 pip install seaborn
 pip install -U scikit-learn
+pip install psycopg2 NEJDE!! (Info https://stackoverflow.com/questions/66888087/cannot-install-psycopg2-with-pip3-on-m1-mac)
+pip install psycopg2-binary
+
+
+brew install postgresql@16
+brew services start postgresql@16
+(Ověřit přes brew services list)
+sudo ln -s $(brew --prefix)/opt/libpq/bin/psql /usr/local/bin/psql
+sudo ln -s $(brew --prefix)/opt/libpq/bin/pg_dump /usr/local/bin/pg_dump
+sudo ln -s $(brew --prefix)/opt/libpq/bin/pg_restore /usr/local/bin/pg_restore
+(Spouští se pak jako psql postgres, info k tomu:
+https://stackoverflow.com/questions/44654216/correct-way-to-install-psql-without-full-postgres-on-macos)
+
+
+brew install --cask pgadmin4
