@@ -31,3 +31,25 @@ https://stackoverflow.com/questions/44654216/correct-way-to-install-psql-without
 
 
 brew install --cask pgadmin4
+
+
+
+create user funka with password '*****';
+create database test;
+grant all privileges on database test to funka;
+
+ALTER USER funka WITH PASSWORD '*****1';
+
+# v pgadmin udělat Register>Server, connection address 127.0.0.1, 5432, funka, *****
+
+\c test
+grant all privileges on schema public to funka;
+SET ROLE funka;
+# (!!! nastavi uzivatele na funka)
+SELECT SESSION_USER, CURRENT_USER;
+# (dá info lépe než v \conninfo)
+exit
+
+psql -d test -f /Users/jiricerny/_Git/_venv/_venv/W3Schools_2024/Postgre/_data/w3schools.sql
+psql -d test -f /Users/jiricerny/_Git/_venv/_venv/SQL_2024/Sql_queries/_data/bill.sql
+psql -d test -f /Users/jiricerny/_Git/_venv/_venv/SQL_2024/Sql_queries_2/_data/bill2.sql
