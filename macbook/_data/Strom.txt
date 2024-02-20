@@ -1,0 +1,1157 @@
+kod	nazev	strom
+62	Činnosti v oblasti informačních technologií	J/62/
+63	Informační činnosti	J/63/
+64	Finanční zprostředkování, kromě pojišťovnictví a penzijního financování	K/64/
+65	Pojištění, zajištění a penzijní financování, kromě povinného sociálního zabezpečení	K/65/
+66	Ostatní finanční činnosti	K/66/
+68	Činnosti v oblasti nemovitostí	L/68/
+69	Právní a účetnické činnosti	M/69/
+70	Činnosti vedení podniků; poradenství v oblasti řízení	M/70/
+71	Architektonické a inženýrské činnosti; technické zkoušky a analýzy	M/71/
+72	Výzkum a vývoj	M/72/
+73	Reklama a průzkum trhu	M/73/
+74	Ostatní profesní, vědecké a technické činnosti	M/74/
+75	Veterinární činnosti	M/75/
+77	Činnosti v oblasti pronájmu a operativního leasingu	N/77/
+78	Činnosti související se zaměstnáním	N/78/
+79	Činnosti cestovních agentur, kanceláří a jiné rezervační a související činnosti	N/79/
+80	Bezpečnostní a pátrací činnosti	N/80/
+81	Činnosti související se stavbami a úpravou krajiny	N/81/
+82	Administrativní, kancelářské a jiné podpůrné činnosti pro podnikání	N/82/
+84	Veřejná správa a obrana; povinné sociální zabezpečení	O/84/
+85	Vzdělávání	P/85/
+86	Zdravotní péče	Q/86/
+87	Pobytové služby sociální péče	Q/87/
+88	Ambulantní nebo terénní sociální služby	Q/88/
+90	Tvůrčí, umělecké a zábavní činnosti	R/90/
+91	Činnosti knihoven, archivů, muzeí a jiných kulturních zařízení	R/91/
+92	Činnosti heren, kasin a sázkových kanceláří	R/92/
+93	Sportovní, zábavní a rekreační činnosti	R/93/
+94	Činnosti organizací sdružujících osoby za účelem prosazování společných zájmů	S/94/
+95	Opravy počítačů a výrobků pro osobní potřebu a převážně pro domácnost	S/95/
+96	Poskytování ostatních osobních služeb	S/96/
+97	Činnosti domácností jako zaměstnavatelů domácího personálu	T/97/
+98	Činnosti domácností produkujících blíže neurčené výrobky a služby pro vlastní potřebu	T/98/
+99	Činnosti exteritoriálních organizací a orgánů	U/99/
+01.1	Pěstování plodin jiných než trvalých	A/01/01.1/
+01.2	Pěstování trvalých plodin	A/01/01.2/
+01.3	Množení rostlin	A/01/01.3/
+01.4	Živočišná výroba	A/01/01.4/
+01.5	Smíšené hospodářství	A/01/01.5/
+01.6	Podpůrné činnosti pro zemědělství a posklizňové činnosti	A/01/01.6/
+01.7	Lov a odchyt divokých zvířat a související činnosti	A/01/01.7/
+02.1	Lesní hospodářství a jiné činnosti v oblasti lesnictví	A/02/02.1/
+02.2	Těžba dřeva	A/02/02.2/
+02.3	Sběr a získávání volně rostoucích plodů a materiálů, kromě dřeva	A/02/02.3/
+02.4	Podpůrné činnosti pro lesnictví	A/02/02.4/
+03.1	Rybolov	A/03/03.1/
+03.2	Akvakultura	A/03/03.2/
+05.1	Těžba a úprava černého uhlí	B/05/05.1/
+05.2	Těžba a úprava hnědého uhlí	B/05/05.2/
+06.1	Těžba ropy	B/06/06.1/
+06.2	Těžba zemního plynu	B/06/06.2/
+07.1	Těžba a úprava železných rud	B/07/07.1/
+07.2	Těžba a úprava neželezných rud	B/07/07.2/
+08.1	Dobývání kamene, písků a jílů	B/08/08.1/
+08.9	Těžba a dobývání j. n.	B/08/08.9/
+09.1	Podpůrné činnosti při těžbě ropy a zemního plynu	B/09/09.1/
+09.9	Podpůrné činnosti při ostatní těžbě a dobývání	B/09/09.9/
+10.1	Zpracování a konzervování masa a výroba masných výrobků	C/10/10.1/
+10.2	Zpracování a konzervování ryb, korýšů a měkkýšů	C/10/10.2/
+10.3	Zpracování a konzervování ovoce a zeleniny	C/10/10.3/
+10.4	Výroba rostlinných a živočišných olejů a tuků	C/10/10.4/
+10.5	Výroba mléčných výrobků	C/10/10.5/
+10.6	Výroba mlýnských a škrobárenských výrobků	C/10/10.6/
+10.7	Výroba pekařských, cukrářských a jiných moučných výrobků	C/10/10.7/
+10.8	Výroba ostatních potravinářských výrobků	C/10/10.8/
+10.9	Výroba průmyslových krmiv	C/10/10.9/
+11.0	Výroba nápojů	C/11/11.0/
+12.0	Výroba tabákových výrobků	C/12/12.0/
+13.1	Úprava a spřádání textilních vláken a příze	C/13/13.1/
+13.2	Tkaní textilií	C/13/13.2/
+13.3	Konečná úprava textilií	C/13/13.3/
+13.9	Výroba ostatních textilií	C/13/13.9/
+14.1	Výroba oděvů, kromě kožešinových výrobků	C/14/14.1/
+14.2	Výroba kožešinových výrobků	C/14/14.2/
+14.3	Výroba pletených a háčkovaných oděvů	C/14/14.3/
+15.1	Činění a úprava usní (vyčiněných kůží); zpracování a barvení kožešin; výroba brašnářských, sedlářských a podobných výrobků	C/15/15.1/
+15.2	Výroba obuvi	C/15/15.2/
+16.1	Výroba pilařská a impregnace dřeva	C/16/16.1/
+16.2	Výroba dřevěných, korkových, proutěných a slaměných výrobků, kromě nábytku	C/16/16.2/
+17.1	Výroba buničiny, papíru a lepenky	C/17/17.1/
+17.2	Výroba výrobků z papíru a lepenky	C/17/17.2/
+18.1	Tisk a činnosti související s tiskem	C/18/18.1/
+18.2	Rozmnožování nahraných nosičů	C/18/18.2/
+19.1	Výroba koksárenských produktů	C/19/19.1/
+19.2	Výroba rafinovaných ropných produktů	C/19/19.2/
+20.1	Výroba základních chemických látek, hnojiv a dusíkatých sloučenin, plastů a syntetického kaučuku v primárních formách	C/20/20.1/
+20.2	Výroba pesticidů a jiných agrochemických přípravků	C/20/20.2/
+20.3	Výroba nátěrových barev, laků a jiných nátěrových materiálů, tiskařských barev a tmelů	C/20/20.3/
+20.4	Výroba mýdel a detergentů, čisticích a lešticích prostředků, parfémů a toaletních přípravků	C/20/20.4/
+20.5	Výroba ostatních chemických výrobků	C/20/20.5/
+20.6	Výroba chemických vláken	C/20/20.6/
+21.1	Výroba základních farmaceutických výrobků	C/21/21.1/
+21.2	Výroba farmaceutických přípravků	C/21/21.2/
+22.1	Výroba pryžových výrobků	C/22/22.1/
+22.2	Výroba plastových výrobků	C/22/22.2/
+23.1	Výroba skla a skleněných výrobků	C/23/23.1/
+23.2	Výroba žáruvzdorných výrobků	C/23/23.2/
+23.3	Výroba stavebních výrobků z jílovitých materiálů	C/23/23.3/
+23.4	Výroba ostatních porcelánových a keramických výrobků	C/23/23.4/
+23.5	Výroba cementu, vápna a sádry	C/23/23.5/
+23.6	Výroba betonových, cementových a sádrových výrobků	C/23/23.6/
+23.7	Řezání, tvarování a konečná úprava kamenů	C/23/23.7/
+23.9	Výroba brusiv a ostatních nekovových minerálních výrobků j. n.	C/23/23.9/
+24.1	Výroba surového železa, oceli a feroslitin, plochých výrobků (kromě pásky za studena), tváření výrobků za tepla	C/24/24.1/
+24.2	Výroba ocelových trub, trubek, dutých profilů a souvisejících potrubních tvarovek	C/24/24.2/
+24.3	Výroba ostatních výrobků získaných jednostupňovým zpracováním oceli	C/24/24.3/
+24.4	Výroba a hutní zpracování drahých a neželezných kovů	C/24/24.4/
+24.5	Slévárenství	C/24/24.5/
+25.1	Výroba konstrukčních kovových výrobků	C/25/25.1/
+25.2	Výroba radiátorů a kotlů k ústřednímu topení, kovových nádrží a zásobníků	C/25/25.2/
+25.3	Výroba parních kotlů, kromě kotlů pro ústřední topení	C/25/25.3/
+25.4	Výroba zbraní a střeliva	C/25/25.4/
+25.5	Kování, lisování, ražení, válcování a protlačování kovů; prášková metalurgie	C/25/25.5/
+25.6	Povrchová úprava a zušlechťování kovů; obrábění	C/25/25.6/
+25.7	Výroba nožířských výrobků, nástrojů a železářských výrobků	C/25/25.7/
+25.9	Výroba ostatních kovodělných výrobků	C/25/25.9/
+26.1	Výroba elektronických součástek a desek	C/26/26.1/
+26.2	Výroba počítačů a periferních zařízení	C/26/26.2/
+26.3	Výroba komunikačních zařízení	C/26/26.3/
+26.4	Výroba spotřební elektroniky	C/26/26.4/
+26.5	Výroba měřicích, zkušebních a navigačních přístrojů; výroba časoměrných přístrojů	C/26/26.5/
+26.6	Výroba ozařovacích, elektroléčebných a elektroterapeutických přístrojů	C/26/26.6/
+26.7	Výroba optických a fotografických přístrojů a zařízení	C/26/26.7/
+26.8	Výroba magnetických a optických médií	C/26/26.8/
+27.1	Výroba elektrických motorů, generátorů, transformátorů a elektrických rozvodných a kontrolních zařízení	C/27/27.1/
+27.2	Výroba baterií a akumulátorů	C/27/27.2/
+27.3	Výroba optických a elektrických kabelů, elektrických vodičů a elektroinstalačních zařízení	C/27/27.3/
+27.4	Výroba elektrických osvětlovacích zařízení	C/27/27.4/
+27.5	Výroba spotřebičů převážně pro domácnost	C/27/27.5/
+27.9	Výroba ostatních elektrických zařízení	C/27/27.9/
+28.1	Výroba strojů a zařízení pro všeobecné účely	C/28/28.1/
+28.2	Výroba ostatních strojů a zařízení pro všeobecné účely	C/28/28.2/
+28.3	Výroba zemědělských a lesnických strojů	C/28/28.3/
+28.4	Výroba kovoobráběcích a ostatních obráběcích strojů	C/28/28.4/
+28.9	Výroba ostatních strojů pro speciální účely	C/28/28.9/
+29.1	Výroba motorových vozidel a jejich motorů	C/29/29.1/
+29.2	Výroba karoserií motorových vozidel; výroba přívěsů a návěsů	C/29/29.2/
+29.3	Výroba dílů a příslušenství pro motorová vozidla a jejich motory	C/29/29.3/
+30.1	Stavba lodí a člunů	C/30/30.1/
+30.2	Výroba železničních lokomotiv a vozového parku	C/30/30.2/
+30.3	Výroba letadel a jejich motorů, kosmických lodí a souvisejících zařízení	C/30/30.3/
+30.4	Výroba vojenských bojových vozidel	C/30/30.4/
+30.9	Výroba dopravních prostředků a zařízení j. n.	C/30/30.9/
+31.0	Výroba nábytku	C/31/31.0/
+32.1	Výroba klenotů, bižuterie a příbuzných výrobků	C/32/32.1/
+32.2	Výroba hudebních nástrojů	C/32/32.2/
+32.3	Výroba sportovních potřeb	C/32/32.3/
+32.4	Výroba her a hraček	C/32/32.4/
+32.5	Výroba lékařských a dentálních nástrojů a potřeb	C/32/32.5/
+32.9	Zpracovatelský průmysl j. n.	C/32/32.9/
+33.1	Opravy kovodělných výrobků, strojů a zařízení	C/33/33.1/
+33.2	Instalace průmyslových strojů a zařízení	C/33/33.2/
+35.1	Výroba, přenos a rozvod elektřiny	D/35/35.1/
+35.2	Výroba plynu; rozvod plynných paliv prostřednictvím sítí	D/35/35.2/
+35.3	Výroba a rozvod tepla a klimatizovaného vzduchu, výroba ledu	D/35/35.3/
+36.0	Shromažďování, úprava a rozvod vody	E/36/36.0/
+37.0	Činnosti související s odpadními vodami	E/37/37.0/
+38.1	Shromažďování a sběr odpadů	E/38/38.1/
+38.2	Odstraňování odpadů	E/38/38.2/
+38.3	Úprava odpadů k dalšímu využití	E/38/38.3/
+39.0	Sanace a jiné činnosti související s odpady	E/39/39.0/
+41.1	Developerská činnost	F/41/41.1/
+41.2	Výstavba bytových a nebytových budov	F/41/41.2/
+42.1	Výstavba silnic a železnic	F/42/42.1/
+42.2	Výstavba inženýrských sítí	F/42/42.2/
+42.9	Výstavba ostatních staveb	F/42/42.9/
+43.1	Demolice a příprava staveniště	F/43/43.1/
+43.2	Elektroinstalační, instalatérské a ostatní stavebně instalační práce	F/43/43.2/
+43.3	Kompletační a dokončovací práce	F/43/43.3/
+43.9	Ostatní specializované stavební činnosti	F/43/43.9/
+45.1	Obchod s motorovými vozidly, kromě motocyklů	G/45/45.1/
+45.2	Opravy a údržba motorových vozidel, kromě motocyklů	G/45/45.2/
+45.3	Obchod s díly a příslušenstvím pro motorová vozidla, kromě motocyklů	G/45/45.3/
+45.4	Obchod, opravy a údržba motocyklů, jejich dílů a příslušenství	G/45/45.4/
+46.1	Zprostředkování velkoobchodu a velkoobchod v zastoupení	G/46/46.1/
+46.2	Velkoobchod se základními zemědělskými produkty a živými zvířaty	G/46/46.2/
+46.3	Velkoobchod s potravinami, nápoji a tabákovými výrobky	G/46/46.3/
+46.4	Velkoobchod s výrobky převážně pro domácnost	G/46/46.4/
+46.5	Velkoobchod s počítačovým a komunikačním zařízením	G/46/46.5/
+46.6	Velkoobchod s ostatními stroji, strojním zařízením a příslušenstvím	G/46/46.6/
+46.7	Ostatní specializovaný velkoobchod	G/46/46.7/
+46.9	Nespecializovaný velkoobchod	G/46/46.9/
+47.1	Maloobchod v nespecializovaných prodejnách	G/47/47.1/
+47.2	Maloobchod s potravinami, nápoji a tabákovými výrobky ve specializovaných prodejnách	G/47/47.2/
+47.3	Maloobchod s pohonnými hmotami ve specializovaných prodejnách	G/47/47.3/
+47.4	Maloobchod s počítačovým a komunikačním zařízením ve specializovaných prodejnách	G/47/47.4/
+47.5	Maloobchod s ostatními výrobky převážně pro domácnost ve specializovaných prodejnách	G/47/47.5/
+47.6	Maloobchod s výrobky pro kulturní rozhled a rekreaci ve specializovaných prodejnách	G/47/47.6/
+47.7	Maloobchod s ostatním zbožím ve specializovaných prodejnách	G/47/47.7/
+47.8	Maloobchod ve stáncích a na trzích	G/47/47.8/
+47.9	Maloobchod mimo prodejny, stánky a trhy	G/47/47.9/
+49.1	Železniční osobní doprava meziměstská	H/49/49.1/
+49.2	Železniční nákladní doprava	H/49/49.2/
+49.3	Ostatní pozemní osobní doprava	H/49/49.3/
+49.4	Silniční nákladní doprava a stěhovací služby	H/49/49.4/
+49.5	Potrubní doprava	H/49/49.5/
+50.1	Námořní a pobřežní osobní doprava	H/50/50.1/
+50.2	Námořní a pobřežní nákladní doprava	H/50/50.2/
+50.3	Vnitrozemská vodní osobní doprava	H/50/50.3/
+50.4	Vnitrozemská vodní nákladní doprava	H/50/50.4/
+51.1	Letecká osobní doprava	H/51/51.1/
+51.2	Letecká nákladní doprava a kosmická doprava	H/51/51.2/
+52.1	Skladování	H/52/52.1/
+52.2	Vedlejší činnosti v dopravě	H/52/52.2/
+53.1	Základní poštovní služby poskytované na základě poštovní licence	H/53/53.1/
+53.2	Ostatní poštovní a kurýrní činnosti	H/53/53.2/
+55.1	Ubytování v hotelích a podobných ubytovacích zařízeních	I/55/55.1/
+55.2	Rekreační a ostatní krátkodobé ubytování	I/55/55.2/
+55.3	Kempy a tábořiště	I/55/55.3/
+55.9	Ostatní ubytování	I/55/55.9/
+56.1	Stravování v restauracích, u stánků a v mobilních zařízeních	I/56/56.1/
+56.2	Poskytování cateringových a ostatních stravovacích služeb	I/56/56.2/
+56.3	Pohostinství	I/56/56.3/
+58.1	Vydávání knih, periodických publikací a ostatní vydavatelské činnosti	J/58/58.1/
+58.2	Vydávání softwaru	J/58/58.2/
+59.1	Činnosti v oblasti filmů, videozáznamů a televizních programů	J/59/59.1/
+59.2	Pořizování zvukových nahrávek a hudební vydavatelské činnosti	J/59/59.2/
+60.1	Rozhlasové vysílání	J/60/60.1/
+60.2	Tvorba televizních programů a televizní vysílání	J/60/60.2/
+61.1	Činnosti související s pevnou telekomunikační sítí	J/61/61.1/
+61.2	Činnosti související s bezdrátovou telekomunikační sítí	J/61/61.2/
+61.3	Činnosti související se satelitní telekomunikační sítí	J/61/61.3/
+61.9	Ostatní telekomunikační činnosti	J/61/61.9/
+A	SEKCE A - ZEMĚDĚLSTVÍ, LESNICTVÍ A RYBÁŘSTVÍ	A/
+B	SEKCE B - TĚŽBA A DOBÝVÁNÍ	B/
+C	SEKCE C - ZPRACOVATELSKÝ PRŮMYSL	C/
+D	SEKCE D – VÝROBA A ROZVOD ELEKTŘINY, PLYNU, TEPLA A KLIMATIZOVANÉHO VZDUCHU	D/
+E	SEKCE E – ZÁSOBOVÁNÍ VODOU; ČINNOSTI SOUVISEJÍCÍ S ODPADNÍMI VODAMI, ODPADY A SANACEMI	E/
+F	SEKCE F - STAVEBNICTVÍ	F/
+G	SEKCE G - VELKOOBCHOD A MALOOBCHOD; OPRAVY A ÚDRŽBA MOTOROVÝCH VOZIDEL	G/
+H	SEKCE H - DOPRAVA A SKLADOVÁNÍ	H/
+I	SEKCE I - UBYTOVÁNÍ, STRAVOVÁNÍ A POHOSTINSTVÍ	I/
+J	SEKCE J - INFORMAČNÍ A KOMUNIKAČNÍ ČINNOSTI	J/
+K	SEKCE K - PENĚŽNICTVÍ A POJIŠŤOVNICTVÍ	K/
+L	SEKCE L - ČINNOSTI V OBLASTI NEMOVITOSTÍ	L/
+M	SEKCE M - PROFESNÍ, VĚDECKÉ A TECHNICKÉ ČINNOSTI	M/
+N	SEKCE N - ADMINISTRATIVNÍ A PODPŮRNÉ ČINNOSTI	N/
+O	SEKCE O - VEŘEJNÁ SPRÁVA A OBRANA; POVINNÉ SOCIÁLNÍ ZABEZPEČENÍ	O/
+P	SEKCE P – VZDĚLÁVÁNÍ	P/
+Q	SEKCE Q - ZDRAVOTNÍ A SOCIÁLNÍ PÉČE	Q/
+R	SEKCE R - KULTURNÍ, ZÁBAVNÍ A REKREAČNÍ ČINNOSTI	R/
+S	SEKCE S - OSTATNÍ ČINNOSTI	S/
+T	SEKCE T - ČINNOSTI DOMÁCNOSTÍ JAKO ZAMĚSTNAVATELŮ; ČINNOSTI DOMÁCNOSTÍ PRODUKUJÍCÍCH BLÍŽE NEURČENÉ VÝROBKY A SLUŽBY PRO VLASTNÍ POTŘEBU	T/
+U	SEKCE U - ČINNOSTI EXTERITORIÁLNÍCH ORGANIZACÍ A ORGÁNŮ	U/
+01	Rostlinná a živočišná výroba, myslivost a související činnosti	A/01/
+02	Lesnictví a těžba dřeva	A/02/
+03	Rybolov a akvakultura	A/03/
+05	Těžba a úprava černého a hnědého uhlí	B/05/
+06	Těžba ropy a zemního plynu	B/06/
+07	Těžba a úprava rud	B/07/
+08	Ostatní těžba a dobývání	B/08/
+09	Podpůrné činnosti při těžbě	B/09/
+10	Výroba potravinářských výrobků	C/10/
+11	Výroba nápojů	C/11/
+12	Výroba tabákových výrobků	C/12/
+13	Výroba textilií	C/13/
+14	Výroba oděvů	C/14/
+15	Výroba usní a souvisejících výrobků	C/15/
+16	Zpracování dřeva, výroba dřevěných, korkových, proutěných a slaměných výrobků, kromě nábytku	C/16/
+17	Výroba papíru a výrobků z papíru	C/17/
+18	Tisk a rozmnožování nahraných nosičů	C/18/
+19	Výroba koksu a rafinovaných ropných produktů	C/19/
+20	Výroba chemických látek a chemických přípravků	C/20/
+21	Výroba základních farmaceutických výrobků a farmaceutických přípravků	C/21/
+22	Výroba pryžových a plastových výrobků	C/22/
+23	Výroba ostatních nekovových minerálních výrobků	C/23/
+24	Výroba základních kovů, hutní zpracování kovů; slévárenství	C/24/
+25	Výroba kovových konstrukcí a kovodělných výrobků, kromě strojů a zařízení	C/25/
+26	Výroba počítačů, elektronických a optických přístrojů a zařízení	C/26/
+27	Výroba elektrických zařízení	C/27/
+28	Výroba strojů a zařízení j. n.	C/28/
+29	Výroba motorových vozidel (kromě motocyklů), přívěsů a návěsů	C/29/
+30	Výroba ostatních dopravních prostředků a zařízení	C/30/
+31	Výroba nábytku	C/31/
+32	Ostatní zpracovatelský průmysl	C/32/
+33	Opravy a instalace strojů a zařízení	C/33/
+35	Výroba a rozvod elektřiny, plynu, tepla a klimatizovaného vzduchu	D/35/
+36	Shromažďování, úprava a rozvod vody	E/36/
+37	Činnosti související s odpadními vodami	E/37/
+38	Shromažďování, sběr a odstraňování odpadů, úprava odpadů k dalšímu využití	E/38/
+39	Sanace a jiné činnosti související s odpady	E/39/
+41	Výstavba budov	F/41/
+42	Inženýrské stavitelství	F/42/
+43	Specializované stavební činnosti	F/43/
+45	Velkoobchod, maloobchod a opravy motorových vozidel	G/45/
+46	Velkoobchod, kromě motorových vozidel	G/46/
+47	Maloobchod, kromě motorových vozidel	G/47/
+49	Pozemní a potrubní doprava	H/49/
+50	Vodní doprava	H/50/
+51	Letecká doprava	H/51/
+52	Skladování a vedlejší činnosti v dopravě	H/52/
+53	Poštovní a kurýrní činnosti	H/53/
+55	Ubytování	I/55/
+56	Stravování a pohostinství	I/56/
+58	Vydavatelské činnosti	J/58/
+59	Činnosti v oblasti filmů, videozáznamů a televizních programů, pořizování zvukových nahrávek a hudební vydavatelské činnosti	J/59/
+60	Tvorba programů a vysílání	J/60/
+61	Telekomunikační činnosti	J/61/
+62.0	Činnosti v oblasti informačních technologií	J/62/62.0/
+63.1	Činnosti související se zpracováním dat a hostingem; činnosti související s webovými portály	J/63/63.1/
+63.9	Ostatní informační činnosti	J/63/63.9/
+64.1	Peněžní zprostředkování	K/64/64.1/
+64.2	Činnosti holdingových společností	K/64/64.2/
+64.3	Činnosti trustů, fondů a podobných finančních subjektů	K/64/64.3/
+64.9	Ostatní finanční zprostředkování	K/64/64.9/
+65.1	Pojištění	K/65/65.1/
+65.2	Zajištění	K/65/65.2/
+65.3	Penzijní financování	K/65/65.3/
+66.1	Pomocné činnosti související s finančním zprostředkováním, kromě pojišťovnictví a penzijního financování	K/66/66.1/
+66.2	Pomocné činnosti související s pojišťovnictvím a penzijním financováním	K/66/66.2/
+66.3	Správa fondů	K/66/66.3/
+68.1	Nákup a následný prodej vlastních nemovitostí	L/68/68.1/
+68.2	Pronájem a správa vlastních nebo pronajatých nemovitostí	L/68/68.2/
+68.3	Činnosti v oblasti nemovitostí na základě smlouvy nebo dohody	L/68/68.3/
+69.1	Právní činnosti	M/69/69.1/
+69.2	Účetnické a auditorské činnosti; daňové poradenství	M/69/69.2/
+70.1	Činnosti vedení podniků	M/70/70.1/
+70.2	Poradenství v oblasti řízení	M/70/70.2/
+71.1	Architektonické a inženýrské činnosti a související technické poradenství	M/71/71.1/
+71.2	Technické zkoušky a analýzy	M/71/71.2/
+72.1	Výzkum a vývoj v oblasti přírodních a technických věd	M/72/72.1/
+72.2	Výzkum a vývoj v oblasti společenských a humanitních věd	M/72/72.2/
+73.1	Reklamní činnosti	M/73/73.1/
+73.2	Průzkum trhu a veřejného mínění	M/73/73.2/
+74.1	Specializované návrhářské činnosti	M/74/74.1/
+74.2	Fotografické činnosti	M/74/74.2/
+74.3	Překladatelské a tlumočnické činnosti	M/74/74.3/
+74.9	Ostatní profesní, vědecké a technické činnosti j. n.	M/74/74.9/
+75.0	Veterinární činnosti	M/75/75.0/
+77.1	Pronájem a leasing motorových vozidel, kromě motocyklů	N/77/77.1/
+77.2	Pronájem a leasing výrobků pro osobní potřebu a převážně pro domácnost	N/77/77.2/
+77.3	Pronájem a leasing ostatních strojů, zařízení a výrobků	N/77/77.3/
+77.4	Leasing duševního vlastnictví a podobných produktů, kromě děl chráněných autorským právem	N/77/77.4/
+78.1	Činnosti agentur zprostředkujících zaměstnání	N/78/78.1/
+78.2	Činnosti agentur zprostředkujících práci na přechodnou dobu	N/78/78.2/
+78.3	Ostatní poskytování lidských zdrojů	N/78/78.3/
+79.1	Činnosti cestovních agentur a cestovních kanceláří	N/79/79.1/
+79.9	Ostatní rezervační a související činnosti	N/79/79.9/
+80.1	Činnosti soukromých bezpečnostních agentur	N/80/80.1/
+80.2	Činnosti související s provozem bezpečnostních systémů	N/80/80.2/
+80.3	Pátrací činnosti	N/80/80.3/
+81.1	Kombinované pomocné činnosti	N/81/81.1/
+81.2	Úklidové činnosti	N/81/81.2/
+81.3	Činnosti související s úpravou krajiny	N/81/81.3/
+82.1	Administrativní a kancelářské činnosti	N/82/82.1/
+82.2	Činnosti zprostředkovatelských středisek po telefonu	N/82/82.2/
+82.3	Pořádání konferencí a hospodářských výstav	N/82/82.3/
+82.9	Podpůrné činnosti pro podnikání j. n.	N/82/82.9/
+84.1	Veřejná správa a hospodářská a sociální politika	O/84/84.1/
+84.2	Činnosti pro společnost jako celek	O/84/84.2/
+84.3	Činnosti v oblasti povinného sociálního zabezpečení	O/84/84.3/
+85.1	Předškolní vzdělávání	P/85/85.1/
+85.2	Primární vzdělávání	P/85/85.2/
+85.3	Sekundární vzdělávání	P/85/85.3/
+85.4	Postsekundární vzdělávání	P/85/85.4/
+85.5	Ostatní vzdělávání	P/85/85.5/
+85.6	Podpůrné činnosti ve vzdělávání	P/85/85.6/
+86.1	Ústavní zdravotní péče	Q/86/86.1/
+86.2	Ambulantní a zubní zdravotní péče	Q/86/86.2/
+86.9	Ostatní činnosti související se zdravotní péčí	Q/86/86.9/
+87.1	Sociální péče ve zdravotnických zařízeních ústavní péče	Q/87/87.1/
+87.2	Sociální péče v zařízeních pro osoby s chronickým duševním onemocněním a osoby závislé na návykových látkách	Q/87/87.2/
+87.3	Sociální péče v domovech pro seniory a osoby se zdravotním postižením	Q/87/87.3/
+87.9	Ostatní pobytové služby sociální péče	Q/87/87.9/
+88.1	Ambulantní nebo terénní sociální služby pro seniory a osoby se zdravotním postižením	Q/88/88.1/
+88.9	Ostatní ambulantní nebo terénní sociální služby	Q/88/88.9/
+90.0	Tvůrčí, umělecké a zábavní činnosti	R/90/90.0/
+91.0	Činnosti knihoven, archivů, muzeí a jiných kulturních zařízení	R/91/91.0/
+92.0	Činnosti heren, kasin a sázkových kanceláří	R/92/92.0/
+93.1	Sportovní činnosti	R/93/93.1/
+93.2	Ostatní zábavní a rekreační činnosti	R/93/93.2/
+94.1	Činnosti podnikatelských, zaměstnavatelských a profesních organizací	S/94/94.1/
+94.2	Činnosti odborových svazů	S/94/94.2/
+94.9	Činnosti ostatních organizací sdružujících osoby za účelem prosazování společných zájmů	S/94/94.9/
+95.1	Opravy počítačů a komunikačních zařízení	S/95/95.1/
+95.2	Opravy výrobků pro osobní potřebu a převážně pro domácnost	S/95/95.2/
+96.0	Poskytování ostatních osobních služeb	S/96/96.0/
+97.0	Činnosti domácností jako zaměstnavatelů domácího personálu	T/97/97.0/
+98.1	Činnosti domácností produkujících blíže neurčené výrobky pro vlastní potřebu	T/98/98.1/
+98.2	Činnosti domácností poskytujících blíže neurčené služby pro vlastní potřebu	T/98/98.2/
+99.0	Činnosti exteritoriálních organizací a orgánů	U/99/99.0/
+01.11	Pěstování obilovin (kromě rýže), luštěnin a olejnatých semen	A/01/01.1/01.11/
+01.12	Pěstování rýže	A/01/01.1/01.12/
+01.13	Pěstování zeleniny a melounů, kořenů a hlíz	A/01/01.1/01.13/
+01.14	Pěstování cukrové třtiny	A/01/01.1/01.14/
+01.15	Pěstování tabáku	A/01/01.1/01.15/
+01.16	Pěstování přadných rostlin	A/01/01.1/01.16/
+01.19	Pěstování ostatních plodin jiných než trvalých	A/01/01.1/01.19/
+01.21	Pěstování vinných hroznů	A/01/01.2/01.21/
+01.22	Pěstování tropického a subtropického ovoce	A/01/01.2/01.22/
+01.23	Pěstování citrusových plodů	A/01/01.2/01.23/
+01.24	Pěstování jádrového a peckového ovoce	A/01/01.2/01.24/
+01.25	Pěstování ostatního stromového a keřového ovoce a ořechů	A/01/01.2/01.25/
+01.26	Pěstování olejnatých plodů	A/01/01.2/01.26/
+01.27	Pěstování rostlin pro výrobu nápojů	A/01/01.2/01.27/
+01.28	Pěstování koření, aromatických, léčivých a farmaceutických rostlin	A/01/01.2/01.28/
+01.29	Pěstování ostatních trvalých plodin	A/01/01.2/01.29/
+01.30	Množení rostlin	A/01/01.3/01.30/
+01.41	Chov mléčného skotu	A/01/01.4/01.41/
+01.42	Chov jiného skotu	A/01/01.4/01.42/
+01.43	Chov koní a jiných koňovitých	A/01/01.4/01.43/
+01.44	Chov velbloudů a velbloudovitých	A/01/01.4/01.44/
+01.45	Chov ovcí a koz	A/01/01.4/01.45/
+01.46	Chov prasat	A/01/01.4/01.46/
+01.47	Chov drůbeže	A/01/01.4/01.47/
+01.49.1	Chov drobných hospodářských zvířat	A/01/01.4/01.49.1/
+01.49.2	Chov kožešinových zvířat	A/01/01.4/01.49.2/
+01.49.3	Chov zvířat pro zájmový chov	A/01/01.4/01.49.3/
+01.49.9	Chov ostatních zvířat j. n.	A/01/01.4/01.49.9/
+01.49	Chov ostatních zvířat	A/01/01.4/01.49/
+01.50	Smíšené hospodářství	A/01/01.5/01.50/
+01.61	Podpůrné činnosti pro rostlinnou výrobu	A/01/01.6/01.61/
+01.62	Podpůrné činnosti pro živočišnou výrobu	A/01/01.6/01.62/
+01.63	Posklizňové činnosti	A/01/01.6/01.63/
+01.64	Zpracování osiva pro účely množení	A/01/01.6/01.64/
+01.70	Lov a odchyt divokých zvířat a související činnosti	A/01/01.7/01.70/
+02.10	Lesní hospodářství a jiné činnosti v oblasti lesnictví	A/02/02.1/02.10/
+02.20	Těžba dřeva	A/02/02.2/02.20/
+02.30	Sběr a získávání volně rostoucích plodů a materiálů, kromě dřeva	A/02/02.3/02.30/
+02.40	Podpůrné činnosti pro lesnictví	A/02/02.4/02.40/
+03.11	Mořský rybolov	A/03/03.1/03.11/
+03.12	Sladkovodní rybolov	A/03/03.1/03.12/
+03.21	Mořská akvakultura	A/03/03.2/03.21/
+03.22	Sladkovodní akvakultura	A/03/03.2/03.22/
+05.10.1	Těžba černého uhlí	B/05/05.1/05.10.1/
+05.10.2	Úprava černého uhlí	B/05/05.1/05.10.2/
+05.10	Těžba a úprava černého uhlí	B/05/05.1/05.10/
+05.20.1	Těžba hnědého uhlí, kromě lignitu	B/05/05.2/05.20.1/
+05.20.2	Úprava hnědého uhlí, kromě lignitu	B/05/05.2/05.20.2/
+05.20.3	Těžba lignitu	B/05/05.2/05.20.3/
+05.20.4	Úprava lignitu	B/05/05.2/05.20.4/
+05.20	Těžba a úprava hnědého uhlí	B/05/05.2/05.20/
+06.10	Těžba ropy	B/06/06.1/06.10/
+06.20	Těžba zemního plynu	B/06/06.2/06.20/
+07.10.1	Těžba železných rud	B/07/07.1/07.10.1/
+07.10.2	Úprava železných rud	B/07/07.1/07.10.2/
+07.10	Těžba a úprava železných rud	B/07/07.1/07.10/
+07.21.1	Těžba uranových a thoriových rud	B/07/07.2/07.21.1/
+07.21.2	Úprava uranových a thoriových rud	B/07/07.2/07.21.2/
+07.21	Těžba a úprava uranových a thoriových rud	B/07/07.2/07.21/
+07.29.1	Těžba ostatních neželezných rud	B/07/07.2/07.29.1/
+07.29.2	Úprava ostatních neželezných rud	B/07/07.2/07.29.2/
+07.29	Těžba a úprava ostatních neželezných rud	B/07/07.2/07.29/
+08.11	Dobývání kamene pro výtvarné nebo stavební účely, vápence, sádrovce, křídy a břidlice	B/08/08.1/08.11/
+08.12	Provoz pískoven a štěrkopískoven; těžba jílů a kaolinu	B/08/08.1/08.12/
+08.91	Těžba chemických minerálů a minerálů pro výrobu hnojiv	B/08/08.9/08.91/
+08.92	Těžba rašeliny	B/08/08.9/08.92/
+08.93	Těžba soli	B/08/08.9/08.93/
+08.99	Ostatní těžba a dobývání j. n.	B/08/08.9/08.99/
+09.10	Podpůrné činnosti při těžbě ropy a zemního plynu	B/09/09.1/09.10/
+09.90	Podpůrné činnosti při ostatní těžbě a dobývání	B/09/09.9/09.90/
+10.11	Zpracování a konzervování masa, kromě drůbežího	C/10/10.1/10.11/
+10.12	Zpracování a konzervování drůbežího masa	C/10/10.1/10.12/
+10.13	Výroba masných výrobků a výrobků z drůbežího masa	C/10/10.1/10.13/
+10.20	Zpracování a konzervování ryb, korýšů a měkkýšů	C/10/10.2/10.20/
+10.31	Zpracování a konzervování brambor	C/10/10.3/10.31/
+10.32	Výroba ovocných a zeleninových šťáv	C/10/10.3/10.32/
+10.39	Ostatní zpracování a konzervování ovoce a zeleniny	C/10/10.3/10.39/
+10.41	Výroba olejů a tuků	C/10/10.4/10.41/
+10.42	Výroba margarínu a podobných jedlých tuků	C/10/10.4/10.42/
+10.51	Zpracování mléka, výroba mléčných výrobků a sýrů	C/10/10.5/10.51/
+10.52	Výroba zmrzliny	C/10/10.5/10.52/
+10.61	Výroba mlýnských výrobků	C/10/10.6/10.61/
+10.62	Výroba škrobárenských výrobků	C/10/10.6/10.62/
+10.71	Výroba pekařských a cukrářských výrobků, kromě trvanlivých	C/10/10.7/10.71/
+10.72	Výroba sucharů a sušenek; výroba trvanlivých cukrářských výrobků	C/10/10.7/10.72/
+10.73	Výroba makaronů, nudlí, kuskusu a podobných moučných výrobků	C/10/10.7/10.73/
+10.81	Výroba cukru	C/10/10.8/10.81/
+10.82	Výroba kakaa, čokolády a cukrovinek	C/10/10.8/10.82/
+10.83	Zpracování čaje a kávy	C/10/10.8/10.83/
+10.84	Výroba koření a aromatických výtažků	C/10/10.8/10.84/
+10.85	Výroba hotových pokrmů	C/10/10.8/10.85/
+10.86	Výroba homogenizovaných potravinářských přípravků a dietních potravin	C/10/10.8/10.86/
+10.89	Výroba ostatních potravinářských výrobků j. n.	C/10/10.8/10.89/
+10.91	Výroba průmyslových krmiv pro hospodářská zvířata	C/10/10.9/10.91/
+10.92	Výroba průmyslových krmiv pro zvířata v zájmovém chovu	C/10/10.9/10.92/
+11.01	Destilace, rektifikace a míchání lihovin	C/11/11.0/11.01/
+11.02	Výroba vína z vinných hroznů	C/11/11.0/11.02/
+11.03	Výroba jablečného vína a jiných ovocných vín	C/11/11.0/11.03/
+11.04	Výroba ostatních nedestilovaných kvašených nápojů	C/11/11.0/11.04/
+11.05	Výroba piva	C/11/11.0/11.05/
+11.06	Výroba sladu	C/11/11.0/11.06/
+11.07	Výroba nealkoholických nápojů; stáčení minerálních a ostatních vod do lahví	C/11/11.0/11.07/
+12.00	Výroba tabákových výrobků	C/12/12.0/12.00/
+13.10	Úprava a spřádání textilních vláken a příze	C/13/13.1/13.10/
+13.20	Tkaní textilií	C/13/13.2/13.20/
+13.30	Konečná úprava textilií	C/13/13.3/13.30/
+13.91	Výroba pletených a háčkovaných materiálů	C/13/13.9/13.91/
+13.92	Výroba konfekčních textilních výrobků, kromě oděvů	C/13/13.9/13.92/
+13.93	Výroba koberců a kobercových předložek	C/13/13.9/13.93/
+13.94	Výroba lan, provazů a síťovaných výrobků	C/13/13.9/13.94/
+13.95	Výroba netkaných textilií a výrobků z nich, kromě oděvů	C/13/13.9/13.95/
+13.96	Výroba ostatních technických a průmyslových textilií	C/13/13.9/13.96/
+13.99	Výroba ostatních textilií j. n.	C/13/13.9/13.99/
+14.11	Výroba kožených oděvů	C/14/14.1/14.11/
+14.12	Výroba pracovních oděvů	C/14/14.1/14.12/
+14.13	Výroba ostatních svrchních oděvů	C/14/14.1/14.13/
+14.14	Výroba osobního prádla	C/14/14.1/14.14/
+14.19	Výroba ostatních oděvů a oděvních doplňků	C/14/14.1/14.19/
+14.20	Výroba kožešinových výrobků	C/14/14.2/14.20/
+14.31	Výroba pletených a háčkovaných punčochových výrobků	C/14/14.3/14.31/
+14.39	Výroba ostatních pletených a háčkovaných oděvů	C/14/14.3/14.39/
+15.11	Činění a úprava usní (vyčiněných kůží); zpracování a barvení kožešin	C/15/15.1/15.11/
+15.12	Výroba brašnářských, sedlářských a podobných výrobků	C/15/15.1/15.12/
+15.20.1	Výroba obuvi s usňovým svrškem	C/15/15.2/15.20.1/
+15.20.9	Výroba obuvi z ostatních materiálů	C/15/15.2/15.20.9/
+15.20	Výroba obuvi	C/15/15.2/15.20/
+16.10	Výroba pilařská a impregnace dřeva	C/16/16.1/16.10/
+16.21	Výroba dýh a desek na bázi dřeva	C/16/16.2/16.21/
+16.22	Výroba sestavených parketových podlah	C/16/16.2/16.22/
+16.23	Výroba ostatních výrobků stavebního truhlářství a tesařství	C/16/16.2/16.23/
+16.24	Výroba dřevěných obalů	C/16/16.2/16.24/
+16.29	Výroba ostatních dřevěných, korkových, proutěných a slaměných výrobků, kromě nábytku	C/16/16.2/16.29/
+17.11.1	Výroba chemických buničin	C/17/17.1/17.11.1/
+17.11.2	Výroba mechanických vláknin	C/17/17.1/17.11.2/
+17.11.3	Výroba ostatních papírenských vláknin	C/17/17.1/17.11.3/
+17.11	Výroba buničiny	C/17/17.1/17.11/
+17.12	Výroba papíru a lepenky	C/17/17.1/17.12/
+17.21	Výroba vlnitého papíru a lepenky, papírových a lepenkových obalů	C/17/17.2/17.21/
+17.22	Výroba domácích potřeb, hygienických a toaletních výrobků z papíru	C/17/17.2/17.22/
+17.23	Výroba kancelářských potřeb z papíru	C/17/17.2/17.23/
+17.24	Výroba tapet	C/17/17.2/17.24/
+17.29	Výroba ostatních výrobků z papíru a lepenky	C/17/17.2/17.29/
+18.11	Tisk novin	C/18/18.1/18.11/
+18.12	Tisk ostatní, kromě novin	C/18/18.1/18.12/
+18.13	Příprava tisku a digitálních dat	C/18/18.1/18.13/
+18.14	Vázání a související činnosti	C/18/18.1/18.14/
+18.20	Rozmnožování nahraných nosičů	C/18/18.2/18.20/
+19.10	Výroba koksárenských produktů	C/19/19.1/19.10/
+19.20	Výroba rafinovaných ropných produktů	C/19/19.2/19.20/
+20.11	Výroba technických plynů	C/20/20.1/20.11/
+20.12	Výroba barviv a pigmentů	C/20/20.1/20.12/
+20.13	Výroba jiných základních anorganických chemických látek	C/20/20.1/20.13/
+20.14.1	Výroba bioetanolu (biolihu) pro pohon motorů a pro výrobu směsí a komponent paliv pro pohon motorů	C/20/20.1/20.14.1/
+20.14.9	Výroba ostatních základních organických chemických látek	C/20/20.1/20.14.9/
+20.14	Výroba jiných základních organických chemických látek	C/20/20.1/20.14/
+20.15	Výroba hnojiv a dusíkatých sloučenin	C/20/20.1/20.15/
+20.16	Výroba plastů v primárních formách	C/20/20.1/20.16/
+20.17	Výroba syntetického kaučuku v primárních formách	C/20/20.1/20.17/
+20.20	Výroba pesticidů a jiných agrochemických přípravků	C/20/20.2/20.20/
+20.30	Výroba nátěrových barev, laků a jiných nátěrových materiálů, tiskařských barev a tmelů	C/20/20.3/20.30/
+20.41	Výroba mýdel a detergentů, čisticích a lešticích prostředků	C/20/20.4/20.41/
+20.42	Výroba parfémů a toaletních přípravků	C/20/20.4/20.42/
+20.51	Výroba výbušnin	C/20/20.5/20.51/
+20.52	Výroba klihů	C/20/20.5/20.52/
+20.53	Výroba vonných silic	C/20/20.5/20.53/
+20.59.1	Výroba metylesterů a etylesterů mastných kyselin pro pohon motorů a pro výrobu směsí paliv pro pohon motorů	C/20/20.5/20.59.1/
+20.59.9	Výroba jiných chemických výrobků j. n.	C/20/20.5/20.59.9/
+20.59	Výroba ostatních chemických výrobků j. n.	C/20/20.5/20.59/
+20.60	Výroba chemických vláken	C/20/20.6/20.60/
+21.10	Výroba základních farmaceutických výrobků	C/21/21.1/21.10/
+21.20	Výroba farmaceutických přípravků	C/21/21.2/21.20/
+22.11	Výroba pryžových plášťů a duší; protektorování pneumatik	C/22/22.1/22.11/
+22.19	Výroba ostatních pryžových výrobků	C/22/22.1/22.19/
+22.21	Výroba plastových desek, fólií, hadic, trubek a profilů	C/22/22.2/22.21/
+22.22	Výroba plastových obalů	C/22/22.2/22.22/
+22.23	Výroba plastových výrobků pro stavebnictví	C/22/22.2/22.23/
+22.29	Výroba ostatních plastových výrobků	C/22/22.2/22.29/
+23.11	Výroba plochého skla	C/23/23.1/23.11/
+23.12	Tvarování a zpracování plochého skla	C/23/23.1/23.12/
+23.13	Výroba dutého skla	C/23/23.1/23.13/
+23.14	Výroba skleněných vláken	C/23/23.1/23.14/
+23.19	Výroba a zpracování ostatního skla vč. technického	C/23/23.1/23.19/
+23.20	Výroba žáruvzdorných výrobků	C/23/23.2/23.20/
+23.31	Výroba keramických obkládaček a dlaždic	C/23/23.3/23.31/
+23.32	Výroba pálených zdicích materiálů, tašek, dlaždic a podobných výrobků	C/23/23.3/23.32/
+23.41	Výroba keramických a porcelánových výrobků převážně pro domácnost a ozdobných předmětů	C/23/23.4/23.41/
+23.42	Výroba keramických sanitárních výrobků	C/23/23.4/23.42/
+23.43	Výroba keramických izolátorů a izolačního příslušenství	C/23/23.4/23.43/
+23.44	Výroba ostatních technických keramických výrobků	C/23/23.4/23.44/
+23.49	Výroba ostatních keramických výrobků	C/23/23.4/23.49/
+23.51	Výroba cementu	C/23/23.5/23.51/
+23.52	Výroba vápna a sádry	C/23/23.5/23.52/
+23.61	Výroba betonových výrobků pro stavební účely	C/23/23.6/23.61/
+23.62	Výroba sádrových výrobků pro stavební účely	C/23/23.6/23.62/
+23.63	Výroba betonu připraveného k lití	C/23/23.6/23.63/
+23.64	Výroba malt	C/23/23.6/23.64/
+23.65	Výroba vláknitých cementů	C/23/23.6/23.65/
+23.69	Výroba ostatních betonových, cementových a sádrových výrobků	C/23/23.6/23.69/
+23.70	Řezání, tvarování a konečná úprava kamenů	C/23/23.7/23.70/
+23.91	Výroba brusiv	C/23/23.9/23.91/
+23.99	Výroba ostatních nekovových minerálních výrobků j. n.	C/23/23.9/23.99/
+24.10.1	Výroba surového železa, oceli a feroslitin	C/24/24.1/24.10.1/
+24.10.2	Výroba plochých výrobků (kromě pásky za studena)	C/24/24.1/24.10.2/
+24.10.3	Tváření výrobků za tepla	C/24/24.1/24.10.3/
+24.10	Výroba surového železa, oceli a feroslitin, plochých výrobků (kromě pásky za studena), tváření výrobků za tepla	C/24/24.1/24.10/
+24.20	Výroba ocelových trub, trubek, dutých profilů a souvisejících potrubních tvarovek	C/24/24.2/24.20/
+24.31	Tažení tyčí za studena	C/24/24.3/24.31/
+24.32	Válcování ocelových úzkých pásů za studena	C/24/24.3/24.32/
+24.33	Tváření ocelových profilů za studena	C/24/24.3/24.33/
+24.34	Tažení ocelového drátu za studena	C/24/24.3/24.34/
+24.41	Výroba a hutní zpracování drahých kovů	C/24/24.4/24.41/
+24.42	Výroba a hutní zpracování hliníku	C/24/24.4/24.42/
+24.43	Výroba a hutní zpracování olova, zinku a cínu	C/24/24.4/24.43/
+24.44	Výroba a hutní zpracování mědi	C/24/24.4/24.44/
+24.45	Výroba a hutní zpracování ostatních neželezných kovů	C/24/24.4/24.45/
+24.46	Zpracování jaderného paliva	C/24/24.4/24.46/
+24.51.1	Výroba odlitků z litiny s lupínkovým grafitem	C/24/24.5/24.51.1/
+24.51.2	Výroba odlitků z litiny s kuličkovým grafitem	C/24/24.5/24.51.2/
+24.51.9	Výroba ostatních odlitků z litiny	C/24/24.5/24.51.9/
+24.51	Výroba odlitků z litiny	C/24/24.5/24.51/
+24.52.1	Výroba odlitků z uhlíkatých ocelí	C/24/24.5/24.52.1/
+24.52.2	Výroba odlitků z legovaných ocelí	C/24/24.5/24.52.2/
+24.52	Výroba odlitků z oceli	C/24/24.5/24.52/
+24.53	Výroba odlitků z lehkých neželezných kovů	C/24/24.5/24.53/
+24.54	Výroba odlitků z ostatních neželezných kovů	C/24/24.5/24.54/
+25.11	Výroba kovových konstrukcí a jejich dílů	C/25/25.1/25.11/
+25.12	Výroba kovových dveří a oken	C/25/25.1/25.12/
+25.21	Výroba radiátorů a kotlů k ústřednímu topení	C/25/25.2/25.21/
+25.29	Výroba kovových nádrží a zásobníků	C/25/25.2/25.29/
+25.30	Výroba parních kotlů, kromě kotlů pro ústřední topení	C/25/25.3/25.30/
+25.40	Výroba zbraní a střeliva	C/25/25.4/25.40/
+25.50	Kování, lisování, ražení, válcování a protlačování kovů; prášková metalurgie	C/25/25.5/25.50/
+25.61	Povrchová úprava a zušlechťování kovů	C/25/25.6/25.61/
+25.62	Obrábění	C/25/25.6/25.62/
+25.71	Výroba nožířských výrobků	C/25/25.7/25.71/
+25.72	Výroba zámků a kování	C/25/25.7/25.72/
+25.73	Výroba nástrojů a nářadí	C/25/25.7/25.73/
+25.91	Výroba ocelových sudů a podobných nádob	C/25/25.9/25.91/
+25.92	Výroba drobných kovových obalů	C/25/25.9/25.92/
+25.93	Výroba drátěných výrobků, řetězů a pružin	C/25/25.9/25.93/
+25.94	Výroba spojovacích materiálů a spojovacích výrobků se závity	C/25/25.9/25.94/
+25.99	Výroba ostatních kovodělných výrobků j. n.	C/25/25.9/25.99/
+26.11	Výroba elektronických součástek	C/26/26.1/26.11/
+26.12	Výroba osazených elektronických desek	C/26/26.1/26.12/
+26.20	Výroba počítačů a periferních zařízení	C/26/26.2/26.20/
+26.30	Výroba komunikačních zařízení	C/26/26.3/26.30/
+26.40	Výroba spotřební elektroniky	C/26/26.4/26.40/
+26.51	Výroba měřicích, zkušebních a navigačních přístrojů	C/26/26.5/26.51/
+26.52	Výroba časoměrných přístrojů	C/26/26.5/26.52/
+26.60	Výroba ozařovacích, elektroléčebných a elektroterapeutických přístrojů	C/26/26.6/26.60/
+26.70	Výroba optických a fotografických přístrojů a zařízení	C/26/26.7/26.70/
+26.80	Výroba magnetických a optických médií	C/26/26.8/26.80/
+27.11	Výroba elektrických motorů, generátorů a transformátorů	C/27/27.1/27.11/
+27.12	Výroba elektrických rozvodných a kontrolních zařízení	C/27/27.1/27.12/
+27.20	Výroba baterií a akumulátorů	C/27/27.2/27.20/
+27.31	Výroba optických kabelů	C/27/27.3/27.31/
+27.32	Výroba elektrických vodičů a kabelů j. n.	C/27/27.3/27.32/
+27.33	Výroba elektroinstalačních zařízení	C/27/27.3/27.33/
+27.40	Výroba elektrických osvětlovacích zařízení	C/27/27.4/27.40/
+27.51	Výroba elektrických spotřebičů převážně pro domácnost	C/27/27.5/27.51/
+27.52	Výroba neelektrických spotřebičů převážně pro domácnost	C/27/27.5/27.52/
+27.90	Výroba ostatních elektrických zařízení	C/27/27.9/27.90/
+28.11	Výroba motorů a turbín, kromě motorů pro letadla, automobily a motocykly	C/28/28.1/28.11/
+28.12	Výroba hydraulických a pneumatických zařízení	C/28/28.1/28.12/
+28.13	Výroba ostatních čerpadel a kompresorů	C/28/28.1/28.13/
+28.14	Výroba ostatních potrubních armatur	C/28/28.1/28.14/
+28.15	Výroba ložisek, ozubených kol, převodů a hnacích prvků	C/28/28.1/28.15/
+28.21	Výroba pecí a hořáků pro topeniště	C/28/28.2/28.21/
+28.22	Výroba zdvihacích a manipulačních zařízení	C/28/28.2/28.22/
+28.23	Výroba kancelářských strojů a zařízení, kromě počítačů a periferních zařízení	C/28/28.2/28.23/
+28.24	Výroba ručních mechanizovaných nástrojů	C/28/28.2/28.24/
+28.25	Výroba průmyslových chladicích a klimatizačních zařízení	C/28/28.2/28.25/
+28.29	Výroba ostatních strojů a zařízení pro všeobecné účely j. n.	C/28/28.2/28.29/
+28.30	Výroba zemědělských a lesnických strojů	C/28/28.3/28.30/
+28.41	Výroba kovoobráběcích strojů	C/28/28.4/28.41/
+28.49	Výroba ostatních obráběcích strojů	C/28/28.4/28.49/
+28.91	Výroba strojů pro metalurgii	C/28/28.9/28.91/
+28.92	Výroba strojů pro těžbu, dobývání a stavebnictví	C/28/28.9/28.92/
+28.93	Výroba strojů na výrobu potravin, nápojů a zpracování tabáku	C/28/28.9/28.93/
+28.94	Výroba strojů na výrobu textilu, oděvních výrobků a výrobků z usní	C/28/28.9/28.94/
+28.95	Výroba strojů a přístrojů na výrobu papíru a lepenky	C/28/28.9/28.95/
+28.96	Výroba strojů na výrobu plastů a pryže	C/28/28.9/28.96/
+28.99	Výroba ostatních strojů pro speciální účely j. n.	C/28/28.9/28.99/
+29.10	Výroba motorových vozidel a jejich motorů	C/29/29.1/29.10/
+29.20	Výroba karoserií motorových vozidel; výroba přívěsů a návěsů	C/29/29.2/29.20/
+29.31	Výroba elektrického a elektronického zařízení pro motorová vozidla	C/29/29.3/29.31/
+29.32	Výroba ostatních dílů a příslušenství pro motorová vozidla	C/29/29.3/29.32/
+30.11	Stavba lodí a plavidel	C/30/30.1/30.11/
+30.12	Stavba rekreačních a sportovních člunů	C/30/30.1/30.12/
+30.20	Výroba železničních lokomotiv a vozového parku	C/30/30.2/30.20/
+30.30	Výroba letadel a jejich motorů, kosmických lodí a souvisejících zařízení	C/30/30.3/30.30/
+30.40	Výroba vojenských bojových vozidel	C/30/30.4/30.40/
+30.91	Výroba motocyklů	C/30/30.9/30.91/
+30.92	Výroba jízdních kol a vozíků pro invalidy	C/30/30.9/30.92/
+30.99	Výroba ostatních dopravních prostředků a zařízení j. n.	C/30/30.9/30.99/
+31.01	Výroba kancelářského nábytku a zařízení obchodů	C/31/31.0/31.01/
+31.02	Výroba kuchyňského nábytku	C/31/31.0/31.02/
+31.03	Výroba matrací	C/31/31.0/31.03/
+31.09	Výroba ostatního nábytku	C/31/31.0/31.09/
+32.11	Ražení mincí	C/32/32.1/32.11/
+32.12	Výroba klenotů a příbuzných výrobků	C/32/32.1/32.12/
+32.13	Výroba bižuterie a příbuzných výrobků	C/32/32.1/32.13/
+32.20	Výroba hudebních nástrojů	C/32/32.2/32.20/
+32.30	Výroba sportovních potřeb	C/32/32.3/32.30/
+32.40	Výroba her a hraček	C/32/32.4/32.40/
+32.50	Výroba lékařských a dentálních nástrojů a potřeb	C/32/32.5/32.50/
+32.91	Výroba košťat a kartáčnických výrobků	C/32/32.9/32.91/
+32.99	Ostatní zpracovatelský průmysl j. n.	C/32/32.9/32.99/
+33.11	Opravy kovodělných výrobků	C/33/33.1/33.11/
+33.12	Opravy strojů	C/33/33.1/33.12/
+33.13	Opravy elektronických a optických přístrojů a zařízení	C/33/33.1/33.13/
+33.14	Opravy elektrických zařízení	C/33/33.1/33.14/
+33.15	Opravy a údržba lodí a člunů	C/33/33.1/33.15/
+33.16	Opravy a údržba letadel a kosmických lodí	C/33/33.1/33.16/
+33.17.1	Opravy a údržba kolejových vozidel	C/33/33.1/33.17.1/
+33.17.9	Opravy a údržba ostatních dopravních prostředků a zařízení j. n. kromě kolejových vozidel	C/33/33.1/33.17.9/
+33.17	Opravy a údržba ostatních dopravních prostředků a zařízení j. n.	C/33/33.1/33.17/
+33.19	Opravy ostatních zařízení	C/33/33.1/33.19/
+33.20	Instalace průmyslových strojů a zařízení	C/33/33.2/33.20/
+35.11	Výroba elektřiny	D/35/35.1/35.11/
+35.12	Přenos elektřiny	D/35/35.1/35.12/
+35.13	Rozvod elektřiny	D/35/35.1/35.13/
+35.14	Obchod s elektřinou	D/35/35.1/35.14/
+35.21	Výroba plynu	D/35/35.2/35.21/
+35.22	Rozvod plynných paliv prostřednictvím sítí	D/35/35.2/35.22/
+35.23	Obchod s plynem prostřednictvím sítí	D/35/35.2/35.23/
+35.30.1	Výroba tepla	D/35/35.3/35.30.1/
+35.30.2	Rozvod tepla	D/35/35.3/35.30.2/
+35.30.3	Výroba klimatizovaného vzduchu	D/35/35.3/35.30.3/
+35.30.4	Rozvod klimatizovaného vzduchu	D/35/35.3/35.30.4/
+35.30.5	Výroba chladicí vody	D/35/35.3/35.30.5/
+35.30.6	Rozvod chladicí vody	D/35/35.3/35.30.6/
+35.30.7	Výroba ledu	D/35/35.3/35.30.7/
+35.30	Výroba a rozvod tepla a klimatizovaného vzduchu, výroba ledu	D/35/35.3/35.30/
+36.00	Shromažďování, úprava a rozvod vody	E/36/36.0/36.00/
+37.00	Činnosti související s odpadními vodami	E/37/37.0/37.00/
+38.11	Shromažďování a sběr odpadů, kromě nebezpečných	E/38/38.1/38.11/
+38.12	Shromažďování a sběr nebezpečných odpadů	E/38/38.1/38.12/
+38.21	Odstraňování odpadů, kromě nebezpečných	E/38/38.2/38.21/
+38.22	Odstraňování nebezpečných odpadů	E/38/38.2/38.22/
+38.31	Demontáž vraků a vyřazených strojů a zařízení pro účely recyklace	E/38/38.3/38.31/
+38.32	Úprava odpadů k dalšímu využití, kromě demontáže vraků, strojů a zařízení	E/38/38.3/38.32/
+39.00	Sanace a jiné činnosti související s odpady	E/39/39.0/39.00/
+41.10	Developerská činnost	F/41/41.1/41.10/
+41.20.1	Výstavba bytových budov	F/41/41.2/41.20.1/
+41.20.2	Výstavba nebytových budov	F/41/41.2/41.20.2/
+41.20	Výstavba bytových a nebytových budov	F/41/41.2/41.20/
+42.11	Výstavba silnic a dálnic	F/42/42.1/42.11/
+42.12	Výstavba železnic a podzemních drah	F/42/42.1/42.12/
+42.13	Výstavba mostů a tunelů	F/42/42.1/42.13/
+42.21.1	Výstavba inženýrských sítí pro kapaliny	F/42/42.2/42.21.1/
+42.21.2	Výstavba inženýrských sítí pro plyny	F/42/42.2/42.21.2/
+42.21	Výstavba inženýrských sítí pro kapaliny a plyny	F/42/42.2/42.21/
+42.22	Výstavba inženýrských sítí pro elektřinu a telekomunikace	F/42/42.2/42.22/
+42.91	Výstavba vodních děl	F/42/42.9/42.91/
+42.99	Výstavba ostatních staveb j. n.	F/42/42.9/42.99/
+43.11	Demolice	F/43/43.1/43.11/
+43.12	Příprava staveniště	F/43/43.1/43.12/
+43.13	Průzkumné vrtné práce	F/43/43.1/43.13/
+43.21	Elektrické instalace	F/43/43.2/43.21/
+43.22	Instalace vody, odpadu, plynu, topení a klimatizace	F/43/43.2/43.22/
+43.29	Ostatní stavební instalace	F/43/43.2/43.29/
+43.31	Omítkářské práce	F/43/43.3/43.31/
+43.32	Truhlářské práce	F/43/43.3/43.32/
+43.33	Obkládání stěn a pokládání podlahových krytin	F/43/43.3/43.33/
+43.34.1	Sklenářské práce	F/43/43.3/43.34.1/
+43.34.2	Malířské a natěračské práce	F/43/43.3/43.34.2/
+43.34	Sklenářské, malířské a natěračské práce	F/43/43.3/43.34/
+43.39	Ostatní kompletační a dokončovací práce	F/43/43.3/43.39/
+43.91	Pokrývačské práce	F/43/43.9/43.91/
+43.99.1	Montáž a demontáž lešení a bednění	F/43/43.9/43.99.1/
+43.99.9	Jiné specializované stavební činnosti j. n.	F/43/43.9/43.99.9/
+43.99	Ostatní specializované stavební činnosti j. n.	F/43/43.9/43.99/
+45.11	Obchod s automobily a jinými lehkými motorovými vozidly	G/45/45.1/45.11/
+45.19	Obchod s ostatními motorovými vozidly, kromě motocyklů	G/45/45.1/45.19/
+45.20	Opravy a údržba motorových vozidel, kromě motocyklů	G/45/45.2/45.20/
+45.31	Velkoobchod s díly a příslušenstvím pro motorová vozidla, kromě motocyklů	G/45/45.3/45.31/
+45.32	Maloobchod s díly a příslušenstvím pro motorová vozidla, kromě motocyklů	G/45/45.3/45.32/
+45.40	Obchod, opravy a údržba motocyklů, jejich dílů a příslušenství	G/45/45.4/45.40/
+46.11	Zprostředkování velkoobchodu a velkoobchod v zastoupení se základními zemědělskými produkty, živými zvířaty, textilními surovinami a polotovary	G/46/46.1/46.11/
+46.12	Zprostředkování velkoobchodu a velkoobchod v zastoupení s palivy, rudami, kovy a průmyslovými chemikáliemi	G/46/46.1/46.12/
+46.13	Zprostředkování velkoobchodu a velkoobchod v zastoupení se dřevem a stavebními materiály	G/46/46.1/46.13/
+46.14	Zprostředkování velkoobchodu a velkoobchod v zastoupení se stroji, průmyslovým zařízením, loděmi a letadly	G/46/46.1/46.14/
+46.15	Zprostředkování velkoobchodu a velkoobchod v zastoupení s nábytkem, železářským zbožím a potřebami převážně pro domácnost	G/46/46.1/46.15/
+46.16	Zprostředkování velkoobchodu a velkoobchod v zastoupení s textilem, oděvy, kožešinami, obuví a koženými výrobky	G/46/46.1/46.16/
+46.17	Zprostředkování velkoobchodu a velkoobchod v zastoupení s potravinami, nápoji, tabákem a tabákovými výrobky	G/46/46.1/46.17/
+46.18.1	Zprostředkování velkoobchodu a velkoobchod v zastoupení s papírenskými výrobky	G/46/46.1/46.18.1/
+46.18.9	Zprostředkování specializovaného velkoobchodu a velkoobchod v zastoupení s ostatními výrobky j. n.	G/46/46.1/46.18.9/
+46.18	Zprostředkování specializovaného velkoobchodu a specializovaný velkoobchod v zastoupení s ostatními výrobky	G/46/46.1/46.18/
+46.19	Zprostředkování nespecializovaného velkoobchodu a nespecializovaný velkoobchod v zastoupení	G/46/46.1/46.19/
+46.21	Velkoobchod s obilím, surovým tabákem, osivy a krmivy	G/46/46.2/46.21/
+46.22	Velkoobchod s květinami a jinými rostlinami	G/46/46.2/46.22/
+46.23	Velkoobchod s živými zvířaty	G/46/46.2/46.23/
+46.24	Velkoobchod se surovými kůžemi, kožešinami a usněmi	G/46/46.2/46.24/
+46.31	Velkoobchod s ovocem a zeleninou	G/46/46.3/46.31/
+46.32	Velkoobchod s masem a masnými výrobky	G/46/46.3/46.32/
+46.33	Velkoobchod s mléčnými výrobky, vejci, jedlými oleji a tuky	G/46/46.3/46.33/
+46.34	Velkoobchod s nápoji	G/46/46.3/46.34/
+46.35	Velkoobchod s tabákovými výrobky	G/46/46.3/46.35/
+46.36	Velkoobchod s cukrem, čokoládou a cukrovinkami	G/46/46.3/46.36/
+46.37	Velkoobchod s kávou, čajem, kakaem a kořením	G/46/46.3/46.37/
+46.38	Specializovaný velkoobchod s jinými potravinami, včetně ryb, korýšů a měkkýšů	G/46/46.3/46.38/
+46.39	Nespecializovaný velkoobchod s potravinami, nápoji a tabákovými výrobky	G/46/46.3/46.39/
+46.41	Velkoobchod s textilem	G/46/46.4/46.41/
+46.42.1	Velkoobchod s oděvy	G/46/46.4/46.42.1/
+46.42.2	Velkoobchod s obuví	G/46/46.4/46.42.2/
+46.42	Velkoobchod s oděvy a obuví	G/46/46.4/46.42/
+46.43	Velkoobchod s elektrospotřebiči a elektronikou	G/46/46.4/46.43/
+46.44.1	Velkoobchod s porcelánovými, keramickými a skleněnými výrobky	G/46/46.4/46.44.1/
+46.44.2	Velkoobchod s pracími a čisticími prostředky	G/46/46.4/46.44.2/
+46.44	Velkoobchod s porcelánovými, keramickými a skleněnými výrobky a čisticími prostředky	G/46/46.4/46.44/
+46.45	Velkoobchod s kosmetickými výrobky	G/46/46.4/46.45/
+46.46	Velkoobchod s farmaceutickými výrobky	G/46/46.4/46.46/
+46.47	Velkoobchod s nábytkem, koberci a svítidly	G/46/46.4/46.47/
+46.48	Velkoobchod s hodinami, hodinkami a klenoty	G/46/46.4/46.48/
+46.49	Velkoobchod s ostatními výrobky převážně pro domácnost	G/46/46.4/46.49/
+46.51	Velkoobchod s počítači, počítačovým periferním zařízením a softwarem	G/46/46.5/46.51/
+46.52	Velkoobchod s elektronickým a telekomunikačním zařízením a jeho díly	G/46/46.5/46.52/
+46.61	Velkoobchod se zemědělskými stroji, strojním zařízením a příslušenstvím	G/46/46.6/46.61/
+46.62	Velkoobchod s obráběcími stroji	G/46/46.6/46.62/
+46.63	Velkoobchod s těžebními a stavebními stroji a zařízením	G/46/46.6/46.63/
+46.64	Velkoobchod se strojním zařízením pro textilní průmysl, šicími a pletacími stroji	G/46/46.6/46.64/
+46.65	Velkoobchod s kancelářským nábytkem	G/46/46.6/46.65/
+46.66	Velkoobchod s ostatními kancelářskými stroji a zařízením	G/46/46.6/46.66/
+46.69	Velkoobchod s ostatními stroji a zařízením	G/46/46.6/46.69/
+46.71.1	Velkoobchod s pevnými palivy a příbuznými výrobky	G/46/46.7/46.71.1/
+46.71.2	Velkoobchod s kapalnými palivy a příbuznými výrobky	G/46/46.7/46.71.2/
+46.71.3	Velkoobchod s plynnými palivy a příbuznými výrobky	G/46/46.7/46.71.3/
+46.71	Velkoobchod s pevnými, kapalnými a plynnými palivy a příbuznými výrobky	G/46/46.7/46.71/
+46.72	Velkoobchod s rudami, kovy a hutními výrobky	G/46/46.7/46.72/
+46.73	Velkoobchod se dřevem, stavebními materiály a sanitárním vybavením	G/46/46.7/46.73/
+46.74	Velkoobchod s železářským zbožím, instalatérskými a topenářskými potřebami	G/46/46.7/46.74/
+46.75	Velkoobchod s chemickými výrobky	G/46/46.7/46.75/
+46.76.1	Velkoobchod s papírenskými meziprodukty	G/46/46.7/46.76.1/
+46.76.9	Velkoobchod s ostatními meziprodukty j. n.	G/46/46.7/46.76.9/
+46.76	Velkoobchod s ostatními meziprodukty	G/46/46.7/46.76/
+46.77	Velkoobchod s odpadem a šrotem	G/46/46.7/46.77/
+46.90	Nespecializovaný velkoobchod	G/46/46.9/46.90/
+47.11	Maloobchod s převahou potravin, nápojů a tabákových výrobků v nespecializovaných prodejnách	G/47/47.1/47.11/
+47.19	Ostatní maloobchod v nespecializovaných prodejnách	G/47/47.1/47.19/
+47.21	Maloobchod s ovocem a zeleninou	G/47/47.2/47.21/
+47.22	Maloobchod s masem a masnými výrobky	G/47/47.2/47.22/
+47.23	Maloobchod s rybami, korýši a měkkýši	G/47/47.2/47.23/
+47.24	Maloobchod s chlebem, pečivem, cukrářskými výrobky a cukrovinkami	G/47/47.2/47.24/
+47.25	Maloobchod s nápoji	G/47/47.2/47.25/
+47.26	Maloobchod s tabákovými výrobky	G/47/47.2/47.26/
+47.29	Ostatní maloobchod s potravinami ve specializovaných prodejnách	G/47/47.2/47.29/
+47.30	Maloobchod s pohonnými hmotami ve specializovaných prodejnách	G/47/47.3/47.30/
+47.41	Maloobchod s počítači, počítačovým periferním zařízením a softwarem	G/47/47.4/47.41/
+47.42	Maloobchod s telekomunikačním zařízením	G/47/47.4/47.42/
+47.43	Maloobchod s audio- a videozařízením	G/47/47.4/47.43/
+47.51	Maloobchod s textilem	G/47/47.5/47.51/
+47.52	Maloobchod s železářským zbožím, barvami, sklem a potřebami pro kutily	G/47/47.5/47.52/
+47.53	Maloobchod s koberci, podlahovými krytinami a nástěnnými obklady	G/47/47.5/47.53/
+47.54	Maloobchod s elektrospotřebiči a elektronikou	G/47/47.5/47.54/
+47.59	Maloobchod s nábytkem, svítidly a ostatními výrobky převážně pro domácnost ve specializovaných prodejnách	G/47/47.5/47.59/
+47.61	Maloobchod s knihami	G/47/47.6/47.61/
+47.62	Maloobchod s novinami, časopisy a papírnickým zbožím	G/47/47.6/47.62/
+47.63	Maloobchod s audio- a videozáznamy	G/47/47.6/47.63/
+47.64	Maloobchod se sportovním vybavením	G/47/47.6/47.64/
+47.65	Maloobchod s hrami a hračkami	G/47/47.6/47.65/
+47.71	Maloobchod s oděvy	G/47/47.7/47.71/
+47.72	Maloobchod s obuví a koženými výrobky	G/47/47.7/47.72/
+47.73	Maloobchod s farmaceutickými přípravky	G/47/47.7/47.73/
+47.74	Maloobchod se zdravotnickými a ortopedickými výrobky	G/47/47.7/47.74/
+47.75	Maloobchod s kosmetickými a toaletními výrobky	G/47/47.7/47.75/
+47.76	Maloobchod s květinami, rostlinami, osivy, hnojivy, zvířaty pro zájmový chov a krmivy pro ně	G/47/47.7/47.76/
+47.77	Maloobchod s hodinami, hodinkami a klenoty	G/47/47.7/47.77/
+47.78.1	Maloobchod s fotografickým a optickým zařízením a potřebami	G/47/47.7/47.78.1/
+47.78.2	Maloobchod s pevnými palivy	G/47/47.7/47.78.2/
+47.78.3	Maloobchod s kapalnými palivy (kromě pohonných hmot)	G/47/47.7/47.78.3/
+47.78.4	Maloobchod s plynnými palivy (kromě pohonných hmot)	G/47/47.7/47.78.4/
+47.78.9	Ostatní maloobchod s novým zbožím ve specializovaných prodejnách j. n.	G/47/47.7/47.78.9/
+47.78	Ostatní maloobchod s novým zbožím ve specializovaných prodejnách	G/47/47.7/47.78/
+47.79	Maloobchod s použitým zbožím v prodejnách	G/47/47.7/47.79/
+47.81	Maloobchod s potravinami, nápoji a tabákovými výrobky ve stáncích a na trzích	G/47/47.8/47.81/
+47.82	Maloobchod s textilem, oděvy a obuví ve stáncích a na trzích	G/47/47.8/47.82/
+47.89	Maloobchod s ostatním zbožím ve stáncích a na trzích	G/47/47.8/47.89/
+47.91.1	Maloobchod prostřednictvím internetu	G/47/47.9/47.91.1/
+47.91.2	Maloobchod prostřednictvím zásilkové služby (jiný než prostřednictvím internetu)	G/47/47.9/47.91.2/
+47.91	Maloobchod prostřednictvím internetu nebo zásilkové služby	G/47/47.9/47.91/
+47.99	Ostatní maloobchod mimo prodejny, stánky a trhy	G/47/47.9/47.99/
+49.10	Železniční osobní doprava meziměstská	H/49/49.1/49.10/
+49.20	Železniční nákladní doprava	H/49/49.2/49.20/
+49.31	Městská a příměstská pozemní osobní doprava	H/49/49.3/49.31/
+49.32	Taxislužba a pronájem osobních vozů s řidičem	H/49/49.3/49.32/
+49.39.1	Meziměstská pravidelná pozemní osobní doprava	H/49/49.3/49.39.1/
+49.39.2	Osobní doprava lanovkou nebo vlekem	H/49/49.3/49.39.2/
+49.39.3	Nepravidelná pozemní osobní doprava	H/49/49.3/49.39.3/
+49.39.9	Jiná pozemní osobní doprava j. n.	H/49/49.3/49.39.9/
+49.39	Ostatní pozemní osobní doprava j. n.	H/49/49.3/49.39/
+49.41	Silniční nákladní doprava	H/49/49.4/49.41/
+49.42	Stěhovací služby	H/49/49.4/49.42/
+49.50.1	Potrubní doprava ropovodem	H/49/49.5/49.50.1/
+49.50.2	Potrubní doprava plynovodem	H/49/49.5/49.50.2/
+49.50.9	Potrubní doprava ostatní	H/49/49.5/49.50.9/
+49.50	Potrubní doprava	H/49/49.5/49.50/
+50.10	Námořní a pobřežní osobní doprava	H/50/50.1/50.10/
+50.20	Námořní a pobřežní nákladní doprava	H/50/50.2/50.20/
+50.30	Vnitrozemská vodní osobní doprava	H/50/50.3/50.30/
+50.40	Vnitrozemská vodní nákladní doprava	H/50/50.4/50.40/
+51.10.1	Vnitrostátní pravidelná letecká osobní doprava	H/51/51.1/51.10.1/
+51.10.2	Vnitrostátní nepravidelná letecká osobní doprava	H/51/51.1/51.10.2/
+51.10.3	Mezinárodní pravidelná letecká osobní doprava	H/51/51.1/51.10.3/
+51.10.4	Mezinárodní nepravidelná letecká osobní doprava	H/51/51.1/51.10.4/
+51.10.9	Ostatní letecká osobní doprava	H/51/51.1/51.10.9/
+51.10	Letecká osobní doprava	H/51/51.1/51.10/
+51.21	Letecká nákladní doprava	H/51/51.2/51.21/
+51.22	Kosmická doprava	H/51/51.2/51.22/
+52.10	Skladování	H/52/52.1/52.10/
+52.21	Činnosti související s pozemní dopravou	H/52/52.2/52.21/
+52.22	Činnosti související s vodní dopravou	H/52/52.2/52.22/
+52.23	Činnosti související s leteckou dopravou	H/52/52.2/52.23/
+52.24	Manipulace s nákladem	H/52/52.2/52.24/
+52.29	Ostatní vedlejší činnosti v dopravě	H/52/52.2/52.29/
+53.10	Základní poštovní služby poskytované na základě poštovní licence	H/53/53.1/53.10/
+53.20	Ostatní poštovní a kurýrní činnosti	H/53/53.2/53.20/
+55.10.1	Hotely	I/55/55.1/55.10.1/
+55.10.2	Motely, botely	I/55/55.1/55.10.2/
+55.10.9	Ostatní podobná ubytovací zařízení	I/55/55.1/55.10.9/
+55.10	Ubytování v hotelích a podobných ubytovacích zařízeních	I/55/55.1/55.10/
+55.20	Rekreační a ostatní krátkodobé ubytování	I/55/55.2/55.20/
+55.30	Kempy a tábořiště	I/55/55.3/55.30/
+55.90.1	Ubytování v zařízených pronájmech	I/55/55.9/55.90.1/
+55.90.2	Ubytování ve vysokoškolských kolejích, domovech mládeže	I/55/55.9/55.90.2/
+55.90.9	Ostatní ubytování j. n.	I/55/55.9/55.90.9/
+55.90	Ostatní ubytování	I/55/55.9/55.90/
+56.10	Stravování v restauracích, u stánků a v mobilních zařízeních	I/56/56.1/56.10/
+56.21	Poskytování cateringových služeb	I/56/56.2/56.21/
+56.29.1	Stravování v závodních kuchyních	I/56/56.2/56.29.1/
+56.29.2	Stravování ve školních zařízeních, menzách	I/56/56.2/56.29.2/
+56.29.9	Poskytování jiných stravovacích služeb j. n.	I/56/56.2/56.29.9/
+56.29	Poskytování ostatních stravovacích služeb	I/56/56.2/56.29/
+56.30	Pohostinství	I/56/56.3/56.30/
+58.11	Vydávání knih	J/58/58.1/58.11/
+58.12	Vydávání adresářů a jiných seznamů	J/58/58.1/58.12/
+58.13	Vydávání novin	J/58/58.1/58.13/
+58.14	Vydávání časopisů a ostatních periodických publikací	J/58/58.1/58.14/
+58.19	Ostatní vydavatelské činnosti	J/58/58.1/58.19/
+58.21	Vydávání počítačových her	J/58/58.2/58.21/
+58.29	Ostatní vydávání softwaru	J/58/58.2/58.29/
+59.11	Produkce filmů, videozáznamů a televizních programů	J/59/59.1/59.11/
+59.12	Postprodukce filmů, videozáznamů a televizních programů	J/59/59.1/59.12/
+59.13	Distribuce filmů, videozáznamů a televizních programů	J/59/59.1/59.13/
+59.14	Promítání filmů	J/59/59.1/59.14/
+59.20	Pořizování zvukových nahrávek a hudební vydavatelské činnosti	J/59/59.2/59.20/
+60.10	Rozhlasové vysílání	J/60/60.1/60.10/
+60.20	Tvorba televizních programů a televizní vysílání	J/60/60.2/60.20/
+61.10.1	Poskytování hlasových služeb přes pevnou telekomunikační síť	J/61/61.1/61.10.1/
+61.10.2	Pronájem pevné telekomunikační sítě	J/61/61.1/61.10.2/
+61.10.3	Přenos dat přes pevnou telekomunikační síť	J/61/61.1/61.10.3/
+61.10.4	Poskytování přístupu k internetu přes pevnou telekomunikační síť	J/61/61.1/61.10.4/
+61.10.9	Ostatní činnosti související s pevnou telekomunikační sítí	J/61/61.1/61.10.9/
+61.10	Činnosti související s pevnou telekomunikační sítí	J/61/61.1/61.10/
+61.20.1	Poskytování hlasových služeb přes bezdrátovou telekomunikační síť	J/61/61.2/61.20.1/
+61.20.2	Pronájem bezdrátové telekomunikační sítě	J/61/61.2/61.20.2/
+61.20.3	Přenos dat přes bezdrátovou telekomunikační síť	J/61/61.2/61.20.3/
+61.20.4	Poskytování přístupu k internetu přes bezdrátovou telekomunikační síť	J/61/61.2/61.20.4/
+61.20.9	Ostatní činnosti související s bezdrátovou telekomunikační sítí	J/61/61.2/61.20.9/
+61.20	Činnosti související s bezdrátovou telekomunikační sítí	J/61/61.2/61.20/
+61.30	Činnosti související se satelitní telekomunikační sítí	J/61/61.3/61.30/
+61.90	Ostatní telekomunikační činnosti	J/61/61.9/61.90/
+62.01	Programování	J/62/62.0/62.01/
+62.02	Poradenství v oblasti informačních technologií	J/62/62.0/62.02/
+62.03	Správa počítačového vybavení	J/62/62.0/62.03/
+62.09	Ostatní činnosti v oblasti informačních technologií	J/62/62.0/62.09/
+63.11	Činnosti související se zpracováním dat a hostingem	J/63/63.1/63.11/
+63.12	Činnosti související s webovými portály	J/63/63.1/63.12/
+63.91	Činnosti zpravodajských tiskových kanceláří a agentur	J/63/63.9/63.91/
+63.99	Ostatní informační činnosti j. n.	J/63/63.9/63.99/
+64.11	Centrální bankovnictví	K/64/64.1/64.11/
+64.19	Ostatní peněžní zprostředkování	K/64/64.1/64.19/
+64.20	Činnosti holdingových společností	K/64/64.2/64.20/
+64.30	Činnosti trustů, fondů a podobných finančních subjektů	K/64/64.3/64.30/
+64.91	Finanční leasing	K/64/64.9/64.91/
+64.92.1	Poskytování úvěrů společnostmi, které nepřijímají vklady	K/64/64.9/64.92.1/
+64.92.2	Poskytování obchodních úvěrů	K/64/64.9/64.92.2/
+64.92.3	Činnosti zastaváren	K/64/64.9/64.92.3/
+64.92.9	Ostatní poskytování úvěrů j. n.	K/64/64.9/64.92.9/
+64.92	Ostatní poskytování úvěrů	K/64/64.9/64.92/
+64.99.1	Faktoringové činnosti	K/64/64.9/64.99.1/
+64.99.2	Obchodování s cennými papíry na vlastní účet	K/64/64.9/64.99.2/
+64.99.9	Jiné finanční zprostředkování j. n.	K/64/64.9/64.99.9/
+64.99	Ostatní finanční zprostředkování j. n.	K/64/64.9/64.99/
+65.11	Životní pojištění	K/65/65.1/65.11/
+65.12	Neživotní pojištění	K/65/65.1/65.12/
+65.20	Zajištění	K/65/65.2/65.20/
+65.30	Penzijní financování	K/65/65.3/65.30/
+66.11	Řízení a správa finančních trhů	K/66/66.1/66.11/
+66.12	Obchodování s cennými papíry a komoditami na burzách	K/66/66.1/66.12/
+66.19	Ostatní pomocné činnosti související s finančním zprostředkováním	K/66/66.1/66.19/
+66.21	Vyhodnocování rizik a škod	K/66/66.2/66.21/
+66.22	Činnosti zástupců pojišťovny a makléřů	K/66/66.2/66.22/
+66.29	Ostatní pomocné činnosti související s pojišťovnictvím a penzijním financováním	K/66/66.2/66.29/
+66.30	Správa fondů	K/66/66.3/66.30/
+68.10	Nákup a následný prodej vlastních nemovitostí	L/68/68.1/68.10/
+68.20.1	Pronájem vlastních nebo pronajatých nemovitostí s bytovými prostory	L/68/68.2/68.20.1/
+68.20.2	Pronájem vlastních nebo pronajatých nemovitostí s nebytovými prostory	L/68/68.2/68.20.2/
+68.20.3	Správa vlastních nebo pronajatých nemovitostí s bytovými prostory	L/68/68.2/68.20.3/
+68.20.4	Správa vlastních nebo pronajatých nemovitostí s nebytovými prostory	L/68/68.2/68.20.4/
+68.20	Pronájem a správa vlastních nebo pronajatých nemovitostí	L/68/68.2/68.20/
+68.31	Zprostředkovatelské činnosti realitních agentur	L/68/68.3/68.31/
+68.32	Správa nemovitostí na základě smlouvy	L/68/68.3/68.32/
+69.10	Právní činnosti	M/69/69.1/69.10/
+69.20	Účetnické a auditorské činnosti; daňové poradenství	M/69/69.2/69.20/
+70.10	Činnosti vedení podniků	M/70/70.1/70.10/
+70.21	Poradenství v oblasti vztahů s veřejností a komunikace	M/70/70.2/70.21/
+70.22	Ostatní poradenství v oblasti podnikání a řízení	M/70/70.2/70.22/
+71.11	Architektonické činnosti	M/71/71.1/71.11/
+71.12.1	Geologický průzkum	M/71/71.1/71.12.1/
+71.12.2	Zeměměřické a kartografické činnosti	M/71/71.1/71.12.2/
+71.12.3	Hydrometeorologické a meteorologické činnosti	M/71/71.1/71.12.3/
+71.12.9	Ostatní inženýrské činnosti a související technické poradenství j. n.	M/71/71.1/71.12.9/
+71.12	Inženýrské činnosti a související technické poradenství	M/71/71.1/71.12/
+71.20.1	Zkoušky a analýzy vyhrazených technických zařízení	M/71/71.2/71.20.1/
+71.20.9	Ostatní technické zkoušky a analýzy	M/71/71.2/71.20.9/
+71.20	Technické zkoušky a analýzy	M/71/71.2/71.20/
+72.11	Výzkum a vývoj v oblasti biotechnologie	M/72/72.1/72.11/
+72.19.1	Výzkum a vývoj v oblasti lékařských věd	M/72/72.1/72.19.1/
+72.19.2	Výzkum a vývoj v oblasti technických věd	M/72/72.1/72.19.2/
+72.19.9	Výzkum a vývoj v oblasti jiných přírodních věd	M/72/72.1/72.19.9/
+72.19	Ostatní výzkum a vývoj v oblasti přírodních a technických věd	M/72/72.1/72.19/
+72.20	Výzkum a vývoj v oblasti společenských a humanitních věd	M/72/72.2/72.20/
+73.11	Činnosti reklamních agentur	M/73/73.1/73.11/
+73.12	Zastupování médií při prodeji reklamního času a prostoru	M/73/73.1/73.12/
+73.20	Průzkum trhu a veřejného mínění	M/73/73.2/73.20/
+74.10	Specializované návrhářské činnosti	M/74/74.1/74.10/
+74.20	Fotografické činnosti	M/74/74.2/74.20/
+74.30	Překladatelské a tlumočnické činnosti	M/74/74.3/74.30/
+74.90.1	Poradenství v oblasti bezpečnosti a ochrany zdraví při práci	M/74/74.9/74.90.1/
+74.90.2	Poradenství v oblasti požární ochrany	M/74/74.9/74.90.2/
+74.90.9	Jiné profesní, vědecké a technické činnosti j. n.	M/74/74.9/74.90.9/
+74.90	Ostatní profesní, vědecké a technické činnosti j. n.	M/74/74.9/74.90/
+75.00	Veterinární činnosti	M/75/75.0/75.00/
+77.11	Pronájem a leasing automobilů a jiných lehkých motorových vozidel, kromě motocyklů	N/77/77.1/77.11/
+77.12	Pronájem a leasing nákladních automobilů	N/77/77.1/77.12/
+77.21	Pronájem a leasing rekreačních a sportovních potřeb	N/77/77.2/77.21/
+77.22	Pronájem videokazet a disků	N/77/77.2/77.22/
+77.29	Pronájem a leasing ostatních výrobků pro osobní potřebu a převážně pro domácnost	N/77/77.2/77.29/
+77.31	Pronájem a leasing zemědělských strojů a zařízení	N/77/77.3/77.31/
+77.32	Pronájem a leasing stavebních strojů a zařízení	N/77/77.3/77.32/
+77.33	Pronájem a leasing kancelářských strojů a zařízení, včetně počítačů	N/77/77.3/77.33/
+77.34	Pronájem a leasing vodních dopravních prostředků	N/77/77.3/77.34/
+77.35	Pronájem a leasing leteckých dopravních prostředků	N/77/77.3/77.35/
+77.39	Pronájem a leasing ostatních strojů, zařízení a výrobků j. n.	N/77/77.3/77.39/
+77.40	Leasing duševního vlastnictví a podobných produktů, kromě děl chráněných autorským právem	N/77/77.4/77.40/
+78.10	Činnosti agentur zprostředkujících zaměstnání	N/78/78.1/78.10/
+78.20	Činnosti agentur zprostředkujících práci na přechodnou dobu	N/78/78.2/78.20/
+78.30	Ostatní poskytování lidských zdrojů	N/78/78.3/78.30/
+79.11	Činnosti cestovních agentur	N/79/79.1/79.11/
+79.12	Činnosti cestovních kanceláří	N/79/79.1/79.12/
+79.90.1	Průvodcovské činnosti	N/79/79.9/79.90.1/
+79.90.9	Ostatní rezervační a související činnosti j. n.	N/79/79.9/79.90.9/
+79.90	Ostatní rezervační a související činnosti	N/79/79.9/79.90/
+80.10	Činnosti soukromých bezpečnostních agentur	N/80/80.1/80.10/
+80.20	Činnosti související s provozem bezpečnostních systémů	N/80/80.2/80.20/
+80.30	Pátrací činnosti	N/80/80.3/80.30/
+81.10	Kombinované pomocné činnosti	N/81/81.1/81.10/
+81.21	Všeobecný úklid budov	N/81/81.2/81.21/
+81.22	Specializované čištění a úklid budov a průmyslových zařízení	N/81/81.2/81.22/
+81.29	Ostatní úklidové činnosti	N/81/81.2/81.29/
+81.30	Činnosti související s úpravou krajiny	N/81/81.3/81.30/
+82.11	Univerzální administrativní činnosti	N/82/82.1/82.11/
+82.19	Kopírování, příprava dokumentů a ostatní specializované kancelářské podpůrné činnosti	N/82/82.1/82.19/
+82.20	Činnosti zprostředkovatelských středisek po telefonu	N/82/82.2/82.20/
+82.30	Pořádání konferencí a hospodářských výstav	N/82/82.3/82.30/
+82.91	Inkasní činnosti, ověřování solventnosti zákazníka	N/82/82.9/82.91/
+82.92	Balicí činnosti	N/82/82.9/82.92/
+82.99	Ostatní podpůrné činnosti pro podnikání j. n.	N/82/82.9/82.99/
+84.11	Všeobecné činnosti veřejné správy	O/84/84.1/84.11/
+84.12	Regulace činností souvisejících s poskytováním zdravotní péče, vzděláváním, kulturou a sociální péčí, kromě sociálního zabezpečení	O/84/84.1/84.12/
+84.13	Regulace a podpora podnikatelského prostředí	O/84/84.1/84.13/
+84.21.1	Pomoc cizím zemím při katastrofách nebo v nouzových situacích přímo nebo prostřednictvím mezinárodních organizací	O/84/84.2/84.21.1/
+84.21.2	Rozvíjení vzájemného přátelství a porozumění mezi národy	O/84/84.2/84.21.2/
+84.21.9	Ostatní činnosti v oblasti zahraničních věcí	O/84/84.2/84.21.9/
+84.21	Činnosti v oblasti zahraničních věcí	O/84/84.2/84.21/
+84.22	Činnosti v oblasti obrany	O/84/84.2/84.22/
+84.23	Činnosti v oblasti spravedlnosti a soudnictví	O/84/84.2/84.23/
+84.24	Činnosti v oblasti veřejného pořádku a bezpečnosti	O/84/84.2/84.24/
+84.25	Činnosti v oblasti protipožární ochrany	O/84/84.2/84.25/
+84.30	Činnosti v oblasti povinného sociálního zabezpečení	O/84/84.3/84.30/
+85.10	Předškolní vzdělávání	P/85/85.1/85.10/
+85.20	Primární vzdělávání	P/85/85.2/85.20/
+85.31.1	Základní vzdělávání na druhém stupni základních škol	P/85/85.3/85.31.1/
+85.31.2	Střední všeobecné vzdělávání	P/85/85.3/85.31.2/
+85.31	Sekundární všeobecné vzdělávání	P/85/85.3/85.31/
+85.32.1	Střední odborné vzdělávání na učilištích	P/85/85.3/85.32.1/
+85.32.2	Střední odborné vzdělávání na středních odborných školách	P/85/85.3/85.32.2/
+85.32	Sekundární odborné vzdělávání	P/85/85.3/85.32/
+85.41	Postsekundární nikoli terciární vzdělávání	P/85/85.4/85.41/
+85.42	Terciární vzdělávání	P/85/85.4/85.42/
+85.51	Sportovní a rekreační vzdělávání	P/85/85.5/85.51/
+85.52	Umělecké vzdělávání	P/85/85.5/85.52/
+85.53.1	Činnosti autoškol	P/85/85.5/85.53.1/
+85.53.2	Činnosti leteckých škol	P/85/85.5/85.53.2/
+85.53.9	Činnosti ostatních škol řízení	P/85/85.5/85.53.9/
+85.53	Činnosti autoškol a jiných škol řízení	P/85/85.5/85.53/
+85.59.1	Vzdělávání v jazykových školách	P/85/85.5/85.59.1/
+85.59.2	Environmentální vzdělávání	P/85/85.5/85.59.2/
+85.59.3	Inovační vzdělávání	P/85/85.5/85.59.3/
+85.59.9	Jiné vzdělávání j. n.	P/85/85.5/85.59.9/
+85.59	Ostatní vzdělávání j. n.	P/85/85.5/85.59/
+85.60	Podpůrné činnosti ve vzdělávání	P/85/85.6/85.60/
+86.10	Ústavní zdravotní péče	Q/86/86.1/86.10/
+86.21	Všeobecná ambulantní zdravotní péče	Q/86/86.2/86.21/
+86.22	Specializovaná ambulantní zdravotní péče	Q/86/86.2/86.22/
+86.23	Zubní péče	Q/86/86.2/86.23/
+86.90.1	Činnosti související s ochranou veřejného zdraví	Q/86/86.9/86.90.1/
+86.90.9	Ostatní činnosti související se zdravotní péčí j. n.	Q/86/86.9/86.90.9/
+86.90	Ostatní činnosti související se zdravotní péčí	Q/86/86.9/86.90/
+87.10	Sociální péče ve zdravotnických zařízeních ústavní péče	Q/87/87.1/87.10/
+87.20.1	Sociální péče v zařízeních pro osoby s chronickým duševním onemocněním	Q/87/87.2/87.20.1/
+87.20.2	Sociální péče v zařízeních pro osoby závislé na návykových látkách	Q/87/87.2/87.20.2/
+87.20	Sociální péče v zařízeních pro osoby s chronickým duševním onemocněním a osoby závislé na návykových látkách	Q/87/87.2/87.20/
+87.30.1	Sociální péče v domovech pro seniory	Q/87/87.3/87.30.1/
+87.30.2	Sociální péče v domovech pro osoby se zdravotním postižením	Q/87/87.3/87.30.2/
+87.30	Sociální péče v domovech pro seniory a osoby se zdravotním postižením	Q/87/87.3/87.30/
+87.90	Ostatní pobytové služby sociální péče	Q/87/87.9/87.90/
+88.10.1	Ambulantní nebo terénní sociální služby pro seniory	Q/88/88.1/88.10.1/
+88.10.2	Ambulantní nebo terénní sociální služby pro osoby se zdravotním postižením	Q/88/88.1/88.10.2/
+88.10	Ambulantní nebo terénní sociální služby pro seniory a osoby se zdravotním postižením	Q/88/88.1/88.10/
+88.91	Sociální služby poskytované dětem	Q/88/88.9/88.91/
+88.99.1	Sociální služby pro uprchlíky, oběti katastrof	Q/88/88.9/88.99.1/
+88.99.2	Sociální prevence	Q/88/88.9/88.99.2/
+88.99.3	Sociální rehabilitace	Q/88/88.9/88.99.3/
+88.99.9	Jiné ambulantní nebo terénní sociální služby j. n.	Q/88/88.9/88.99.9/
+88.99	Ostatní ambulantní nebo terénní sociální služby j. n.	Q/88/88.9/88.99/
+90.01	Scénická umění	R/90/90.0/90.01/
+90.02	Podpůrné činnosti pro scénická umění	R/90/90.0/90.02/
+90.03	Umělecká tvorba	R/90/90.0/90.03/
+90.04	Provozování kulturních zařízení	R/90/90.0/90.04/
+91.01	Činnosti knihoven a archivů	R/91/91.0/91.01/
+91.02	Činnosti muzeí	R/91/91.0/91.02/
+91.03	Provozování kulturních památek, historických staveb a obdobných turistických zajímavostí	R/91/91.0/91.03/
+91.04.1	Činnosti botanických a zoologických zahrad	R/91/91.0/91.04.1/
+91.04.2	Činnosti přírodních rezervací a národních parků	R/91/91.0/91.04.2/
+91.04	Činnosti botanických a zoologických zahrad, přírodních rezervací a národních parků	R/91/91.0/91.04/
+92.00	Činnosti heren, kasin a sázkových kanceláří	R/92/92.0/92.00/
+93.11	Provozování sportovních zařízení	R/93/93.1/93.11/
+93.12	Činnosti sportovních klubů	R/93/93.1/93.12/
+93.13	Činnosti fitcenter	R/93/93.1/93.13/
+93.19	Ostatní sportovní činnosti	R/93/93.1/93.19/
+93.21	Činnosti lunaparků a zábavních parků	R/93/93.2/93.21/
+93.29	Ostatní zábavní a rekreační činnosti j. n.	R/93/93.2/93.29/
+94.11	Činnosti podnikatelských a zaměstnavatelských organizací	S/94/94.1/94.11/
+94.12	Činnosti profesních organizací	S/94/94.1/94.12/
+94.20	Činnosti odborových svazů	S/94/94.2/94.20/
+94.91	Činnosti náboženských organizací	S/94/94.9/94.91/
+94.92	Činnosti politických stran a organizací	S/94/94.9/94.92/
+94.99.1	Činnosti organizací dětí a mládeže	S/94/94.9/94.99.1/
+94.99.2	Činnosti organizací na podporu kulturní činnosti	S/94/94.9/94.99.2/
+94.99.3	Činnosti organizací na podporu rekreační a zájmové činnosti	S/94/94.9/94.99.3/
+94.99.4	Činnosti spotřebitelských organizací	S/94/94.9/94.99.4/
+94.99.5	Činnosti environmentálních a ekologických hnutí	S/94/94.9/94.99.5/
+94.99.6	Činnosti organizací na ochranu a zlepšení postavení etnických, menšinových a jiných speciálních skupin	S/94/94.9/94.99.6/
+94.99.7	Činnosti občanských iniciativ, protestních hnutí	S/94/94.9/94.99.7/
+94.99.9	Činnosti ostatních organizací j. n.	S/94/94.9/94.99.9/
+94.99	Činnosti ostatních organizací sdružujících osoby za účelem prosazování společných zájmů j. n.	S/94/94.9/94.99/
+95.11	Opravy počítačů a periferních zařízení	S/95/95.1/95.11/
+95.12	Opravy komunikačních zařízení	S/95/95.1/95.12/
+95.21	Opravy spotřební elektroniky	S/95/95.2/95.21/
+95.22	Opravy přístrojů a zařízení převážně pro domácnost, dům a zahradu	S/95/95.2/95.22/
+95.23	Opravy obuvi a kožených výrobků	S/95/95.2/95.23/
+95.24	Opravy nábytku a bytového zařízení	S/95/95.2/95.24/
+95.25	Opravy hodin, hodinek a klenotnických výrobků	S/95/95.2/95.25/
+95.29	Opravy ostatních výrobků pro osobní potřebu a převážně pro domácnost	S/95/95.2/95.29/
+96.01	Praní a chemické čištění textilních a kožešinových výrobků	S/96/96.0/96.01/
+96.02	Kadeřnické, kosmetické a podobné činnosti	S/96/96.0/96.02/
+96.03	Pohřební a související činnosti	S/96/96.0/96.03/
+96.04	Činnosti pro osobní a fyzickou pohodu	S/96/96.0/96.04/
+96.09	Poskytování ostatních osobních služeb j. n.	S/96/96.0/96.09/
+97.00	Činnosti domácností jako zaměstnavatelů domácího personálu	T/97/97.0/97.00/
+98.10	Činnosti domácností produkujících blíže neurčené výrobky pro vlastní potřebu	T/98/98.1/98.10/
+98.20	Činnosti domácností poskytujících blíže neurčené služby pro vlastní potřebu	T/98/98.2/98.20/
+99.00	Činnosti exteritoriálních organizací a orgánů	U/99/99.0/99.00/
