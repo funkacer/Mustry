@@ -53,3 +53,4 @@ exit
 psql -d test -f /Users/jiricerny/_Git/_venv/_venv/W3Schools_2024/Postgre/_data/w3schools.sql
 psql -d test -f /Users/jiricerny/_Git/_venv/_venv/SQL_2024/Sql_queries/_data/bill.sql
 psql -d test -f /Users/jiricerny/_Git/_venv/_venv/SQL_2024/Sql_queries_2/_data/bill2.sql
+psql -d test -f /Users/jiricerny/_Git/_venv/_venv/SQL_2024/Sql_queries_2/_data/bill3.sql
