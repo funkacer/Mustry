@@ -78,3 +78,68 @@ COPY nace.nace_podklad("kod", "nazev", "strom")
 FROM '/Users/jiricerny/_Git/Mustry/macbook/_data/Strom.txt'
 DELIMITER E'\t'
 CSV HEADER;
+
+
+psql postgres
+\c test
+create schema sqlw3s;
+grant all privileges on schema sqlw3s to funka;
+set role funka;
+
+create table sqlw3s."Customers" ("CustomerID" int, "CustomerName" varchar(255), "ContactName" varchar(255), "Address"	varchar(255), "City" varchar(255), "PostalCode" varchar(255), "Country" varchar(255));
+
+psql postgres
+\c test
+
+COPY sqlw3s."Customers" ("CustomerID", "CustomerName", "ContactName", "Address", "City", "PostalCode", "Country")
+FROM '/Users/jiricerny/_Git/_venv/_venv/W3Schools_2024/SQL/_data/customers.txt'
+DELIMITER E'\t'
+CSV HEADER;
+
+--tabulka obsahuje mezery na konci, tak se jich zbavim:
+psql postgres
+\c test
+SET ROLE funka;
+
+ALTER TABLE sqlw3s."Customers" RENAME TO "Customers_podklad";
+
+SELECT "CustomerID",
+    trim("CustomerName") as "CustomerName",
+    trim("ContactName") as "ContactName",
+    trim("Address") as "Address",
+    trim("City") as "City",
+    trim("PostalCode") as "PostalCode",
+    trim("Country") as "Country" INTO sqlw3s."Customers"
+FROM sqlw3s."Customers_podklad";
+
+DROP TABLE sqlw3s."Customers_podklad";
+
+
+--FUNGUJE PRIPOJENI FUNKA S JAKYMKOLIV HESLEM!!!
+--OPRAVA:
+--https://stackoverflow.com/questions/29679507/how-to-force-postgresql-user-login-with-password
+psql postgres
+SHOW hba_file ;
+exit
+--edituj ten soubor který to uvede, vždy radka s admin trust, radka all password
+ex cat /opt/homebrew/var/postgresql@16/pg_hba.conf
+
+local   all             jiricerny                               trust
+local   all             all                                     password
+# IPv4 local connections:
+host    all             jiricerny       127.0.0.1/32            trust
+host    all             all             127.0.0.1/32            password
+# IPv6 local connections:
+host    all             jiricerny       ::1/128                 trust
+host    all             all             ::1/128                 password
+# Allow replication connections from localhost, by a user with the
+# replication privilege.
+local   replication     all                                     trust
+host    replication     all             127.0.0.1/32            trust
+host    replication     all             ::1/128                 trust
+
+--restart service:
+brew services list
+brew services restart postgresql@16
+
+
