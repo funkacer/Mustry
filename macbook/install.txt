@@ -92,7 +92,7 @@ psql postgres
 \c test
 
 COPY sqlw3s."Customers" ("CustomerID", "CustomerName", "ContactName", "Address", "City", "PostalCode", "Country")
-FROM '/Users/jiricerny/_Git/_venv/_venv/W3Schools_2024/SQL/_data/customers.txt'
+FROM '/Users/jiricerny/_Git/_venv/_venv/W3Schools_2024/SQL/_data/Customers.txt'
 DELIMITER E'\t'
 CSV HEADER;
 
