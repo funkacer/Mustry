@@ -143,3 +143,12 @@ brew services list
 brew services restart postgresql@16
 
 
+--MySQLdb client pro python vent:
+# Assume you are activating Python 3 venv
+$ brew install mysql-client pkg-config
+$ export PKG_CONFIG_PATH="$(brew --prefix)/opt/mysql-client/lib/pkgconfig"
+$ pip install mysqlclient
+--vice na https://stackoverflow.com/questions/66669728/trouble-installing-mysql-client-on-mac
+
+pip install ipython-sql
+(v jupyter notebooku pak %load_ext sql)
