@@ -1,6 +1,11 @@
 python -m venv c:/_venv
 c:/_venv/Scripts/activate.bat
 
+import sys
+print(sys.executable)
+import os
+print(os.getcwd())
+
 pip install jupyter notebook
 pip install pandas
 pip install numpy
