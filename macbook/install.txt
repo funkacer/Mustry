@@ -152,3 +152,10 @@ $ pip install mysqlclient
 
 pip install ipython-sql
 (v jupyter notebooku pak %load_ext sql)
+
+
+psql postgres
+\c test
+\l --list all databases
+\du --list all users
+\i /Users/jiricerny/_Git/_venv/_venv/SQL_2024/Sql_queries_3/_data/bill4.sql
