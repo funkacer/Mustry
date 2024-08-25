@@ -159,3 +159,15 @@ psql postgres
 \l --list all databases
 \du --list all users
 \i /Users/jiricerny/_Git/_venv/_venv/SQL_2024/Sql_queries_3/_data/bill4.sql
+
+
+Mysql sakila db:
+cd /Users/jiricerny/_Git/Mustry/macbook/_data/sakila-db
+cd /Applications/MAMP/Library/bin
+Mysql se spustí takto:
+/Applications/MAMP/Library/bin/mysql -u root -p
+..zadat heslo
+mysql> SOURCE /Users/jiricerny/_Git/Mustry/macbook/_data/sakila-db/sakila-schema.sql;
+mysql> SOURCE /Users/jiricerny/_Git/Mustry/macbook/_data/sakila-db/sakila-data.sql;
+use sakila;
+Select * from actor limit 5;
