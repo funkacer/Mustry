@@ -169,5 +169,8 @@ Mysql se spustí takto:
 ..zadat heslo
 mysql> SOURCE /Users/jiricerny/_Git/Mustry/macbook/_data/sakila-db/sakila-schema.sql;
 mysql> SOURCE /Users/jiricerny/_Git/Mustry/macbook/_data/sakila-db/sakila-data.sql;
-use sakila;
-Select * from actor limit 5;
+exit
+..znovu až po zadat heslo
+mysql> SOURCE /Users/jiricerny/_Git/Mustry/macbook/_data/world-db/world.sql;
+exit
+
