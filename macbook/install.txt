@@ -1,3 +1,7 @@
+mc
+htop
+sysctl -a | grep machdep.cpu
+
 git se instaluje zadanim git do ssh, nainstaluje devtools pro prikazovy radek
 git config --global user.name "Jiří Černý"
 git config --global user.email funkacer@gmail.com
