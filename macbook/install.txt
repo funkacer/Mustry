@@ -165,6 +165,31 @@ psql postgres
 \i /Users/jiricerny/_Git/_venv/_venv/SQL_2024/Sql_queries_3/_data/bill4.sql
 
 
+
+--ISCO
+psql test
+create schema isco;
+grant all privileges on schema isco to funka;
+
+--ISCO Z TXT
+psql test
+set role funka;
+CREATE TABLE isco.isco_podklad (kod VARCHAR(10), nazev VARCHAR(255), strom VARCHAR(20));
+Exit
+
+psql postgres
+\c test
+COPY isco.isco_podklad ("kod", "nazev", "strom")
+FROM '/Users/jiricerny/_Git/Mustry/macbook/_data/Isco.txt'
+DELIMITER E'\t'
+CSV HEADER;
+
+--ISCO ZE SQL
+\i /Users/jiricerny/_Git/Mustry/macbook/_data/Isco.sql
+Nebo
+psql -d test -f /Users/jiricerny/_Git/Mustry/macbook/_data/Isco.sql
+
+
 Mysql sakila db:
 cd /Users/jiricerny/_Git/Mustry/macbook/_data/sakila-db
 cd /Applications/MAMP/Library/bin
