@@ -190,6 +190,8 @@ Nebo
 psql -d test -f /Users/jiricerny/_Git/Mustry/macbook/_data/Isco.sql
 
 
+--GOPAS Pyth3 na MacBooku
+
 Mysql sakila db:
 cd /Users/jiricerny/_Git/Mustry/macbook/_data/sakila-db
 cd /Applications/MAMP/Library/bin
@@ -202,4 +204,20 @@ exit
 ..znovu až po zadat heslo
 mysql> SOURCE /Users/jiricerny/_Git/Mustry/macbook/_data/world-db/world.sql;
 exit
+
+
+Day 5 příklad 4 db pro php request - json:
+
+use jiri;
+drop table `Day5_priklad4_json_data`;
+CREATE TABLE `Day5_priklad4_json_data` (`Column1` int PRIMARY KEY AUTO_INCREMENT, mpg decimal, cyl int, displacement decimal, horsepower decimal, weight int, acceleration decimal,  model_year int, origin TEXT, name TEXT, mfr TEXT);
+
+Import dat z _data/gopas/Day5_priklad4_json_data.csv přes
+localhost:8889/phpMyAdmin5/
+
+Přeskočit daný počet dotazů (pro SQL) počínaje od: 1
+Sloupce oddělené: ;
+
+UPDATE `Day5_priklad4_json_data` SET horsepower = null WHERE horsepower = -1;
+
 
