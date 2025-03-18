@@ -221,3 +221,16 @@ Sloupce oddělené: ;
 UPDATE `Day5_priklad4_json_data` SET horsepower = null WHERE horsepower = -1;
 
 
+
+To samé udělat do funkacernette pro webscraping!!!
+
+use funkacernette;
+CREATE TABLE `Day5_priklad4_json_data` (`Column1` int PRIMARY KEY AUTO_INCREMENT, mpg decimal, cyl int, displacement decimal, horsepower decimal, weight int, acceleration decimal,  model_year int, origin TEXT, name TEXT, mfr TEXT);
+
+Import dat z _data/gopas/Day5_priklad4_json_data.csv přes
+localhost:8889/phpMyAdmin5/
+
+Přeskočit daný počet dotazů (pro SQL) počínaje od: 1
+Sloupce oddělené: ;
+
+UPDATE `Day5_priklad4_json_data` SET horsepower = null WHERE horsepower = -1;
