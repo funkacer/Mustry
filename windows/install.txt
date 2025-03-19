@@ -1,0 +1,18 @@
+Aby šly spustit scripty v power shell (ve složce když se dá Otevřít v terminálu), např. Scripts\activate,
+musí se spouštění scriptů povolit, viz.:
+
+https://learn.microsoft.com/cs-cz/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.5
+
+Spustit tento příkaz:
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+Byla hláška:
+
+.\Scripts\activate : File C:\_venv\Scripts\Activate.ps1 cannot be loaded because running scripts is disabled on this sy
+stem. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ .\Scripts\activate
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
