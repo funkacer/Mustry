@@ -195,3 +195,17 @@ mysql -u root -p funkacernette < nette_blog.sql
 upravit v local.neon port na 3306
 
 mysql -u root -p funkacernette < uz.sql
+
+
+
+--------Verze 24.04
+
+Spyder install:
+sudo apt install python3-venv
+python3 -m venv _spyder
+cd _spyder
+. bin/activate
+pip install spyder
+QT_QPA_PLATFORM=wayland spyder
+
+
