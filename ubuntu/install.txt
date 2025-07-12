@@ -117,7 +117,7 @@ update patient set updated_at = now() where id = 2;
 
 //symlink na Git
 cd /var/www/html
-ln -s /home/funkacer/Git/laravel_hospital/public hospital
+ln -s /home/funkacer/_Git/laravel_hospital/public hospital
 
 //list all users
 cut -d: -f1 /etc/passwd
@@ -209,3 +209,155 @@ pip install spyder
 QT_QPA_PLATFORM=wayland spyder
 
 
+--------Verze 25.04
+
+sudo apt install git
+
+ssh-keygen -t ed25519 -C "funkacer@gmail.com"
+cat home/funkacer/.ssh/id_ed25519.pub
+
+sudo apt install chromium-browser
+
+sudo apt install mc
+
+sudo apt install python3.13-venv
+python3 -m venv _venv
+cd _venv
+. bin/activate
+which pip
+pip install numpy pandas matplotlib seaborn scikit-learn
+pip install jupyter notebook
+pip install pytest
+
+sudo su
+apt install software-properties-common
+add-apt-repository ppa:ondrej/php
+apt update
+apt install php8.4 libapache2-mod-php8.4
+
+apt install apache2 php8.4 php8.4-cli php8.4-sqlite3 php8.4-curl php8.4-gd php8.4-imagick php8.4-mbstring php8.4-mcrypt php8.4-soap php8.4-xml php8.4-zip php8.4-fpm
+
+apt install php8.4-pgsql
+
+service apache2 restart
+
+sudo service php8.4-fpm start
+sudo service apache2 start
+
+snap install codium --classic
+
+
+
+cd /var/www/
+sudo chmod -R 777 .
+
+sudo mv composer.phar /usr/local/bin/composer
+cd /usr/local/bin/
+sudo chmod -R 777 .
+
+composer global about
+cd /home/funkacer/.config/composer
+composer global require laravel/installer
+
+cd /var/www/html
+-- původně bylo: composer create-project --prefer-dist laravel/laravel:^7.0 blog
+composer create-project --prefer-dist laravel/laravel:^8.4 blog
+
+sudo su
+ex /etc/apache2/apache2.conf
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+
+<Directory /var/www/html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+
+sudo a2enmod rewrite
+systemctl restart apache2
+(chtělo i systemctl daemon-reload)
+
+
+znovu kvůli Laravel:
+cd /var/www/
+sudo chmod -R 777 .
+
+
+/instalace mysql pro laravel_hospital
+sudo apt install mysql-server -y
+mysql --version
+
+sudo mysql_secure_installation
+
+VALIDATE PASSWORD COMPONENT: Enter Y and press Enter to enable password validation.
+Password Validation Policy: Enter 2 to enforce the usage of strong passwords.
+Remove anonymous users?: Enter Y to remove anonymous MySQL users.
+Disallow root login remotely?: Enter Y to disable root user remote MySQL access.
+Remove test database and access to it?: Enter Y to delete the test database.
+Reload privilege tables now?: Enter Y to apply the changes to the privilege tables.
+
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+VLOŽIT:
+mysql_native_password=ON do sekce [mysqld]
+
+...
+[mysqld]
+#
+# * Basic Settings
+#
+mysql_native_password=ON
+user            = mysql
+...
+
+
+RESTARTOVAT:
+sudo systemctl restart mysql
+
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass';
+FLUSH PRIVILEGES;
+
+mysql -u root -p
+
+show databases;
+create database laravel_hospital;
+use laravel_hospital;
+
+sudo apt-get install php8.4-mysql
+sudo service apache2 restart
+
+
+test pro symlink, musí ukázat seznam souborů:
+sudo -u www-data ls -l /var/www/html/hospital/.
+
+https://stackoverflow.com/questions/7381371/apache-wont-follow-symlinks-403-forbidden
+
+cd /var/www/html
+ln -s /home/funkacer/_Git/laravel_hospital/public hospital
+
+//list all users
+cut -d: -f1 /etc/passwd
+
+test pro symlink, musí ukázat seznam souborů:
+sudo -u www-data ls -l /var/www/html/hospital/.
+
+https://stackoverflow.com/questions/7381371/apache-wont-follow-symlinks-403-forbidden
+
+//tohle funguje, asi přidá www-data pod skupinu funkacer:
+sudo usermod -a -G funkacer www-data
+
+sudo service apache2 restart
+
+//po git clone nutno:
+composer install
+přejmenovat .env.example na .env a upravit db:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_hospital
+DB_USERNAME=root
+DB_PASSWORD=pass
