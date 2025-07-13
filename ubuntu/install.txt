@@ -294,7 +294,7 @@ mysql --version
 sudo mysql_secure_installation
 
 VALIDATE PASSWORD COMPONENT: Enter Y and press Enter to enable password validation.
-Password Validation Policy: Enter 2 to enforce the usage of strong passwords.
+Password Validation Policy: Enter 2 to enforce the usage of strong passwords. (já jsem dal asi 0, ale stejně chce 8 a číslice a znaky)
 Remove anonymous users?: Enter Y to remove anonymous MySQL users.
 Disallow root login remotely?: Enter Y to disable root user remote MySQL access.
 Remove test database and access to it?: Enter Y to delete the test database.
@@ -318,7 +318,7 @@ RESTARTOVAT:
 sudo systemctl restart mysql
 
 sudo mysql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Pass1234*';
 FLUSH PRIVILEGES;
 
 mysql -u root -p
@@ -327,14 +327,10 @@ show databases;
 create database laravel_hospital;
 use laravel_hospital;
 
+lze stáhnout phpMyAdmin do var/www/html
+(psalo mi že chybí mysql knihovna, musím doinstalovat)
 sudo apt-get install php8.4-mysql
 sudo service apache2 restart
-
-
-test pro symlink, musí ukázat seznam souborů:
-sudo -u www-data ls -l /var/www/html/hospital/.
-
-https://stackoverflow.com/questions/7381371/apache-wont-follow-symlinks-403-forbidden
 
 cd /var/www/html
 ln -s /home/funkacer/_Git/laravel_hospital/public hospital
@@ -360,4 +356,42 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=laravel_hospital
 DB_USERNAME=root
-DB_PASSWORD=pass
+DB_PASSWORD=Pass1234*
+
+
+--zkouším nový blog v nette (pro testy videí atd):
+composer create-project nette/web-project nette-blog
+cd /var/www/html
+ln -s /home/funkacer/_Git/nette-blog/www nette-blog
+
+
+
+--zkouším tady funkacernette, ale nejde udělat composer install kvůli verzi php:
+--přejmenuju funkacernette na funkacernette_old
+mv funkacernette/ funkacernette_old/
+
+--udělám nový nette blog jako funkacernette
+composer create-project nette/web-project funkacernette
+
+cd /var/www/html
+ln -s /home/funkacer/_Git/funkacernette/www funkacer
+
+--příprava databáze
+
+mysql -u root -p
+create database funkacernette;
+show databases;
+
+
+mysql -u root -p funkacernette < nette_blog.sql
+upravit v local.neon port na 3306 (?)
+v nette se už upravuje jen common.neon:
+database:
+	dsn: 'mysql:host=127.0.0.1:3306;dbname=funkacernette'
+	user: root
+	password: Pass123*
+mysql -u root -p funkacernette < uz.sql
+mysql -u root -p funkacernette < uz_oprava_21.sql
+mysql -u root -p funkacernette < uz_oprava_21.sql
+mysql -u root -p funkacernette < weather.sql
+
