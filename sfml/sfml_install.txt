@@ -1,0 +1,56 @@
+- Download CodeBlocks
+https://www.codeblocks.org/downloads/binaries/
+codeblocks-20.03-setup.exe
+
+- Download SFML
+https://www.sfml-dev.org/download/sfml/2.6.1/
+GCC 13.1.0 MinGW (SEH) - 64-bit
+WinLibs MSVCRT 13.1.0 (64-bit)
+
+- Setup CodeBlocks
+Settings/compiler/toolchain executables
+Set directory C:\mingw64\
+OK
+
+- Create SFML project
+Create a new project -> Console application
+Project tile: SFML
+Project Folder: C:\#SFML\
+...
+Kliknout vlevo pravou myší na SFML -> Project build options ->
+Vlevo SFML -> Search directories -> Compiler -> Add ->
+-> C:\SFML-2.6.1\include -> Keep this as a relative path: No (!) -> OK
+Vlevo SFML -> Search directories -> Linker -> Add ->
+-> C:\SFML-2.6.1\lib -> Keep this as a relative path: No (!) -> OK
+Vlevo Debug -> Linker settings -> Add ->
+sfml-graphics-d
+sfml-audio-d
+sfml-network-d
+sfml-window-d
+sfml-system-d
+Vlevo Release (yes, save settings) -> Linker settings -> Add ->
+sfml-graphics
+sfml-audio
+sfml-network
+sfml-window
+sfml-system
+
+Čti https://www.sfml-dev.org/tutorials/2.6/start-cb.php
+-lze přidat -s a #defines SFML_STATIC
+-potom jsou knihovny součástí exe
+
+Nyní ještě copy and paste všechny soubory z
+C:\SFML-2.6.1\bin do C:\#SFML\SFML
+..
+Šablona:
+Kliknout vlevo pravou myší na SFML -> Add files -> vybrat all dlls
+(Control pro přidání openal)
+File->Save project as template -> SFML
+
+Do finálního projektu nakopírovat všechny dll a ještě:
+C:\mingw64\bin\libstdc++-6.dll
+C:\mingw64\bin\libgcc_s_seh-1.dll
+C:\mingw64\bin\libwinpthread-1.dll
+
+DONE!
+
