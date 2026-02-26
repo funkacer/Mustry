@@ -1,3 +1,7 @@
+Arduino:
+softwareupdate --install-rosetta
+
+
 mc
 htop
 sysctl -a | grep machdep.cpu
