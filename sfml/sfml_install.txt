@@ -35,9 +35,26 @@ sfml-network
 sfml-window
 sfml-system
 
+
 Čti https://www.sfml-dev.org/tutorials/2.6/start-cb.php
--lze přidat -s a #defines SFML_STATIC
+-lze přidat -s-d / -s do Linker settings a #defines SFML_STATIC
 -potom jsou knihovny součástí exe
+
+Since SFML 3.x no longer bundles its dependencies on Windows, you must link them yourself.
+Depending on modules used, you will need libraries such as:
+freetype
+harfbuzz
+ogg, vorbis, vorbisfile, vorbisenc
+flac
+mbedtls
+opengl32
+winmm
+gdi32
+ws2_32
+pthread (if required by your MinGW)
+(Exact names depend on your SFML build; check the /lib folder.)
+
+
 
 Nyní ještě copy and paste všechny soubory z
 C:\SFML-2.6.1\bin do C:\#SFML\SFML\SFML
