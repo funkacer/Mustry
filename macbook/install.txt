@@ -1,3 +1,7 @@
+Rhodes:
+'/Library/Application Support/Rhodes/Rhodes V8 Pro'
+
+
 Arduino:
 softwareupdate --install-rosetta
 
@@ -238,3 +242,10 @@ Přeskočit daný počet dotazů (pro SQL) počínaje od: 1
 Sloupce oddělené: ;
 
 UPDATE `Day5_priklad4_json_data` SET horsepower = null WHERE horsepower = -1;
+
+
+Omnisphere stem
+https://support.spectrasonics.net/manual/Omnisphere2/25/en/topic/get-started-page04
+cd '/Users/jiricerny/Library/Application Support/Spectrasonics'
+rm -rf STEAM
+ln -s '/Volumes/T7 Shield/# Spectrasonics/STEAM' STEAM
