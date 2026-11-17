@@ -1,3 +1,7 @@
+git checkout .
+(discards unstaged changes in tracked files, leaving staged changes and untracked files untouched)
+
+
 Rhodes:
 '/Library/Application Support/Rhodes/Rhodes V8 Pro'
 
